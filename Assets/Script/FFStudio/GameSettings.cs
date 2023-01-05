@@ -10,6 +10,9 @@ namespace FFStudio
     {
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
+    [ Title( "Ball" ) ]
+		[ LabelText( "Ball Punch Power" ) ] public float ball_punchScale_power = 1;
+		[ LabelText( "Ball Punch Duration" ) ] public float ball_punchScale_duration = 0.35f;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;

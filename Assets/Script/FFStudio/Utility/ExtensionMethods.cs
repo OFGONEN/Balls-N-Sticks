@@ -482,6 +482,11 @@ namespace FFStudio
 			return Random.Range( vector.x, vector.y );
 		}
 
+		public static int ReturnRandom( this Vector2Int vector )
+		{
+			return Random.Range( vector.x, vector.y );
+		}
+
 		public static float ReturnProgress( this Vector2 vector, float progress )
 		{
 			return Mathf.Lerp( vector.x, vector.y, progress );
