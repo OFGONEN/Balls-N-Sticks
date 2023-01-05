@@ -18,6 +18,6 @@ public class BallData : ScriptableObject
 	public float BallMass                    => ball_mass;
 	public Material BallMaterial             => ball_material;
 	public PhysicMaterial BallPhysicMaterial => ball_material_physic;
-	public Vector2 BallCurrency              => ball_currency_range;
+	public float BallCurrency                => ball_currency_range.ReturnRandom();
 	public BallData BallNextData             => ball_nextData;
 }
