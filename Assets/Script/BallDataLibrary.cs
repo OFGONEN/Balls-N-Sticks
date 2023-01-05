@@ -6,6 +6,6 @@ using UnityEngine;
 using FFStudio;
 
 [ CreateAssetMenu( fileName = "library_ball_data", menuName = "FF/Game/Library/Ball Data" ) ]
-public class BallDataLibrary : SharedDataLibrary< BallDataLibrary >
+public class BallDataLibrary : SharedDataLibrary< BallData >
 {
 }
