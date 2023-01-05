@@ -9,27 +9,32 @@ using Sirenix.OdinInspector;
 [ CreateAssetMenu( fileName = "notif_ball_cache", menuName = "FF/Game/Ball Cache Data" ) ]
 public class BallCache : SharedIntNotifier
 {
-    List< BallData > ball_data_list;
+    Stack< BallData > ball_data_stack;
 
-    public List< BallData > BallDataList => ball_data_list;
+    public int BallDataCount => ball_data_stack.Count;
 
     //Info: Call From manager_asset on Awake
     public void OnAwake( int size )
     {
-		ball_data_list = new List< BallData >( size );
-		sharedValue    = 0;
+		ball_data_stack = new Stack< BallData >( size );
+		sharedValue     = 0;
 	}
 
     //Info: Call From manager_asset on respond to event_level_unload_start
     public void Clear()
     {
-		ball_data_list.Clear();
+		ball_data_stack.Clear();
 		SetValue_NotifyAlways( 0 );
 	}
 
-    public void Add( BallData data )
+    public void AddData( BallData data )
     {
-		ball_data_list.Add( data );
-		SharedValue = ball_data_list.Count;
+		ball_data_stack.Push( data );
+		SharedValue = ball_data_stack.Count;
+	}
+
+	public BallData GetBallData() 
+	{
+		return ball_data_stack.Pop();
 	}
 }
