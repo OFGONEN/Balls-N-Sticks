@@ -9,7 +9,9 @@ using Sirenix.OdinInspector;
 public class BallSpawner : MonoBehaviour
 {
 #region Fields
-    [ SerializeField ] BallPool ball_pool;
+    [ SerializeField ] protected BallPool pool_ball;
+    [ SerializeField ] protected BallDataLibrary library_ball_data;
+    [ SerializeField ] protected BallCache ball_cache;
 #endregion
 
 #region Properties
