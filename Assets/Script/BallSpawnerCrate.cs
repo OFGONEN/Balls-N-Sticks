@@ -15,7 +15,6 @@ public class BallSpawnerCrate : BallSpawner
     [ SerializeField, LabelText( "Level Range") ] Vector2Int ball_spawn_level;
     [ SerializeField, LabelText( "Spawn Velocity") ] Vector2 ball_spawn_velocity;
     [ SerializeField, LabelText( "Spawn Radius") ] float ball_spawn_radius;
-    [ SerializeField, LabelText( "Spawn Offset") ] Vector3 ball_spawn_offset;
 #endregion
 
 #region Properties
@@ -28,7 +27,7 @@ public class BallSpawnerCrate : BallSpawner
 	public void Spawn()
 	{
 		var count    = ball_spawn_count.ReturnRandom();
-		var position = transform.position + ball_spawn_offset;
+		var position = transform.position;
 
 		for( var i = 0; i < count; i++ )
 		{
@@ -47,7 +46,7 @@ public class BallSpawnerCrate : BallSpawner
 #if UNITY_EDITOR
 	void OnDrawGizmos()
 	{
-		var position = transform.position + ball_spawn_offset;
+		var position = transform.position;
 		Handles.Label( position, "Ball Crate Spawn" );
 		Gizmos.DrawWireSphere( position, ball_spawn_radius );
 	}
