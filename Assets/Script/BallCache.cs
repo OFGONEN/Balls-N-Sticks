@@ -7,7 +7,7 @@ using FFStudio;
 using Sirenix.OdinInspector;
 
 [ CreateAssetMenu( fileName = "notif_ball_cache", menuName = "FF/Game/Ball Cache Data" ) ]
-public class BallCacheData : SharedIntNotifier
+public class BallCache : SharedIntNotifier
 {
     List< BallData > ball_data_list;
 
