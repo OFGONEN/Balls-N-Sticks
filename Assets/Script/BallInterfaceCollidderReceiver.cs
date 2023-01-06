@@ -20,9 +20,9 @@ public class BallInterfaceCollidderReceiver : ScriptableObject , BallInterface
 #endregion
 
 #region API
-    public void CacheBall( Collider collider )
+    public void CacheBall( Collision collision )
     {
-        _ball = collider.GetComponent< ComponentHost >().HostComponent as Ball;
+        _ball = collision.collider.GetComponent< ComponentHost >().HostComponent as Ball;
     }
 
 	public void DoCached()
