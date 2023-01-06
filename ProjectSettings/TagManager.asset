@@ -32,12 +32,12 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Stick
+  - Ball
+  - Obstacle
+  - Interaction
+  - Environment
   m_SortingLayers:
   - name: Default
     uniqueID: 0
