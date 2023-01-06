@@ -20,6 +20,7 @@ public class Ball : MonoBehaviour
     [ SerializeField ] BallData ball_data;
   [ Title( "Components" ) ]
     [ SerializeField ] Renderer _renderer;
+    [ SerializeField ] MeshFilter _meshFilter;
     [ SerializeField ] Collider _collider;
     [ SerializeField ] Rigidbody _rigidbody;
     [ SerializeField ] ParticleSpawner _particleSpawnner; // Upgrade, Destory, Cache, Currency
@@ -81,7 +82,10 @@ public class Ball : MonoBehaviour
 #region Implementation
     void UpdateBall()
     {
-		_renderer.sharedMaterial = ball_data.BallMaterial;
+		var renderData = ball_data.BallRenderData;
+
+		_renderer.sharedMaterial = renderData.ball_material;
+		_meshFilter.mesh         = renderData.ball_mesh;
 		_collider.sharedMaterial = ball_data.BallPhysicMaterial;
 		_rigidbody.mass          = ball_data.BallMass;
 	}
