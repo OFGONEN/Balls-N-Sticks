@@ -32,6 +32,7 @@ Transform:
   m_Children:
   - {fileID: 5273792639156979722}
   - {fileID: 2239496017034057655}
+  - {fileID: 8060341516366924419}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55,7 +56,7 @@ MonoBehaviour:
   _renderer: {fileID: 1405026803882251717}
   _collider: {fileID: 2451586472557378450}
   _rigidbody: {fileID: 728387305242135349}
-  _particleSpawnner: {fileID: 0}
+  _particleSpawnner: {fileID: 7251293350224833759}
 --- !u!54 &728387305242135349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -187,6 +188,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6820352866762253965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8060341516366924419}
+  - component: {fileID: 7251293350224833759}
+  m_Layer: 28
+  m_Name: logic_pfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8060341516366924419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6820352866762253965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3162736375492179929}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7251293350224833759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6820352866762253965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753b2c2b78147c181c65650f11a67d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleDatas: []
 --- !u!1001 &3174852123077374477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -198,14 +244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: collider_ball
       objectReference: {fileID: 0}
-    - target: {fileID: 718953142985036194, guid: 344af6936e799604d92bcf5f8609d29b, type: 3}
-      propertyPath: m_Layer
-      value: 28
-      objectReference: {fileID: 0}
     - target: {fileID: 1735464504748761601, guid: 344af6936e799604d92bcf5f8609d29b, type: 3}
       propertyPath: _component
       value: 
-      objectReference: {fileID: 3162736375492179929}
+      objectReference: {fileID: 389910542763896007}
     - target: {fileID: 7295568999581907463, guid: 344af6936e799604d92bcf5f8609d29b, type: 3}
       propertyPath: m_RootOrder
       value: 0
