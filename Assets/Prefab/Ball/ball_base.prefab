@@ -52,8 +52,9 @@ MonoBehaviour:
   event_currency_gained: {fileID: 11400000, guid: e11530277c7cf034bb80a793e8925b6e, type: 2}
   ball_cache_data: {fileID: 11400000, guid: 68e8c7d9b26045144b1771d2e1bce148, type: 2}
   ball_pool: {fileID: 0}
-  ball_data: {fileID: 0}
+  ball_data: {fileID: 11400000, guid: 7711b2ec6f5a4bd45a2bbd979bc46814, type: 2}
   _renderer: {fileID: 1405026803882251717}
+  _meshFilter: {fileID: 0}
   _collider: {fileID: 2451586472557378450}
   _rigidbody: {fileID: 728387305242135349}
   _particleSpawnner: {fileID: 7251293350224833759}
