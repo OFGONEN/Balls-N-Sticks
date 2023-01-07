@@ -12,8 +12,9 @@ public class FingerUpdate : ScriptableObject
     Vector2 finger_position_start;
     Vector2 finger_position_end;
 
-    public Vector2 Direction => ( finger_position_end - finger_position_start ).normalized;
-    public float Delta => Mathf.Abs( ( finger_position_end - finger_position_start ).magnitude );
+    public Vector2 Direction    => ( finger_position_end - finger_position_start ).normalized;
+    public Vector2 Delta        => finger_position_end - finger_position_start;
+    public float DeltaMagnitude => Mathf.Abs( ( finger_position_end - finger_position_start ).magnitude );
 #endregion
 
 #region Properties
