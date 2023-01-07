@@ -22,7 +22,7 @@ public class UITextUpdate : MonoBehaviour
 #endregion
 
 #region API
-    public void Update( int value )
+    public void OnUpdate( int value )
     {
 		_textRenderer.text = prefix + value.ToString() + suffix;
 	}
