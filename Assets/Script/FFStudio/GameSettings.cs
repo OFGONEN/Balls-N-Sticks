@@ -13,6 +13,7 @@ namespace FFStudio
     [ Title( "Ball" ) ]
 		[ LabelText( "Ball Punch Power" ) ] public float ball_punchScale_power = 1;
 		[ LabelText( "Ball Punch Duration" ) ] public float ball_punchScale_duration = 0.35f;
+		[ LabelText( "Ball Multiply Offset" ) ] public Vector3 ball_multiply_offset;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;

@@ -47,6 +47,13 @@ public class Ball : MonoBehaviour
 		UpdateBall();
 	}
 
+	public void DoMultiply()
+	{
+		var ball = ball_pool.GetEntity();
+
+		ball.Spawn( transform.position + GameSettings.Instance.ball_multiply_offset, transform.forward, _rigidbody.velocity.magnitude, ball_data );
+	}
+
     public void DoUpgrade()
     {
 		ball_data = ball_data.BallNextData;
