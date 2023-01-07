@@ -7,6 +7,7 @@ using UnityEngine;
 public interface BallInterface
 {
 	public void Spawn( BallInterfaceSpawnData spawnData );
+	public void DoMultiply();
 	public void DoUpgrade();
 	public void DoDestoryed();
 	public void DoCached();
