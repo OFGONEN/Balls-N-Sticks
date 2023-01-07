@@ -13,27 +13,6 @@ MonoBehaviour:
   m_Name: library_ball_data
   m_EditorClassIdentifier: 
   data_array:
-  - {fileID: 11400000, guid: 1693c973b42443e428823395cf223a82, type: 2}
-  - {fileID: 11400000, guid: 8f58222fb3037af4f85056d00b47beaa, type: 2}
-  - {fileID: 11400000, guid: 94aef06cc8bcaab498438dcca15ea2ee, type: 2}
-  - {fileID: 11400000, guid: 4d468f305efb2034293bc9434106bb5e, type: 2}
-  - {fileID: 11400000, guid: e7faa2f5b9065cf45a958dc572e4e59e, type: 2}
-  - {fileID: 11400000, guid: 3b43f7f6ea733754f8084e45ebed1525, type: 2}
-  - {fileID: 11400000, guid: 83b40181bac88f04b8f047409953b23e, type: 2}
-  - {fileID: 11400000, guid: 4677d8e7a95dc8d46825b68da6dfce07, type: 2}
-  - {fileID: 11400000, guid: 6cf1a52ae8d50b348bcefcca902f0e60, type: 2}
-  - {fileID: 11400000, guid: 0e4d8af1308ab3c46957858306fbc2ba, type: 2}
-  - {fileID: 11400000, guid: 72ab701569b677e489166dc9e39ac75d, type: 2}
-  - {fileID: 11400000, guid: 5d22c7dfee2cbdf4ea1fe7f2b86cd7f7, type: 2}
-  - {fileID: 11400000, guid: 741dd2da16d7be24eb67b704ff4a46b1, type: 2}
-  - {fileID: 11400000, guid: 447ebe0b7db66f74ea8f84712f63223e, type: 2}
-  - {fileID: 11400000, guid: 8e82f18d71ec7c8478fe5b68a3717c21, type: 2}
-  - {fileID: 11400000, guid: d4353a3bf00164e4c9d75d85a8d19dde, type: 2}
-  - {fileID: 11400000, guid: 600329dcf35d0df46b2a7d5371441f02, type: 2}
-  - {fileID: 11400000, guid: be94f7fb60536e345853f401d52d6a24, type: 2}
-  - {fileID: 11400000, guid: 51ac5608f12803b4ea476df0b16f787a, type: 2}
-  - {fileID: 11400000, guid: dc9414f99077a6740bf2248b177a18e9, type: 2}
-  - {fileID: 11400000, guid: 81c18c75193c7ad45a21165516c9d642, type: 2}
-  - {fileID: 11400000, guid: 94b534c0b6f8d764d94c784dcc1b93f8, type: 2}
-  - {fileID: 11400000, guid: 0820051e124c8e84daf91fe40bdfaaec, type: 2}
-  - {fileID: 11400000, guid: 1d2ddc17300205b49b50b91c2456751c, type: 2}
+  - {fileID: 11400000, guid: 7711b2ec6f5a4bd45a2bbd979bc46814, type: 2}
+  - {fileID: 11400000, guid: e534ee147178e20419bf9d498c2484f5, type: 2}
+  - {fileID: 11400000, guid: 141ebd2412ab7f0408a370e870061015, type: 2}
