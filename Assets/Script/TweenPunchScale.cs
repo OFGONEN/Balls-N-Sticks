@@ -10,6 +10,7 @@ using Sirenix.OdinInspector;
 public class TweenPunchScale : MonoBehaviour
 {
 #region Fields
+    [ SerializeField ] Transform punch_target;
     [ SerializeField ] float punch_power;
     [ SerializeField ] Vector3 punch_direction;
     [ SerializeField ] float punch_duration;
@@ -34,7 +35,7 @@ public class TweenPunchScale : MonoBehaviour
     {
         if( recycledTween.IsPlaying() && !punch_isInterruptable ) return;
 
-		recycledTween.Recycle( transform.DOPunchScale(
+		recycledTween.Recycle( punch_target.DOPunchScale(
 			punch_direction * punch_power,
 			punch_duration )
 			.SetEase( punch_ease )
