@@ -77,10 +77,8 @@ public class Ball : MonoBehaviour
 
 		event_currency_gained.Raise( ball_data.BallCurrency );
 	}
-#endregion
 
-#region Implementation
-    void UpdateBall()
+    public void UpdateBall()
     {
 		var renderData = ball_data.BallRenderData;
 
@@ -89,7 +87,9 @@ public class Ball : MonoBehaviour
 		_collider.sharedMaterial = ball_data.BallPhysicMaterial;
 		_rigidbody.mass          = ball_data.BallMass;
 	}
+#endregion
 
+#region Implementation
     void PunchScale()
     {
 		_renderer.transform.DOPunchScale( Vector3.one * GameSettings.Instance.ball_punchScale_power, GameSettings.Instance.ball_punchScale_duration );
