@@ -88,24 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401aebb796b51400c825ce52592b53e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collision_respond_data_array:
-  - collision_layer: 27
-    collision_event:
-      m_PersistentCalls:
-        m_Calls: []
-  - collision_layer: 28
-    collision_event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 11400000, guid: a80b76c16d6517746a6b818ea9ea0daa, type: 2}
-          m_TargetAssemblyTypeName: BallInterfaceCollidderReceiver, Assembly-CSharp
-          m_MethodName: CacheBall
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  collision_respond_data_array: []
