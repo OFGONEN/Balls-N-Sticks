@@ -11,17 +11,23 @@ namespace FFStudio
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
     [ Title( "Ball" ) ]
-		[ LabelText( "Ball Punch Power" ) ] public float ball_punchScale_power = 1;
-		[ LabelText( "Ball Punch Duration" ) ] public float ball_punchScale_duration = 0.35f;
-		[ LabelText( "Ball Multiply Offset" ) ] public Vector3 ball_multiply_offset;
+		[ LabelText( "Punch Power" ) ] public float ball_punchScale_power = 1;
+		[ LabelText( "Punch Duration" ) ] public float ball_punchScale_duration = 0.35f;
+		[ LabelText( "Multiply Offset" ) ] public Vector3 ball_multiply_offset;
     
+    [ Title( "Character" ) ]
+		[ LabelText( "Movement Forward Speed" ) ] public float character_movement_forward_speed;
+		[ LabelText( "Movement Lateral Speed" ) ] public float character_movement_lateral_speed;
+		[ LabelText( "Movement Lateral Clamp" ) ] public Vector2 character_movement_lateral_clamp;
+
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
     
     [ Title( "Project Setup", "These settings should not be edited by Level Designer(s).", TitleAlignments.Centered ) ]
         public int maxLevelCount;
-        
-        // Info: 3 groups below (coming from template project) are foldout by design: They should remain hidden.
+		[ LabelText( "Game's Forward" ) ] public Vector3 game_forward;
+
+		// Info: 3 groups below (coming from template project) are foldout by design: They should remain hidden.
 		[ FoldoutGroup( "Remote Config" ) ] public bool useRemoteConfig_GameSettings;
         [ FoldoutGroup( "Remote Config" ) ] public bool useRemoteConfig_Components;
 
