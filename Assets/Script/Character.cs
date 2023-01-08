@@ -19,7 +19,8 @@ public class Character : MonoBehaviour
     [ SerializeField ] Rigidbody _rigidBody;
     [ SerializeField ] Animator _animator;
 
-	Vector3 movement_position;
+	Vector3 character_position;
+	float character_rotation;
 
 	UnityMessage onFixedUpdate;
     UnityMessage onUpdate;
@@ -40,7 +41,7 @@ public class Character : MonoBehaviour
     {
 		EmptyDelegates();
 
-		movement_position = transform.position;
+		character_position = transform.position;
 	}
 
     private void FixedUpdate()
@@ -76,22 +77,30 @@ public class Character : MonoBehaviour
 #region Implementation
 	void CalculateMovement()
 	{
-		var targetPosition    = movement_position;
+		var targetPosition    = character_position;
 		    targetPosition.z += GameSettings.Instance.game_forward.z;
 		    targetPosition.x += shared_finger_update.DeltaScaled.x;
 
-		movement_position.z = Mathf.Lerp( movement_position.z, targetPosition.z, Time.deltaTime * GameSettings.Instance.character_movement_forward_speed );
-		movement_position.x = Mathf.Lerp( movement_position.x, targetPosition.x, Time.deltaTime * GameSettings.Instance.character_movement_lateral_speed );
+		character_position.z = Mathf.Lerp( character_position.z, targetPosition.z, Time.deltaTime * GameSettings.Instance.character_movement_forward_speed );
 
-		movement_position.x = Mathf.Clamp( movement_position.x,
+		character_position.x = Mathf.Clamp( Mathf.Lerp( character_position.x, targetPosition.x, Time.deltaTime * GameSettings.Instance.character_movement_lateral_speed ),
 			GameSettings.Instance.character_movement_lateral_clamp.x,
 			GameSettings.Instance.character_movement_lateral_clamp.y );
+
+		var targetRotation = character_rotation;
+
+		targetRotation += shared_finger_update.DeltaScaled.x * GameSettings.Instance.character_movement_rotate_cofactor + GameSettings.Instance.character_movement_rotate_deceleration;
+
+		character_rotation = Mathf.Clamp( 
+				Mathf.Lerp( character_rotation, targetRotation, Time.deltaTime * GameSettings.Instance.character_movement_rotate_speed ),
+			GameSettings.Instance.character_movement_rotate_clamp.x,
+			GameSettings.Instance.character_movement_rotate_clamp.y );
 	}
 
 	void Movement()
 	{
-		_rigidBody.MovePosition( movement_position );
-		// _rigidBody.MoveRotation() //todo do this now
+		_rigidBody.MovePosition( character_position );
+		_rigidBody.MoveRotation( Quaternion.Euler( 0, character_rotation, 0 ) ); //todo do this now
 
 		//! This does not work. Delta Time or Fixed Delta time. It DOES NOT WORK. Character just jumps positions.
 		// var position          = _rigidBody.position;
@@ -131,7 +140,7 @@ public class Character : MonoBehaviour
 #if UNITY_EDITOR
 	private void OnDrawGizmos()
 	{
-		Gizmos.DrawWireSphere( movement_position, 0.1f );
+		Gizmos.DrawWireSphere( character_position, 0.1f );
 	}
 #endif
 #endregion
