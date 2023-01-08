@@ -11,9 +11,11 @@ public class FingerUpdate : ScriptableObject
 #region Fields
     Vector2 finger_position_start;
     Vector2 finger_position_end;
+	Vector2 finger_position_scaled_delta;
 
     public Vector2 Direction    => ( finger_position_end - finger_position_start ).normalized;
     public Vector2 Delta        => finger_position_end - finger_position_start;
+    public Vector2 DeltaScaled  => finger_position_scaled_delta;
     public float DeltaMagnitude => Mathf.Abs( ( finger_position_end - finger_position_start ).magnitude );
 #endregion
 
@@ -34,6 +36,11 @@ public class FingerUpdate : ScriptableObject
     {
 		finger_position_start = finger_position_end;
 		finger_position_end   = finger.ScreenPosition;
+	}
+
+	public void OnFingerScaledDelta( Vector2 delta )
+	{
+		finger_position_scaled_delta = delta;
 	}
 #endregion
 
