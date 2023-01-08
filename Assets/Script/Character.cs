@@ -89,7 +89,9 @@ public class Character : MonoBehaviour
 
 		var targetRotation = character_rotation;
 
-		targetRotation += shared_finger_update.DeltaScaled.x * GameSettings.Instance.character_movement_rotate_cofactor + GameSettings.Instance.character_movement_rotate_deceleration;
+		targetRotation += shared_finger_update.DeltaScaled.x * GameSettings.Instance.character_movement_rotate_cofactor;
+
+		targetRotation = Mathf.Sign( targetRotation ) * Mathf.Max( 0, Mathf.Abs( targetRotation ) - GameSettings.Instance.character_movement_rotate_deceleration );
 
 		character_rotation = Mathf.Clamp( 
 				Mathf.Lerp( character_rotation, targetRotation, Time.deltaTime * GameSettings.Instance.character_movement_rotate_speed ),
