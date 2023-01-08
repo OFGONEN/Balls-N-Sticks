@@ -17,6 +17,7 @@ namespace FFStudio
     
     [ Title( "Character" ) ]
 		[ LabelText( "Movement Forward Speed" ) ] public float character_movement_forward_speed;
+		[ LabelText( "Movement Lateral Input Cofactor" ) ] public float character_movement_lateral_cofactor;
 		[ LabelText( "Movement Lateral Speed" ) ] public float character_movement_lateral_speed;
 		[ LabelText( "Movement Lateral Clamp" ) ] public Vector2 character_movement_lateral_clamp;
 		[ LabelText( "Movement Rotate Speed" ) ] public float character_movement_rotate_speed;
