@@ -19,8 +19,12 @@ public class Character : MonoBehaviour
     [ SerializeField ] Rigidbody _rigidBody;
     [ SerializeField ] Animator _animator;
 
-    UnityMessage onFixedUpdate;
+	Vector3 movement_position;
+
+	UnityMessage onFixedUpdate;
     UnityMessage onUpdate;
+	UnityMessage onFingerDown;
+	UnityMessage onFingerUp;
 #endregion
 
 #region Properties
@@ -29,13 +33,14 @@ public class Character : MonoBehaviour
 #region Unity API
     private void OnDisable()
     {
-		onFixedUpdate = ExtensionMethods.EmptyMethod;
-		onUpdate      = ExtensionMethods.EmptyMethod;
+		EmptyDelegates();
 	}
+
     private void Awake()
     {
-		onFixedUpdate = ExtensionMethods.EmptyMethod;
-		onUpdate      = ExtensionMethods.EmptyMethod;
+		EmptyDelegates();
+
+		movement_position = transform.position;
 	}
 
     private void FixedUpdate()
@@ -54,39 +59,80 @@ public class Character : MonoBehaviour
     [ Button() ]
     public void OnLevelStart()
     {
-		onFixedUpdate = Movement;
-		onUpdate      = Rotate;
-		_animator.SetTrigger( "run" );
+		onFingerDown = FirstFingerDown;
+	}
+
+	public void OnFingerDown()
+	{
+		onFingerDown();
+	}
+
+	public void OnFingerUp()
+	{
+		onFingerUp();
 	}
 #endregion
 
 #region Implementation
-    void Movement()
-    {
-		var position       = _rigidBody.position;
-		var targetPosition = _rigidBody.position;
+	void CalculateMovement()
+	{
+		var targetPosition    = movement_position;
+		    targetPosition.z += GameSettings.Instance.game_forward.z;
+		    targetPosition.x += shared_finger_update.DeltaScaled.x;
 
-		targetPosition.z = Mathf.Lerp( position.z, position.z + GameSettings.Instance.game_forward.z, Time.fixedDeltaTime * GameSettings.Instance.character_movement_forward_speed );
-		targetPosition.x = Mathf.Lerp( position.x, position.x + shared_finger_update.Delta.x, GameSettings.Instance.character_movement_lateral_speed * Time.fixedDeltaTime);
+		movement_position.z = Mathf.Lerp( movement_position.z, targetPosition.z, Time.deltaTime * GameSettings.Instance.character_movement_forward_speed );
+		movement_position.x = Mathf.Lerp( movement_position.x, targetPosition.x, Time.deltaTime * GameSettings.Instance.character_movement_lateral_speed );
 
-		targetPosition.x = Mathf.Clamp( targetPosition.x,
+		movement_position.x = Mathf.Clamp( movement_position.x,
 			GameSettings.Instance.character_movement_lateral_clamp.x,
 			GameSettings.Instance.character_movement_lateral_clamp.y );
-
-		_rigidBody.MovePosition( targetPosition );
 	}
 
-	void Rotate()
+	void Movement()
 	{
-		var rotation = gfx_parent_transform.localEulerAngles;
-		var targetRotation = shared_finger_update.Delta.x * GameSettings.Instance.character_movement_rotate_cofactor;
+		_rigidBody.MovePosition( movement_position );
+		// _rigidBody.MoveRotation() //todo do this now
 
-		gfx_parent_transform.localEulerAngles = rotation.SetY( Mathf.Lerp( targetRotation, rotation.y, Time.deltaTime ) );
+		//! This does not work. Delta Time or Fixed Delta time. It DOES NOT WORK. Character just jumps positions.
+		// var position          = _rigidBody.position;
+		// var targetPosition    = _rigidBody.position;
+		//     targetPosition.z += GameSettings.Instance.game_forward.z;
+		//     targetPosition.x += shared_finger_update.DeltaScaled.x;
+
+		// position.z = Mathf.Lerp( position.z, targetPosition.z, Time.deltaTime * GameSettings.Instance.character_movement_forward_speed );
+		// position.x = Mathf.Lerp( position.x, targetPosition.x, Time.deltaTime * GameSettings.Instance.character_movement_lateral_speed );
+
+		// position.x = Mathf.Clamp( position.x,
+		// 	GameSettings.Instance.character_movement_lateral_clamp.x,
+		// 	GameSettings.Instance.character_movement_lateral_clamp.y );
+
+		// _rigidBody.MovePosition( position );
+	}
+
+	void FirstFingerDown()
+	{
+		_animator.SetTrigger( "run" );
+		onUpdate      = CalculateMovement;
+		onFixedUpdate = Movement;
+
+		onFingerDown = ExtensionMethods.EmptyMethod;
+	}
+
+	void EmptyDelegates()
+	{
+		onFingerDown  = ExtensionMethods.EmptyMethod;
+		onFingerUp    = ExtensionMethods.EmptyMethod;
+		onUpdate      = ExtensionMethods.EmptyMethod;
+		onFixedUpdate = ExtensionMethods.EmptyMethod;
 	}
 #endregion
 
 #region Editor Only
 #if UNITY_EDITOR
+	private void OnDrawGizmos()
+	{
+		Gizmos.DrawWireSphere( movement_position, 0.1f );
+	}
 #endif
 #endregion
 }
