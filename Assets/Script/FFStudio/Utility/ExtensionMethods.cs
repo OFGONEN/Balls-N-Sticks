@@ -521,6 +521,14 @@ namespace FFStudio
 			return Mathf.Clamp( value, vector.x, vector.y );
 		}
 
+		public static float ReturnSign( this float value )
+		{
+			if( Mathf.Approximately( value, 0 ) )
+				return 0;
+			else
+				return Mathf.Sign( value );
+		}
+
 #if FF_OBI_IMPORTED
 		public static void MergeParticles( this Obi.ObiRope obiRope, int indexOfElementBefore, int indexOfElementOfInterest )
 		{
