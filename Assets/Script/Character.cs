@@ -5,14 +5,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
 using Sirenix.OdinInspector;
+using UnityEditor;
 
 public class Character : MonoBehaviour
 {
 #region Fields
   [ Title( "Setup" ) ]
     [ SerializeField ] FingerUpdate shared_finger_update; 
+    [ SerializeField ] float percentageCofactor = 100f; 
 
   [ Title( "Components" ) ]
+    [ SerializeField ] Rigidbody _rigidBody;
     [ SerializeField ] Animator _animator;
 
     UnityMessage onFixedUpdate;
@@ -50,20 +53,17 @@ public class Character : MonoBehaviour
 #region Implementation
     void Movement()
     {
-		var     position       = transform.position;
-		Vector3 targetPosition = position;
+		var position       = _rigidBody.position;
+		var targetPosition = _rigidBody.position;
 
-		targetPosition.z += GameSettings.Instance.game_forward.z; // Forward
-		targetPosition.x += shared_finger_update.Delta.x;
+		targetPosition.z = Mathf.Lerp( position.z, position.z + GameSettings.Instance.game_forward.z, Time.fixedDeltaTime * GameSettings.Instance.character_movement_forward_speed );
+		targetPosition.x = Mathf.Lerp( position.x, position.x + shared_finger_update.Delta.x, GameSettings.Instance.character_movement_lateral_speed * Time.fixedDeltaTime);
 
-		position.x = Mathf.Lerp( position.x, targetPosition.x, Time.fixedDeltaTime * GameSettings.Instance.character_movement_lateral_speed );
-		position.z = Mathf.Lerp( position.z, targetPosition.z, Time.fixedDeltaTime * GameSettings.Instance.character_movement_forward_speed );
-
-		position.x = Mathf.Clamp( position.x,
+		targetPosition.x = Mathf.Clamp( targetPosition.x,
 			GameSettings.Instance.character_movement_lateral_clamp.x,
 			GameSettings.Instance.character_movement_lateral_clamp.y );
 
-		transform.position = position;
+		_rigidBody.MovePosition( targetPosition );
 	}
 #endregion
 
