@@ -15,10 +15,12 @@ public class Character : MonoBehaviour
     [ SerializeField ] float percentageCofactor = 100f; 
 
   [ Title( "Components" ) ]
+    [ SerializeField ] Transform gfx_parent_transform;
     [ SerializeField ] Rigidbody _rigidBody;
     [ SerializeField ] Animator _animator;
 
     UnityMessage onFixedUpdate;
+    UnityMessage onUpdate;
 #endregion
 
 #region Properties
@@ -28,15 +30,22 @@ public class Character : MonoBehaviour
     private void OnDisable()
     {
 		onFixedUpdate = ExtensionMethods.EmptyMethod;
+		onUpdate      = ExtensionMethods.EmptyMethod;
 	}
     private void Awake()
     {
 		onFixedUpdate = ExtensionMethods.EmptyMethod;
+		onUpdate      = ExtensionMethods.EmptyMethod;
 	}
 
     private void FixedUpdate()
     {
 		onFixedUpdate();
+	}
+
+	private void Update()
+	{
+		onUpdate();
 	}
 #endregion
 
@@ -46,6 +55,7 @@ public class Character : MonoBehaviour
     public void OnLevelStart()
     {
 		onFixedUpdate = Movement;
+		onUpdate      = Rotate;
 		_animator.SetTrigger( "run" );
 	}
 #endregion
@@ -64,6 +74,14 @@ public class Character : MonoBehaviour
 			GameSettings.Instance.character_movement_lateral_clamp.y );
 
 		_rigidBody.MovePosition( targetPosition );
+	}
+
+	void Rotate()
+	{
+		var rotation = gfx_parent_transform.localEulerAngles;
+		var targetRotation = shared_finger_update.Delta.x * GameSettings.Instance.character_movement_rotate_cofactor;
+
+		gfx_parent_transform.localEulerAngles = rotation.SetY( Mathf.Lerp( targetRotation, rotation.y, Time.deltaTime ) );
 	}
 #endregion
 

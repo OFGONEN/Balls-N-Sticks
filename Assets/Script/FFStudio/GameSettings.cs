@@ -19,6 +19,7 @@ namespace FFStudio
 		[ LabelText( "Movement Forward Speed" ) ] public float character_movement_forward_speed;
 		[ LabelText( "Movement Lateral Speed" ) ] public float character_movement_lateral_speed;
 		[ LabelText( "Movement Lateral Clamp" ) ] public Vector2 character_movement_lateral_clamp;
+		[ LabelText( "Movement Rotate Cofactor" ) ] public float character_movement_rotate_cofactor;
 
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
