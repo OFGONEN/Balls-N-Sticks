@@ -32,7 +32,8 @@ public class FingerUpdate : ScriptableObject
 
     public void OnFingerUpdate( LeanFinger finger )
     {
-		finger_position_end = finger.ScreenPosition;
+		finger_position_start = finger_position_end;
+		finger_position_end   = finger.ScreenPosition;
 	}
 #endregion
 
