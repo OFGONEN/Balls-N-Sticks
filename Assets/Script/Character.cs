@@ -77,18 +77,14 @@ public class Character : MonoBehaviour
 #region Implementation
 	void CalculateMovement()
 	{
-		var targetPosition    = character_position;
-		    targetPosition.z += GameSettings.Instance.game_forward.z;
-		    targetPosition.x += shared_finger_update.DeltaScaled.x;
+		character_position.x += shared_finger_update.DeltaScaled.x * GameSettings.Instance.character_movement_lateral_speed * GameSettings.Instance.character_movement_lateral_cofactor;
+		character_position.z += Time.deltaTime * GameSettings.Instance.character_movement_forward_speed;
 
-		character_position.z = Mathf.Lerp( character_position.z, targetPosition.z, Time.deltaTime * GameSettings.Instance.character_movement_forward_speed );
-
-		character_position.x = Mathf.Clamp( Mathf.Lerp( character_position.x, targetPosition.x, Time.deltaTime * GameSettings.Instance.character_movement_lateral_speed ),
+		character_position.x = Mathf.Clamp( character_position.x,
 			GameSettings.Instance.character_movement_lateral_clamp.x,
 			GameSettings.Instance.character_movement_lateral_clamp.y );
 
 		var targetRotation = character_rotation;
-
 		targetRotation += shared_finger_update.DeltaScaled.x * GameSettings.Instance.character_movement_rotate_cofactor;
 
 		targetRotation = Mathf.Sign( targetRotation ) * Mathf.Max( 0, Mathf.Abs( targetRotation ) - GameSettings.Instance.character_movement_rotate_deceleration );
