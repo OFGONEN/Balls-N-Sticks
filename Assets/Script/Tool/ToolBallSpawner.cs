@@ -18,6 +18,7 @@ public class ToolBallSpawner : MonoBehaviour
     [ SerializeField ] Vector2Int ball_level_range;
 
     [ FoldoutGroup( "Configure" ), SerializeField ] GameObject[] ball_gameObject_array;
+    [ FoldoutGroup( "Configure" ), SerializeField ] float ball_spawn_height;
 
     List< GameObject > ball_spawned_list = new List< GameObject >( 16);
 #endregion
@@ -36,7 +37,7 @@ public class ToolBallSpawner : MonoBehaviour
 
 		ball_spawned_list.Clear();
 
-		var position   = transform.position.SetY( 0 );
+		var position   = transform.position.SetY( ball_spawn_height );
 		var spawnCount = ball_count_range.ReturnRandom();
 
 		var siblingIndex = GameObject.Find( "--- Entities_Start ---" ).transform.GetSiblingIndex();
