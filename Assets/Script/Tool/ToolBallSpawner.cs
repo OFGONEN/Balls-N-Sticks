@@ -6,6 +6,7 @@ using UnityEngine;
 using FFStudio;
 using Sirenix.OdinInspector;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 public class ToolBallSpawner : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class ToolBallSpawner : MonoBehaviour
     [ Button() ]
     public void Spawn()
     {
+		EditorSceneManager.MarkAllScenesDirty();
+
 		ball_spawned_list.Clear();
 
 		var position   = transform.position.SetY( 0 );
@@ -59,6 +62,7 @@ public class ToolBallSpawner : MonoBehaviour
     [ Button() ]
     public void DeleteLastSpawned()
     {
+		EditorSceneManager.MarkAllScenesDirty();
         for( var i = 0; i < ball_spawned_list.Count; i++ )
         {
 			GameObject.DestroyImmediate( ball_spawned_list[ i ] );
