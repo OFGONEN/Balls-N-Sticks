@@ -52,8 +52,9 @@ MonoBehaviour:
   event_currency_gained: {fileID: 11400000, guid: e11530277c7cf034bb80a793e8925b6e, type: 2}
   ball_cache_data: {fileID: 11400000, guid: 68e8c7d9b26045144b1771d2e1bce148, type: 2}
   ball_pool: {fileID: 0}
-  ball_data: {fileID: 0}
+  ball_data: {fileID: 11400000, guid: 7711b2ec6f5a4bd45a2bbd979bc46814, type: 2}
   _renderer: {fileID: 1405026803882251717}
+  _meshFilter: {fileID: 3937011074235557242}
   _collider: {fileID: 2451586472557378450}
   _rigidbody: {fileID: 728387305242135349}
   _particleSpawnner: {fileID: 7251293350224833759}
@@ -145,7 +146,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3825434361174243713}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: -776770033807633869, guid: 3ecd902a1ce07c04ab529a44af6fc8bb, type: 3}
 --- !u!23 &1405026803882251717
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -166,7 +167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 437d91e9d23b6ea47ba245fa4d64e1cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

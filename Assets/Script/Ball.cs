@@ -20,6 +20,7 @@ public class Ball : MonoBehaviour
     [ SerializeField ] BallData ball_data;
   [ Title( "Components" ) ]
     [ SerializeField ] Renderer _renderer;
+    [ SerializeField ] MeshFilter _meshFilter;
     [ SerializeField ] Collider _collider;
     [ SerializeField ] Rigidbody _rigidbody;
     [ SerializeField ] ParticleSpawner _particleSpawnner; // Upgrade, Destory, Cache, Currency
@@ -46,6 +47,13 @@ public class Ball : MonoBehaviour
 		UpdateBall();
 	}
 
+	public void DoMultiply()
+	{
+		var ball = ball_pool.GetEntity();
+
+		ball.Spawn( transform.position + GameSettings.Instance.ball_multiply_offset, transform.forward, _rigidbody.velocity.magnitude, ball_data );
+	}
+
     public void DoUpgrade()
     {
 		ball_data = ball_data.BallNextData;
@@ -69,23 +77,26 @@ public class Ball : MonoBehaviour
 		DisableBall();
 	}
 
-    public void DoConvertCurrency()
+    public void DoConvertCurrency( float cofactor )
     {
 		_particleSpawnner.Spawn( 3 );
 		DisableBall();
 
-		event_currency_gained.Raise( ball_data.BallCurrency );
+		event_currency_gained.Raise( ball_data.BallCurrency * cofactor );
+	}
+
+    public void UpdateBall()
+    {
+		var renderData = ball_data.BallRenderData;
+
+		_renderer.sharedMaterial = renderData.ball_material;
+		_meshFilter.mesh         = renderData.ball_mesh;
+		_collider.sharedMaterial = ball_data.BallPhysicMaterial;
+		_rigidbody.mass          = ball_data.BallMass;
 	}
 #endregion
 
 #region Implementation
-    void UpdateBall()
-    {
-		_renderer.sharedMaterial = ball_data.BallMaterial;
-		_collider.sharedMaterial = ball_data.BallPhysicMaterial;
-		_rigidbody.mass          = ball_data.BallMass;
-	}
-
     void PunchScale()
     {
 		_renderer.transform.DOPunchScale( Vector3.one * GameSettings.Instance.ball_punchScale_power, GameSettings.Instance.ball_punchScale_duration );

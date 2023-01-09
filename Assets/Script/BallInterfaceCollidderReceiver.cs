@@ -25,14 +25,19 @@ public class BallInterfaceCollidderReceiver : ScriptableObject , BallInterface
         _ball = collision.collider.GetComponent< ComponentHost >().HostComponent as Ball;
     }
 
+	public void DoMultiply()
+	{
+		_ball.DoMultiply();
+	}
+
 	public void DoCached()
 	{
 		_ball.DoCached();
 	}
 
-	public void DoConvertCurrency()
+	public void DoConvertCurrency( float cofactor )
 	{
-		_ball.DoConvertCurrency();
+		_ball.DoConvertCurrency( cofactor );
 	}
 
 	public void DoDestoryed()
