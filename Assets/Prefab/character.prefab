@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 1252362622510141457}
   - component: {fileID: 5940551019609947051}
   - component: {fileID: 6827057970493469387}
+  - component: {fileID: 7595247700719466581}
   m_Layer: 26
   m_Name: character
   m_TagString: Untagged
@@ -164,7 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shared_finger_update: {fileID: 11400000, guid: e7fd71c5fbd1f2440b96c8b73f34e7d6, type: 2}
-  percentageCofactor: 100
+  notif_stick_left: {fileID: 11400000, guid: 56446f2250619d34490c77352dc3fac2, type: 2}
+  notif_stick_right: {fileID: 11400000, guid: 6a1b0e24ce3b65149b5c40ac85c9abfe, type: 2}
   gfx_parent_transform: {fileID: 230253891901642854}
   _rigidBody: {fileID: 6827057970493469387}
   _animator: {fileID: 9068454733745804954}
@@ -184,6 +186,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7595247700719466581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935867639946044103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8b9286af946534c832e5352b9db9e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedReferenceProperty: {fileID: 11400000, guid: af640506cdbe9aa4f90aa284a691b035, type: 2}
+  referenceComponent: {fileID: 1252362622510141457}
 --- !u!1 &6316907487123529384
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +444,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a78c1986453c14295847957c1d5ab2, type: 3}
+--- !u!1 &2338041041240544858 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8050280639158054179, guid: c5a78c1986453c14295847957c1d5ab2, type: 3}
+  m_PrefabInstance: {fileID: 5749465488230267769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2599823299170166374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338041041240544858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb8372f347f574498c19c45d2b61001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onIKPass:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5940551019609947051}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: OnAnimatorIKUpdate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &8030435378559197120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2358727355063936185, guid: c5a78c1986453c14295847957c1d5ab2, type: 3}
