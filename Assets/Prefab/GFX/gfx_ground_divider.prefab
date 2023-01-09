@@ -87,6 +87,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: envr_platform_divider_v1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fddc46d9fde93b44c9593cdbc1d14fc1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320898754099589294, guid: fddc46d9fde93b44c9593cdbc1d14fc1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122014903863611640, guid: fddc46d9fde93b44c9593cdbc1d14fc1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fddc46d9fde93b44c9593cdbc1d14fc1, type: 3}
 --- !u!4 &605712461812551318 stripped
