@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: envr_platform_v1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a2ae1b625976a164c910d047724bd7da, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ae1b625976a164c910d047724bd7da, type: 3}
 --- !u!4 &8998241962288709144 stripped

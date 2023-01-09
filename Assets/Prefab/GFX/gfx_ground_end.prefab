@@ -83,9 +83,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -788765748936968949, guid: ae4abece4abd9134d85c781ac8e9619b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 64238145209866683, guid: ae4abece4abd9134d85c781ac8e9619b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ae4abece4abd9134d85c781ac8e9619b, type: 3}
       propertyPath: m_Name
       value: envr_platform_end_v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae4abece4abd9134d85c781ac8e9619b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122014903863611640, guid: ae4abece4abd9134d85c781ac8e9619b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae4abece4abd9134d85c781ac8e9619b, type: 3}
