@@ -11,5 +11,5 @@ public interface BallInterface
 	public void DoUpgrade();
 	public void DoDestoryed();
 	public void DoCached();
-	public void DoConvertCurrency();
+	public void DoConvertCurrency( float cofactor );
 }

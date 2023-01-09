@@ -77,12 +77,12 @@ public class Ball : MonoBehaviour
 		DisableBall();
 	}
 
-    public void DoConvertCurrency()
+    public void DoConvertCurrency( float cofactor )
     {
 		_particleSpawnner.Spawn( 3 );
 		DisableBall();
 
-		event_currency_gained.Raise( ball_data.BallCurrency );
+		event_currency_gained.Raise( ball_data.BallCurrency * cofactor );
 	}
 
     public void UpdateBall()
