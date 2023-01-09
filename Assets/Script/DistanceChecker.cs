@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEditor;
+using UnityEngine.Events;
 using FFStudio;
 using Sirenix.OdinInspector;
 
@@ -68,6 +70,11 @@ public class DistanceChecker : MonoBehaviour
 
 #region Editor Only
 #if UNITY_EDITOR
+	private void OnDrawGizmos()
+	{
+		Handles.DrawDottedLine( transform.position, transform.position + Vector3.back * transform_distance, 0.1f );
+		Handles.DrawWireCube( transform.position + Vector3.back * transform_distance, Vector3.one * 0.1f );
+	}
 #endif
 #endregion
 }
