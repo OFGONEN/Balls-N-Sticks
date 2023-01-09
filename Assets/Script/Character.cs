@@ -10,14 +10,18 @@ using UnityEditor;
 public class Character : MonoBehaviour
 {
 #region Fields
-  [ Title( "Setup" ) ]
+  [ Title( "Shared" ) ]
     [ SerializeField ] FingerUpdate shared_finger_update; 
-    [ SerializeField ] float percentageCofactor = 100f; 
+    [ SerializeField ] SharedReferenceNotifier notif_stick_left; 
+    [ SerializeField ] SharedReferenceNotifier notif_stick_right; 
 
   [ Title( "Components" ) ]
     [ SerializeField ] Transform gfx_parent_transform;
     [ SerializeField ] Rigidbody _rigidBody;
     [ SerializeField ] Animator _animator;
+
+	Transform stick_left_transform;
+	Transform stick_right_transform;
 
 	Vector3 character_position;
 	float character_rotation;
@@ -43,6 +47,13 @@ public class Character : MonoBehaviour
 
 		character_position = transform.position;
 	}
+
+	private void Start()
+	{
+		stick_left_transform  = notif_stick_left.sharedValue as Transform;
+		stick_right_transform = notif_stick_right.sharedValue as Transform;
+	}
+
 
     private void FixedUpdate()
     {
@@ -71,6 +82,15 @@ public class Character : MonoBehaviour
 	public void OnFingerUp()
 	{
 		onFingerUp();
+	}
+
+	public void OnAnimatorIKUpdate( int layer )
+	{
+		_animator.SetIKPositionWeight( AvatarIKGoal.LeftHand, 1 );
+		_animator.SetIKPositionWeight( AvatarIKGoal.RightHand, 1 );
+
+		_animator.SetIKPosition( AvatarIKGoal.LeftHand, stick_left_transform.position );
+		_animator.SetIKPosition( AvatarIKGoal.RightHand, stick_right_transform.position );
 	}
 #endregion
 
