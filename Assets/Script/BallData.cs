@@ -10,14 +10,21 @@ using Sirenix.OdinInspector;
 public class BallData : ScriptableObject
 {
     [ SerializeField, LabelText( "Mass" ) ] float ball_mass;
-    [ SerializeField, LabelText( "Mesh Material" ) ] Material[] ball_material_array;
+    [ SerializeField, LabelText( "Render Data" ) ] BallRenderData[] ball_render_data_array;
     [ SerializeField, LabelText( "Physic Material" ) ] PhysicMaterial ball_material_physic;
     [ SerializeField, LabelText( "Currency Range" ) ] Vector2 ball_currency_range;
     [ SerializeField, LabelText( "Next Data" ) ] BallData ball_nextData;
 
 	public float BallMass                    => ball_mass;
-	public Material BallMaterial             => ball_material_array.ReturnRandom();
+	public BallRenderData BallRenderData    => ball_render_data_array.ReturnRandom();
 	public PhysicMaterial BallPhysicMaterial => ball_material_physic;
 	public float BallCurrency                => ball_currency_range.ReturnRandom();
 	public BallData BallNextData             => ball_nextData;
+}
+
+[ System.Serializable ]
+public struct BallRenderData
+{
+	public Material ball_material;
+	public Mesh ball_mesh;
 }
