@@ -15,5 +15,5 @@ MonoBehaviour:
   ball_mass: 1
   ball_render_data_array: []
   ball_material_physic: {fileID: 13400000, guid: dfd2aae4a22e14c4f8b07efcbff40f1b, type: 2}
-  ball_currency_range: {x: 0.5, y: 1}
+  ball_currency_range: {x: 0.7, y: 1}
   ball_nextData: {fileID: 11400000}
