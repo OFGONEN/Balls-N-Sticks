@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8629845152934697057}
   m_Layer: 0
-  m_Name: gfx_gate_multipily
+  m_Name: gfx_gate_stick_length
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
