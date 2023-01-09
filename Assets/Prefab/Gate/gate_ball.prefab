@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4c5ca4e6d7d12428b5491313777102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefix: '+ '
+  prefix: 
   suffix: 
   _textRenderer: {fileID: 9119519961400042012}
 --- !u!65 &5601699445382207617 stripped
