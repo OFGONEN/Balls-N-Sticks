@@ -339,6 +339,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: collider_obstacle_ball
       objectReference: {fileID: 0}
+    - target: {fileID: 4242898949665736701, guid: de1182185664d7945b05fae6697469f7, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242898949665736701, guid: de1182185664d7945b05fae6697469f7, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242898949665736701, guid: de1182185664d7945b05fae6697469f7, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 3800893251854648684}
+    - target: {fileID: 4242898949665736701, guid: de1182185664d7945b05fae6697469f7, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242898949665736701, guid: de1182185664d7945b05fae6697469f7, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Substract
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242898949665736701, guid: de1182185664d7945b05fae6697469f7, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: IntValue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242898949665736701, guid: de1182185664d7945b05fae6697469f7, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242898949665736701, guid: de1182185664d7945b05fae6697469f7, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6561353768907410865, guid: de1182185664d7945b05fae6697469f7, type: 3}
       propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.size
       value: 3

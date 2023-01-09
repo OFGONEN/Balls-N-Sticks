@@ -25,6 +25,11 @@ public class BallInterfaceCollidderReceiver : ScriptableObject , BallInterface
         _ball = collision.collider.GetComponent< ComponentHost >().HostComponent as Ball;
     }
 
+	public void CacheBall( Collider collider )
+	{
+		_ball = collider.GetComponent< ComponentHost >().HostComponent as Ball;
+	}
+
 	public void DoMultiply()
 	{
 		_ball.DoMultiply();

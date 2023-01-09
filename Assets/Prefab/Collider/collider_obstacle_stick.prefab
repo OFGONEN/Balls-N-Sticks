@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7195143113123876433}
   - component: {fileID: 4242898949665736701}
   m_Layer: 29
-  m_Name: collider_obstacle_ball
+  m_Name: collider_obstacle_stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,26 +89,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger_respond_data_array:
-  - collision_layer: 28
+  - collision_layer: 27
     trigger_event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: a80b76c16d6517746a6b818ea9ea0daa, type: 2}
-          m_TargetAssemblyTypeName: BallInterfaceCollidderReceiver, Assembly-CSharp
-          m_MethodName: CacheBall
-          m_Mode: 0
+        - m_Target: {fileID: 11400000, guid: ece9bea0410914f41aa8916b09cb4516, type: 2}
+          m_TargetAssemblyTypeName: FFStudio.FloatGameEvent, Assembly-CSharp
+          m_MethodName: Raise
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 1
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 11400000, guid: a80b76c16d6517746a6b818ea9ea0daa, type: 2}
-          m_TargetAssemblyTypeName: BallInterfaceCollidderReceiver, Assembly-CSharp
-          m_MethodName: DoDestoryed
-          m_Mode: 1
+        - m_Target: {fileID: 8588874995386570243}
+          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
