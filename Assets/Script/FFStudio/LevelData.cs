@@ -15,6 +15,9 @@ namespace FFStudio
 		[ ValueDropdown( "SceneList" ), LabelText( "Scene Index" ) ] public int scene_index;
         [ LabelText( "Override As Active Scene" ) ] public bool scene_overrideAsActiveScene;
 
+	[ Title( "Level Design" ) ]
+        [ LabelText( "Stick Start Length" ) ] public float stick_length_start;
+
 #if UNITY_EDITOR
 		static IEnumerable SceneList()
         {
