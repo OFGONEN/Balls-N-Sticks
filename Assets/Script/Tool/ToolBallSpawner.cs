@@ -14,7 +14,7 @@ public class ToolBallSpawner : MonoBehaviour
   [ Title( "Setup" ) ]
     [ SerializeField ] float ball_spawn_radius;
     [ SerializeField ] Vector2 ball_count_range;
-    [ InfoBox( "Level Starts On 1" ) ]
+    [ InfoBox( "Level Starts at 1" ) ]
     [ SerializeField ] Vector2Int ball_level_range;
 
     [ FoldoutGroup( "Configure" ), SerializeField ] GameObject[] ball_gameObject_array;
@@ -76,14 +76,9 @@ public class ToolBallSpawner : MonoBehaviour
 
 #region Editor Only
 #if UNITY_EDITOR
-    private void OnValidate()
-    {
-		transform.position = transform.position.SetY( 0 );
-	}
-
     private void OnDrawGizmos()
     {
-		Handles.DrawWireArc( transform.position, Vector3.up, Vector3.left, 360, ball_spawn_radius );
+		Handles.DrawWireArc( transform.position.SetY( 0 ), Vector3.up, Vector3.left, 360, ball_spawn_radius );
 	}
 #endif
 #endregion
