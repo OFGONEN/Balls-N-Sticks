@@ -17,8 +17,7 @@ public class ToolBallSpawner : MonoBehaviour
     [ InfoBox( "Level Starts On 1" ) ]
     [ SerializeField ] Vector2Int ball_level_range;
 
-  [ Title( "Configure" ) ]
-    [ SerializeField ] GameObject[] ball_gameObject_array;
+    [ FoldoutGroup( "Configure" ), SerializeField ] GameObject[] ball_gameObject_array;
 
     List< GameObject > ball_spawned_list = new List< GameObject >( 16);
 #endregion
