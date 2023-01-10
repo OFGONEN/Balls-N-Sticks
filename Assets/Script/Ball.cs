@@ -16,7 +16,7 @@ public class Ball : MonoBehaviour
 
   [ Title( "Shared" ) ]
     [ SerializeField ] BallCache ball_cache_data;
-    [ SerializeField, ShowIf( "isPooled" ) ] BallPool ball_pool;
+    [ SerializeField ] BallPool ball_pool;
     [ SerializeField ] BallData ball_data;
   [ Title( "Components" ) ]
     [ SerializeField ] Renderer _renderer;
