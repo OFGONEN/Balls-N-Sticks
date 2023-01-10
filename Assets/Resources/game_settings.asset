@@ -26,6 +26,9 @@ MonoBehaviour:
   character_movement_rotate_clamp: {x: -45, y: 45}
   character_victory_rotate_duration: 0.3
   character_victory_rotate_ease: 12
+  character_bump_delta: 1.5
+  character_bump_duration: 1
+  character_bump_ease: 12
   camera_follow_speed_depth: 2.8
   maxLevelCount: 1
   game_forward: {x: 0, y: 0, z: 1}
