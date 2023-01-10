@@ -31,6 +31,12 @@ namespace FFStudio
             updateMethod = ExtensionMethods.EmptyMethod;
         }
 
+        void Start()
+        {
+            transform_target = notifier_reference_transform_target.SharedValue as Transform;
+			ResetCameraPositionAndRotation( transform_target );
+		}
+
         void Update()
         {
             updateMethod();
@@ -40,10 +46,6 @@ namespace FFStudio
 #region API
         public void LevelRevealedResponse()
         {
-            transform_target = notifier_reference_transform_target.SharedValue as Transform;
-
-            followOffset = transform_target.position - transform.position;
-
             updateMethod = FollowTarget;
         }
 
@@ -56,18 +58,42 @@ namespace FFStudio
 #region Implementation
         void FollowTarget()
         {
-            // Info: Simple follow logic.
-            var player_position = transform_target.position;
-            var target_position = transform_target.position - followOffset;
+			// Info: Simple follow logic.
+			var position = transform.position;
+			var targetPosition = transform_target.position + GameSettings.Instance.camera_follow_offset_position;
 
-            target_position.x = 0;
-            target_position.z = Mathf.Lerp( transform.position.z, target_position.z, Time.deltaTime * GameSettings.Instance.camera_follow_speed_depth );
-            transform.position = target_position;
-        }
+			transform.position = position
+				.SetX( Mathf.Lerp( position.x, targetPosition.x, Time.fixedDeltaTime * GameSettings.Instance.camera_follow_speed_depth ) )
+				.SetY( targetPosition.y )
+				.SetZ( Mathf.Lerp( position.z, targetPosition.z, Time.fixedDeltaTime * GameSettings.Instance.camera_follow_speed_lateral ) );
+		}
+
+        void ResetCameraPositionAndRotation( Transform target )
+        {
+			transform.position    = target.position + GameSettings.Instance.camera_follow_offset_position;
+			transform.eulerAngles = GameSettings.Instance.camera_follow_offset_rotation;
+		}
 #endregion
 
 #region Editor Only
 #if UNITY_EDITOR
+        [ Button() ]
+        void ResetCameraPositionAndRotation()
+        {
+			UnityEditor.EditorUtility.SetDirty( gameObject );
+			ResetCameraPositionAndRotation( GameObject.FindGameObjectWithTag( "Player" ).transform );
+		}
+
+        [ Button() ]
+        void SaveCameraPositionAndRotation()
+        {
+			UnityEditor.EditorUtility.SetDirty( gameObject );
+			UnityEditor.EditorUtility.SetDirty( GameSettings.Instance );
+			var targetPosition = GameObject.FindGameObjectWithTag( "Player" ).transform.position;
+
+			GameSettings.Instance.camera_follow_offset_position = transform.position - targetPosition;
+			GameSettings.Instance.camera_follow_offset_rotation = transform.eulerAngles;
+		}
 #endif
 #endregion
     }

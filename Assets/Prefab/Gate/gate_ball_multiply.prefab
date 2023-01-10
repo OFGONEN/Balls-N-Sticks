@@ -96,6 +96,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: gate_ball_multiply
       objectReference: {fileID: 0}
+    - target: {fileID: 7651145251451513493, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651145251451513493, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651145251451513493, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: a80b76c16d6517746a6b818ea9ea0daa, type: 2}
+    - target: {fileID: 7651145251451513493, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651145251451513493, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: DoMultiply
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651145251451513493, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: BallInterfaceCollidderReceiver, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651145251451513493, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8119158626237398855, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
       propertyPath: m_RootOrder
       value: 0

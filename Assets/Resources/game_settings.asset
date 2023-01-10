@@ -24,7 +24,15 @@ MonoBehaviour:
   character_movement_rotate_cofactor: 10
   character_movement_rotate_deceleration: 3
   character_movement_rotate_clamp: {x: -45, y: 45}
+  character_victory_rotate_duration: 0.3
+  character_victory_rotate_ease: 12
+  character_bump_delta: 1.5
+  character_bump_duration: 1
+  character_bump_ease: 12
   camera_follow_speed_depth: 2.8
+  camera_follow_speed_lateral: 2.8
+  camera_follow_offset_position: {x: 0, y: 6, z: -6.5}
+  camera_follow_offset_rotation: {x: 20.000004, y: -0, z: -0}
   maxLevelCount: 1
   game_forward: {x: 0, y: 0, z: 1}
   useRemoteConfig_GameSettings: 0

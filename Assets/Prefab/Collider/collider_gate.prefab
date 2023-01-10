@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9140588292962130147}
   - component: {fileID: 3368833712626179062}
-  - component: {fileID: 4512829503287146844}
-  - component: {fileID: 9026232841144857321}
+  - component: {fileID: 7929763932953301003}
+  - component: {fileID: 672144168299850210}
   m_Layer: 30
   m_Name: collider_gate
   m_TagString: Untagged
@@ -42,12 +42,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6237221641866999269}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &4512829503287146844
+--- !u!114 &7929763932953301003
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6237221641866999269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd209e93f371934494f5cbe9870d1f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c5cf41ea274c404ea73899fb5b80769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isEnabled: 1
@@ -64,9 +64,9 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9026232841144857321}
-        m_TargetAssemblyTypeName: FFStudio.CollisionRouter, Assembly-CSharp
-        m_MethodName: OnCollision
+      - m_Target: {fileID: 672144168299850210}
+        m_TargetAssemblyTypeName: FFStudio.TriggerRouter, Assembly-CSharp
+        m_MethodName: OnTrigger
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -76,7 +76,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9026232841144857321
+--- !u!114 &672144168299850210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,7 +85,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 6237221641866999269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 401aebb796b51400c825ce52592b53e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f5b20d65233a74c8c4ced8fae5f66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collision_respond_data_array: []
+  trigger_respond_data_array:
+  - collision_layer: 28
+    trigger_event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: a80b76c16d6517746a6b818ea9ea0daa, type: 2}
+          m_TargetAssemblyTypeName: BallInterfaceCollidderReceiver, Assembly-CSharp
+          m_MethodName: CacheBall
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

@@ -614,6 +614,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: collider_ceil
       objectReference: {fileID: 0}
+    - target: {fileID: 3409998957430044360, guid: ca46621d5c7ca1d4991fc20835c0fafe, type: 3}
+      propertyPath: m_Size.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409998957430044360, guid: ca46621d5c7ca1d4991fc20835c0fafe, type: 3}
+      propertyPath: m_Center.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8135901199992658642, guid: ca46621d5c7ca1d4991fc20835c0fafe, type: 3}
       propertyPath: m_RootOrder
       value: 3

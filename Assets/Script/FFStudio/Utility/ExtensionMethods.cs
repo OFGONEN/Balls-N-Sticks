@@ -161,6 +161,11 @@ namespace FFStudio
 		{
 			/* Intentionally empty, by definition. */
 		}
+
+		public static void EmptyMethod( int value )
+		{
+			/* Intentionally empty, by definition. */
+		}
 		
 		public static void EmptyMethod( Vector2 vector2 )
 		{

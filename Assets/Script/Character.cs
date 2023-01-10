@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEditor;
 
@@ -26,6 +27,9 @@ public class Character : MonoBehaviour
 	Vector3 character_position;
 	float character_rotation;
 
+	RecycledTween recycledTween = new RecycledTween();
+
+	UnityIntMessage onIKPass;
 	UnityMessage onFixedUpdate;
     UnityMessage onUpdate;
 	UnityMessage onFingerDown;
@@ -45,6 +49,7 @@ public class Character : MonoBehaviour
     {
 		EmptyDelegates();
 
+		onIKPass           = AnimatorIKUpdate;
 		character_position = transform.position;
 	}
 
@@ -86,15 +91,53 @@ public class Character : MonoBehaviour
 
 	public void OnAnimatorIKUpdate( int layer )
 	{
+		onIKPass( layer );
+	}
+	
+	public void OnFinishLine()
+	{
+		EmptyDelegates();
+		onIKPass = ExtensionMethods.EmptyMethod;
+		_animator.SetTrigger( "victory" );
+
+		recycledTween.Recycle( transform.DORotate( Vector3.zero,
+			GameSettings.Instance.character_victory_rotate_duration )
+			.SetEase( GameSettings.Instance.character_victory_rotate_ease ) );
+	}
+
+	[ Button() ]
+	public void OnCharacterBump()
+	{
+		EmptyDelegates();
+
+		var delta = Vector3.back * GameSettings.Instance.character_bump_delta;
+
+		character_position += delta;
+		character_rotation = 0;
+
+		var sequence = DOTween.Sequence();
+		sequence.Append( transform.DORotate( Vector3.zero, 
+			GameSettings.Instance.character_victory_rotate_duration )
+			.SetEase( GameSettings.Instance.character_victory_rotate_ease ) );
+		sequence.Join( transform.DOMove( delta,
+			GameSettings.Instance.character_bump_duration )
+			.SetEase( GameSettings.Instance.character_bump_ease )
+			.SetRelative()
+		);
+		sequence.OnComplete( StartMovement );
+	}
+#endregion
+
+#region Implementation
+	void AnimatorIKUpdate( int layer )
+	{
 		_animator.SetIKPositionWeight( AvatarIKGoal.LeftHand, 1 );
 		_animator.SetIKPositionWeight( AvatarIKGoal.RightHand, 1 );
 
 		_animator.SetIKPosition( AvatarIKGoal.LeftHand, stick_left_transform.position );
 		_animator.SetIKPosition( AvatarIKGoal.RightHand, stick_right_transform.position );
 	}
-#endregion
 
-#region Implementation
 	void CalculateMovement()
 	{
 		character_position.x += shared_finger_update.DeltaScaled.x * GameSettings.Instance.character_movement_lateral_speed * GameSettings.Instance.character_movement_lateral_cofactor;
@@ -139,10 +182,15 @@ public class Character : MonoBehaviour
 	void FirstFingerDown()
 	{
 		_animator.SetTrigger( "run" );
-		onUpdate      = CalculateMovement;
-		onFixedUpdate = Movement;
+		StartMovement();
 
 		onFingerDown = ExtensionMethods.EmptyMethod;
+	}
+
+	void StartMovement()
+	{
+		onUpdate      = CalculateMovement;
+		onFixedUpdate = Movement;
 	}
 
 	void EmptyDelegates()
