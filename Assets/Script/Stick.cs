@@ -67,8 +67,9 @@ public class Stick : MonoBehaviour
 
 	void UpdateStick()
 	{
-		stick_side_left.localScale  = scale.SetX( stick_length / 2f );
-		stick_side_right.localScale = scale.SetX( stick_length / 2f );
+		var scale                       = stick_side_left.localScale;
+		    stick_side_left.localScale  = scale.SetX( stick_length / 2f );
+		    stick_side_right.localScale = scale.SetX( stick_length / 2f );
 	}
 #endregion
 
