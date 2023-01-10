@@ -66,10 +66,6 @@ public class IntValue : MonoBehaviour
 
 #region Editor Only
 #if UNITY_EDITOR
-	private void OnValidate()
-	{
-		ForceUpdate();
-	}
 #endif
 #endregion
 }
