@@ -83,6 +83,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8172380570641191746, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119519961400042012, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: m_text
+      value: +20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119519961400042012, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119519961400042012, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
 --- !u!4 &2995447284903981025 stripped
