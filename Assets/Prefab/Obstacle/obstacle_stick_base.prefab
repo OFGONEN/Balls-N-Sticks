@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4216014424563735600}
-  - component: {fileID: 5447421623393649735}
   m_Layer: 29
   m_Name: gfx_parent
   m_TagString: Untagged
@@ -30,27 +29,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2816716741664680470}
+  - {fileID: 509518052065990870}
   m_Father: {fileID: 4080874492550047357}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5447421623393649735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3725630070155179501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 054b16471a69d6145a716e37b1f88d29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  punch_target: {fileID: 4216014424563735600}
-  punch_power: 1
-  punch_direction: {x: 1, y: 1, z: 1}
-  punch_duration: 0.25
-  punch_ease: 12
-  punch_isInterruptable: 0
 --- !u!1 &5222962169054751892
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8432192741720085941}
   - component: {fileID: 4983962878101058338}
+  - component: {fileID: 4186952211514452726}
   m_Layer: 29
   m_Name: logic_tween
   m_TagString: Untagged
@@ -81,7 +64,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4080874492550047357}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4983962878101058338
 MonoBehaviour:
@@ -102,13 +85,71 @@ MonoBehaviour:
   loop_type: 0
   loop_isInfinite: 1
   loop_count: 1
-  tweenDatas: []
+  tweenDatas:
+  - rid: 5262645521140416512
   unityEvent_onChainComplete:
     m_PersistentCalls:
       m_Calls: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5262645521140416512
+      type: {class: RotationTweenData, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        sequenceElementType: 0
+        insertion_time: 0
+        tweenEventDatas: []
+        easing: 1
+        loop: 1
+        loop_type: 2
+        loop_isInfinite: 1
+        loop_count: 1
+        unityEvent_onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        useDelta: 1
+        speedBased: 0
+        endValue: 360
+        duration: 2
+        rotationMode: 0
+        rotationAxisMaskVector: {x: 0, y: 1, z: 0}
+--- !u!114 &4186952211514452726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222962169054751892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced0f1e42f0d0455e998d43366b153f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onAwakeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4983962878101058338}
+        m_TargetAssemblyTypeName: FFStudio.TweenChain, Assembly-CSharp
+        m_MethodName: PlayTween
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5880546678315691007
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +178,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 509518052065990870}
   - {fileID: 4216014424563735600}
   - {fileID: 8432192741720085941}
   m_Father: {fileID: 0}
@@ -210,7 +250,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4080874492550047357}
+    m_TransformParent: {fileID: 4216014424563735600}
     m_Modifications:
     - target: {fileID: 2529159525406137380, guid: 3eb3f965dc8efdb439e962d24a21e779, type: 3}
       propertyPath: m_Name
@@ -246,7 +286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8927142722521276206, guid: 3eb3f965dc8efdb439e962d24a21e779, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8927142722521276206, guid: 3eb3f965dc8efdb439e962d24a21e779, type: 3}
       propertyPath: m_LocalPosition.x
@@ -266,15 +306,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8927142722521276206, guid: 3eb3f965dc8efdb439e962d24a21e779, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8927142722521276206, guid: 3eb3f965dc8efdb439e962d24a21e779, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8927142722521276206, guid: 3eb3f965dc8efdb439e962d24a21e779, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8927142722521276206, guid: 3eb3f965dc8efdb439e962d24a21e779, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -295,3 +335,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8927142722521276206, guid: 3eb3f965dc8efdb439e962d24a21e779, type: 3}
   m_PrefabInstance: {fileID: 9003187111428540408}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &846798463937188347 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 8588874995386570243, guid: 3eb3f965dc8efdb439e962d24a21e779, type: 3}
+  m_PrefabInstance: {fileID: 9003187111428540408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6911019687466900444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2529159525406137380, guid: 3eb3f965dc8efdb439e962d24a21e779, type: 3}
+  m_PrefabInstance: {fileID: 9003187111428540408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7312957353812492086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6911019687466900444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec19097e88c2348bc8f41358280d6e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 846798463937188347}
+  _particleData:
+    particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: stick_lost
+    parent: 0
+    offset: {x: 0, y: 0, z: 0}
+    size: 1
