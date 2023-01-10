@@ -15,6 +15,9 @@ namespace FFStudio
 		[ LabelText( "Punch Duration" ) ] public float ball_punchScale_duration = 0.35f;
 		[ LabelText( "Multiply Offset" ) ] public Vector3 ball_multiply_offset;
     
+    [ Title( "Stick" ) ]
+		[ LabelText( "Stick Max Length " ), Min( 0 ) ] public float stick_length_max;
+
     [ Title( "Character" ) ]
 		[ LabelText( "Movement Forward Speed" ) ] public float character_movement_forward_speed;
 		[ LabelText( "Movement Lateral Input Cofactor" ) ] public float character_movement_lateral_cofactor;
