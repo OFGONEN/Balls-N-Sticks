@@ -1,5 +1,75 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3008953536490460159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3329636155433514897}
+  - component: {fileID: 3555749737976009252}
+  m_Layer: 0
+  m_Name: logic_pfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3329636155433514897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3008953536490460159}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3069070546741235172}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3555749737976009252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3008953536490460159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753b2c2b78147c181c65650f11a67d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleDatas:
+  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: gate_disappear
+    parent: 0
+    offset: {x: 0, y: 0, z: 0}
+    size: 1
+  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: inside_gate_stick_grow
+    parent: 0
+    offset: {x: 0, y: 0, z: 0}
+    size: 1
+  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: inside_gate_stick_shrink
+    parent: 0
+    offset: {x: 0, y: 0, z: 0}
+    size: 1
+  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: stick_grow
+    parent: 0
+    offset: {x: 0, y: 0, z: 0}
+    size: 1
+  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: stick_shrink
+    parent: 0
+    offset: {x: 0, y: 0, z: 0}
+    size: 1
 --- !u!1 &3196664296634709416
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,6 +102,7 @@ Transform:
   - {fileID: 4890489354916359480}
   - {fileID: 5184916008795467345}
   - {fileID: 1381264048955846419}
+  - {fileID: 3329636155433514897}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
