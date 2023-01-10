@@ -27,6 +27,8 @@ namespace FFStudio
 		[ LabelText( "Movement Rotate Cofactor" ) ] public float character_movement_rotate_cofactor;
 		[ LabelText( "Movement Rotate Deceleration" ) ] public float character_movement_rotate_deceleration;
 		[ LabelText( "Movement Rotate Clamp" ) ] public Vector2 character_movement_rotate_clamp;
+		[ LabelText( "Victory Rotate Duration" ) ] public float character_victory_rotate_duration;
+		[ LabelText( "Victory Rotate Ease" ) ] public Ease character_victory_rotate_ease;
 
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
