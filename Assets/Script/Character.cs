@@ -104,6 +104,28 @@ public class Character : MonoBehaviour
 			GameSettings.Instance.character_victory_rotate_duration )
 			.SetEase( GameSettings.Instance.character_victory_rotate_ease ) );
 	}
+
+	[ Button() ]
+	public void OnCharacterBump()
+	{
+		EmptyDelegates();
+
+		var delta = Vector3.back * GameSettings.Instance.character_bump_delta;
+
+		character_position += delta;
+		character_rotation = 0;
+
+		var sequence = DOTween.Sequence();
+		sequence.Append( transform.DORotate( Vector3.zero, 
+			GameSettings.Instance.character_victory_rotate_duration )
+			.SetEase( GameSettings.Instance.character_victory_rotate_ease ) );
+		sequence.Join( transform.DOMove( delta,
+			GameSettings.Instance.character_bump_duration )
+			.SetEase( GameSettings.Instance.character_bump_ease )
+			.SetRelative()
+		);
+		sequence.OnComplete( StartMovement );
+	}
 #endregion
 
 #region Implementation
@@ -160,10 +182,15 @@ public class Character : MonoBehaviour
 	void FirstFingerDown()
 	{
 		_animator.SetTrigger( "run" );
-		onUpdate      = CalculateMovement;
-		onFixedUpdate = Movement;
+		StartMovement();
 
 		onFingerDown = ExtensionMethods.EmptyMethod;
+	}
+
+	void StartMovement()
+	{
+		onUpdate      = CalculateMovement;
+		onFixedUpdate = Movement;
 	}
 
 	void EmptyDelegates()
