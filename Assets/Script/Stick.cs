@@ -25,7 +25,6 @@ public class Stick : MonoBehaviour
 	private void Awake()
 	{
 		stick_length = CurrentLevelData.Instance.levelData.stick_length_start;
-
 		UpdateStick();
 	}
 #endregion
@@ -35,7 +34,7 @@ public class Stick : MonoBehaviour
 	public void OnStickLengthGained( float delta )
 	{
 		stick_length = Mathf.Min( stick_length + delta, GameSettings.Instance.stick_length_max );
-		UpdateStick();
+		TweenUpdateStick();
 	}
 
 	[ Button() ]
@@ -48,7 +47,7 @@ public class Stick : MonoBehaviour
 #endregion
 
 #region Implementation
-	void UpdateStick()
+	void TweenUpdateStick()
 	{
 		recycledSequence.Kill();
 
@@ -64,6 +63,12 @@ public class Stick : MonoBehaviour
 
 		// stick_side_left.localScale  = scale.SetX( stick_length / 2f );
 		// stick_side_right.localScale = scale.SetX( stick_length / 2f );
+	}
+
+	void UpdateStick()
+	{
+		stick_side_left.localScale  = scale.SetX( stick_length / 2f );
+		stick_side_right.localScale = scale.SetX( stick_length / 2f );
 	}
 #endregion
 
