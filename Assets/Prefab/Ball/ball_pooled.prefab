@@ -11,13 +11,9 @@ PrefabInstance:
       propertyPath: isPooled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 389910542763896007, guid: 323d4be5930de9f45833044870324152, type: 3}
-      propertyPath: ball_pool
-      value: 
-      objectReference: {fileID: 11400000, guid: 53958f55ff87f8b458fbe9c8a391482e, type: 2}
     - target: {fileID: 606760728381489696, guid: 323d4be5930de9f45833044870324152, type: 3}
       propertyPath: m_Name
-      value: ball_base_pooled
+      value: ball_pooled
       objectReference: {fileID: 0}
     - target: {fileID: 3162736375492179929, guid: 323d4be5930de9f45833044870324152, type: 3}
       propertyPath: m_RootOrder
