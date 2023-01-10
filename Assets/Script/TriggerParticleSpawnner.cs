@@ -24,7 +24,7 @@ public class TriggerParticleSpawnner : MonoBehaviour
 		var contactPoint = ( collider.transform.position + _collider.transform.position ) / 2f;
 
 		Transform parent = _particleData.parent ? transform : null;
-		_particleData.particle_event.Raise( _particleData.alias, transform.position + _particleData.offset, parent, _particleData.size );
+		_particleData.particle_event.Raise( _particleData.alias, contactPoint, parent, _particleData.size );
 	}
 #endregion
 
