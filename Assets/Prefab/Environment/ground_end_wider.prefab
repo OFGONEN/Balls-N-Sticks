@@ -160,7 +160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015506577533005173, guid: 049b17e3edf0c224494ac7bcf1a227d3, type: 3}
       propertyPath: m_Name
-      value: finishLine
+      value: finish_line
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 049b17e3edf0c224494ac7bcf1a227d3, type: 3}
