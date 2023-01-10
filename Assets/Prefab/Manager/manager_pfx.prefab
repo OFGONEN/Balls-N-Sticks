@@ -126,5 +126,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227cd4c92a59b224d9f99d9e97bf6358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools_pfx: []
+  pools_pfx:
+  - {fileID: 11400000, guid: 0c0b169b181329f4ea8cd73747dfddf3, type: 2}
+  - {fileID: 11400000, guid: 62d05ed552f2ba1469794b00e0ef5030, type: 2}
+  - {fileID: 11400000, guid: ee585e7dbd9e5904ba01f4b1f92c4d36, type: 2}
+  - {fileID: 11400000, guid: f035a1143cb59e34696c140be974e1ba, type: 2}
+  - {fileID: 11400000, guid: 334abaed93ba6914c93aa5a4e8fd4775, type: 2}
+  - {fileID: 11400000, guid: c9550f64773aab14b9ea0a9db3e4291b, type: 2}
+  - {fileID: 11400000, guid: 007338c4f13a92e48abe0a68221596b9, type: 2}
+  - {fileID: 11400000, guid: 87f66c2d12e0c5d458d82a57c00256c0, type: 2}
+  - {fileID: 11400000, guid: d5a538cd7bdc0984f997f4f5afb9f637, type: 2}
+  - {fileID: 11400000, guid: 07b5abbc53ff4b446acdf16fc9d64270, type: 2}
   pools_pfx_random: []
