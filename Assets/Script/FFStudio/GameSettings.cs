@@ -17,6 +17,8 @@ namespace FFStudio
     
     [ Title( "Stick" ) ]
 		[ LabelText( "Stick Max Length " ), Min( 0 ) ] public float stick_length_max;
+		[ LabelText( "Stick Update Duration" ), Min( 0 ) ] public float stick_update_duration;
+		[ LabelText( "Stick Update Ease" ), Min( 0 ) ] public Ease stick_update_ease;
 
     [ Title( "Character" ) ]
 		[ LabelText( "Movement Forward Speed" ) ] public float character_movement_forward_speed;
