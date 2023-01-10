@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stick_side_left: {fileID: 1573450586844336260}
   stick_side_right: {fileID: 1932020400879650040}
+  stick_side_right_punchScale: {fileID: 4814520674250605236}
+  stick_side_left_punchScale: {fileID: 3388695903611598237}
 --- !u!1 &7381397335923446332
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1932020400879650040}
+  - component: {fileID: 4814520674250605236}
   m_Layer: 0
   m_Name: gfx_parent_stick_right
   m_TagString: Untagged
@@ -266,6 +269,24 @@ Transform:
   m_Father: {fileID: 5876555228464799732}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4814520674250605236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7837849640412098837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054b16471a69d6145a716e37b1f88d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punch_target: {fileID: 1932020400879650040}
+  punch_power: 0.2
+  punch_direction: {x: 1, y: 0, z: 0}
+  punch_duration: 0.3
+  punch_ease: 12
+  punch_isInterruptable: 0
 --- !u!1 &8469965969360268084
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1573450586844336260}
+  - component: {fileID: 3388695903611598237}
   m_Layer: 0
   m_Name: gfx_parent_stick_left
   m_TagString: Untagged
@@ -299,6 +321,24 @@ Transform:
   m_Father: {fileID: 5876555228464799732}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3388695903611598237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8469965969360268084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054b16471a69d6145a716e37b1f88d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punch_target: {fileID: 1573450586844336260}
+  punch_power: 0.5
+  punch_direction: {x: 1, y: 0, z: 0}
+  punch_duration: 0.3
+  punch_ease: 12
+  punch_isInterruptable: 0
 --- !u!1001 &559039110897943042
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class Stick : MonoBehaviour
 #region Fields
 	[ SerializeField ] Transform stick_side_left;
 	[ SerializeField ] Transform stick_side_right;
+	[ SerializeField ] TweenPunchScale stick_side_left_punchScale;
+	[ SerializeField ] TweenPunchScale stick_side_right_punchScale;
 
 	RecycledSequence recycledSequence = new RecycledSequence();
 
@@ -41,8 +43,11 @@ public class Stick : MonoBehaviour
 	public void OnStickLengthLost( float delta )
 	{
 		stick_length = Mathf.Max( stick_length - delta, 0 );
-		//todo Spawn Little Sticks
+
 		UpdateStick();
+
+		stick_side_left_punchScale.DoPunchScale();
+		stick_side_right_punchScale.DoPunchScale();
 	}
 #endregion
 
