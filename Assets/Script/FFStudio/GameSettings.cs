@@ -34,7 +34,10 @@ namespace FFStudio
 		[ LabelText( "Bump Ease" ) ] public Ease character_bump_ease;
 
     [ Title( "Camera" ) ]
-        [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
+        [ LabelText( "Follow Speed Depth" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
+        [ LabelText( "Follow Speed Lateral" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_lateral = 2.8f;
+        [ LabelText( "Follow Offset Position" ) ] public Vector3 camera_follow_offset_position;
+        [ LabelText( "Follow Offset Rotation" ) ] public Vector3 camera_follow_offset_rotation;
     
     [ Title( "Project Setup", "These settings should not be edited by Level Designer(s).", TitleAlignments.Centered ) ]
         public int maxLevelCount;
