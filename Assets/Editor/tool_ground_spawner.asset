@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ff057ed6dc32b46ab272ac1a080f20, type: 3}
   m_Name: tool_ground_spawner
   m_EditorClassIdentifier: 
-  level_code: 2D2
+  level_code: 4d7d94
   prefab_ground: {fileID: 237767412321979465, guid: 9d09cd21e5c3f8e4e93b4d30b13d0b31, type: 3}
   prefab_divider: {fileID: 237767412321979465, guid: 4a81a0f162ad6294f9520f118a92f63c, type: 3}
-  prefab_end: {fileID: 237767412321979465, guid: 904f996db16b6894da438df03e789849, type: 3}
+  prefab_ground_start: {fileID: 237767412321979465, guid: 27fc1954e8af4ae4f8b62233e085cc67, type: 3}
+  prefab_ground_end: {fileID: 237767412321979465, guid: 904f996db16b6894da438df03e789849, type: 3}
   prefab_ground_length: 6
