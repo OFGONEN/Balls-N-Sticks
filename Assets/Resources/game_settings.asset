@@ -34,6 +34,7 @@ MonoBehaviour:
   camera_follow_offset_rotation: {x: 20.000006, y: -0, z: -0}
   camera_endLevel_offset: {x: 0, y: 0, z: -14}
   camera_endLevel_rotation: {x: 0, y: 0, z: 0}
+  camera_endLevel_transition_delay: 0.3
   camera_endLevel_transition_duration: 0.75
   camera_endLevel_transition_ease: 12
   maxLevelCount: 2

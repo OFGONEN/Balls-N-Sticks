@@ -40,6 +40,7 @@ namespace FFStudio
         [ LabelText( "Follow Offset Rotation" ) ] public Vector3 camera_follow_offset_rotation;
         [ LabelText( "End Level Offset" ) ] public Vector3 camera_endLevel_offset;
         [ LabelText( "End Level Rotation" ) ] public Vector3 camera_endLevel_rotation;
+        [ LabelText( "End Level Transition Delay" ) ] public float camera_endLevel_transition_delay;
         [ LabelText( "End Level Transition Duration" ) ] public float camera_endLevel_transition_duration;
         [ LabelText( "End Level Transition Ease" ) ] public Ease camera_endLevel_transition_ease;
     
