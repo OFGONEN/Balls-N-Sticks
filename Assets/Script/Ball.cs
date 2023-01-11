@@ -53,7 +53,7 @@ public class Ball : MonoBehaviour
 	{
 		var ball = ball_pool.GetEntity();
 
-		ball.Spawn( transform.position + GameSettings.Instance.ball_multiply_offset, transform.forward, _rigidbody.velocity.magnitude, ball_data );
+		ball.Spawn( transform.position + GameSettings.Instance.ball_multiply_offset, Vector3.forward, _rigidbody.velocity.magnitude, ball_data );
 	}
 
     public void DoUpgrade()
