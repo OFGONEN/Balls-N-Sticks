@@ -96,22 +96,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: gate_ball_deposit
       objectReference: {fileID: 0}
-    - target: {fileID: 5000704544089806101, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
-      propertyPath: onComparisionUnityEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5000704544089806101, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
-      propertyPath: onComparisionUnityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5000704544089806101, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
-      propertyPath: onComparisionUnityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5000704544089806101, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
-      propertyPath: onComparisionUnityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: FFStudio.TweenChain, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 7651145251451513493, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.size
       value: 4

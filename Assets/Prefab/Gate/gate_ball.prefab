@@ -112,6 +112,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6943708561977026174}
+        m_TargetAssemblyTypeName: FFStudio.ParticleSpawner, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6874353405710516133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,6 +697,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2601354484714642909, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
   m_PrefabInstance: {fileID: 8230571209699150748}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6943708561977026174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1325710640346983906, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+  m_PrefabInstance: {fileID: 8230571209699150748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753b2c2b78147c181c65650f11a67d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8119158626237398855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 186291529546036443, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
