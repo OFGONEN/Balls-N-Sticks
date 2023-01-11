@@ -146,8 +146,8 @@ public class Character : MonoBehaviour
 		character_position.z += Time.deltaTime * GameSettings.Instance.character_movement_forward_speed;
 
 		character_position.x = Mathf.Clamp( character_position.x,
-			GameSettings.Instance.character_movement_lateral_clamp.x,
-			GameSettings.Instance.character_movement_lateral_clamp.y );
+			CurrentLevelData.Instance.levelData.character_movement_lateral_clamp.x,
+			CurrentLevelData.Instance.levelData.character_movement_lateral_clamp.y );
 
 		var targetRotation = character_rotation;
 		targetRotation += shared_finger_update.DeltaScaled.x * GameSettings.Instance.character_movement_rotate_cofactor;
