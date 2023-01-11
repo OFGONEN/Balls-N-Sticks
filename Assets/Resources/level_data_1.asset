@@ -15,3 +15,4 @@ MonoBehaviour:
   scene_index: 1
   scene_overrideAsActiveScene: 0
   stick_length_start: 0.2
+  character_movement_lateral_clamp: {x: -2.5, y: 2.5}
