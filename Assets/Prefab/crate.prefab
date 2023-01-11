@@ -86,6 +86,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2804965296005431016}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9209701771972819815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212337994561284384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -176,10 +188,10 @@ MonoBehaviour:
   pool_ball: {fileID: 11400000, guid: 53958f55ff87f8b458fbe9c8a391482e, type: 2}
   library_ball_data: {fileID: 11400000, guid: 8547dd0b5cf3c6c469eca6160478d11a, type: 2}
   ball_cache: {fileID: 11400000, guid: 68e8c7d9b26045144b1771d2e1bce148, type: 2}
-  ball_spawn_count: {x: 1, y: 3}
+  ball_spawn_count: {x: 3, y: 5}
   ball_spawn_level: {x: 1, y: 2}
   ball_spawn_velocity: {x: 1, y: 2}
-  ball_spawn_radius: 1
+  ball_spawn_radius: 0.5
 --- !u!1 &2233380841604635902
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945695909254940052}
   - component: {fileID: 3046890173963113791}
+  - component: {fileID: 8594937968475930453}
   m_Layer: 29
   m_Name: logic_int
   m_TagString: Untagged
@@ -291,13 +304,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onComparisionUnityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9005349842962656585}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 3046890173963113791}
+        m_TargetAssemblyTypeName: IntValue, Assembly-CSharp
+        m_MethodName: CheckIfEqual
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -306,13 +316,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 118816732550347755}
-        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
-        m_MethodName: SetParent
-        m_Mode: 2
+  onComparisionUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2233380841604635902}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 2736112017872256929}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -333,6 +346,54 @@ MonoBehaviour:
       - m_Target: {fileID: 6200798667638195569}
         m_TargetAssemblyTypeName: BallSpawnerCrate, Assembly-CSharp
         m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1539235634802522051}
+        m_TargetAssemblyTypeName: FFStudio.ParticleSpawner, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8594937968475930453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238905418260827500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced0f1e42f0d0455e998d43366b153f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onAwakeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3046890173963113791}
+        m_TargetAssemblyTypeName: IntValue, Assembly-CSharp
+        m_MethodName: ForceUpdate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -467,8 +528,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punch_target: {fileID: 2736112017872256929}
-  punch_power: 1
-  punch_direction: {x: 1, y: 1, z: 1}
+  punch_power: 0.5
+  punch_direction: {x: -0.8, y: 1, z: -0.8}
   punch_duration: 0.25
   punch_ease: 12
   punch_isInterruptable: 0
@@ -520,7 +581,7 @@ MonoBehaviour:
   - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
     alias: crate_explode
     parent: 0
-    offset: {x: 0, y: 0, z: 0}
+    offset: {x: 0, y: 0.25, z: 0}
     size: 1
 --- !u!1001 &609834919400995671
 PrefabInstance:
@@ -665,7 +726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2407574007300901498, guid: 9768d684be27e434898f54dea1c93182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2407574007300901498, guid: 9768d684be27e434898f54dea1c93182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -692,6 +753,11 @@ PrefabInstance:
 --- !u!224 &118816732550347755 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2407574007300901498, guid: 9768d684be27e434898f54dea1c93182, type: 3}
+  m_PrefabInstance: {fileID: 2364236961829056913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2804965296005431016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 441997003629055865, guid: 9768d684be27e434898f54dea1c93182, type: 3}
   m_PrefabInstance: {fileID: 2364236961829056913}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3614005131094134113
@@ -746,6 +812,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
+      propertyPath: collision_respond_data_array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
+      propertyPath: collision_respond_data_array.Array.data[0].collision_layer
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
       propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -769,6 +843,10 @@ PrefabInstance:
       propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3046890173963113791}
+    - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
+      propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
       propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -806,6 +884,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
+      propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
       propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -836,6 +918,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ui_world_text
       objectReference: {fileID: 0}
+    - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
+      propertyPath: m_fontSize
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 61cbfcba0d3f0a843a450218100c5182, type: 2}
+    - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d2c5727e137da4a96f5ab254f928fe, type: 2}
     - target: {fileID: 7668125578453921217, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

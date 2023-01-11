@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punch_target: {fileID: 4216014424563735600}
-  punch_power: 0.2
-  punch_direction: {x: 0.8, y: 1, z: 0.8}
+  punch_power: 0.4
+  punch_direction: {x: -0.8, y: 1, z: -0.8}
   punch_duration: 0.25
   punch_ease: 12
   punch_isInterruptable: 0

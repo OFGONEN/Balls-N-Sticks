@@ -48,7 +48,7 @@ public class DistanceChecker : MonoBehaviour
 
     public void StartDistanceChecking()
     {
-		onUpdate = ExtensionMethods.EmptyMethod;
+		onUpdate = DistanceCheck;
 		enabled  = true;
 	}
 

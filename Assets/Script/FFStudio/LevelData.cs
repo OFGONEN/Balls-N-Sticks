@@ -17,6 +17,7 @@ namespace FFStudio
 
 	[ Title( "Level Design" ) ]
         [ LabelText( "Stick Start Length" ) ] public float stick_length_start;
+		[ LabelText( "Movement Lateral Clamp" ) ] public Vector2 character_movement_lateral_clamp;
 
 #if UNITY_EDITOR
 		static IEnumerable SceneList()

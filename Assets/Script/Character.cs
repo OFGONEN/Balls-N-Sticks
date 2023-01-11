@@ -13,16 +13,15 @@ public class Character : MonoBehaviour
 #region Fields
   [ Title( "Shared" ) ]
     [ SerializeField ] FingerUpdate shared_finger_update; 
-    [ SerializeField ] SharedReferenceNotifier notif_stick_left; 
-    [ SerializeField ] SharedReferenceNotifier notif_stick_right; 
+    [ SerializeField ] Transform hand_target_left; 
+    [ SerializeField ] Transform hand_target_right;
+	[ SerializeField ] Transform hand_hint_left;
+	[ SerializeField ] Transform hand_hint_right;
 
-  [ Title( "Components" ) ]
+	[ Title( "Components" ) ]
     [ SerializeField ] Transform gfx_parent_transform;
     [ SerializeField ] Rigidbody _rigidBody;
     [ SerializeField ] Animator _animator;
-
-	Transform stick_left_transform;
-	Transform stick_right_transform;
 
 	Vector3 character_position;
 	float character_rotation;
@@ -52,13 +51,6 @@ public class Character : MonoBehaviour
 		onIKPass           = AnimatorIKUpdate;
 		character_position = transform.position;
 	}
-
-	private void Start()
-	{
-		stick_left_transform  = notif_stick_left.sharedValue as Transform;
-		stick_right_transform = notif_stick_right.sharedValue as Transform;
-	}
-
 
     private void FixedUpdate()
     {
@@ -133,9 +125,19 @@ public class Character : MonoBehaviour
 	{
 		_animator.SetIKPositionWeight( AvatarIKGoal.LeftHand, 1 );
 		_animator.SetIKPositionWeight( AvatarIKGoal.RightHand, 1 );
+		_animator.SetIKRotationWeight( AvatarIKGoal.LeftHand, 1 );
+		_animator.SetIKRotationWeight( AvatarIKGoal.RightHand, 1 );
 
-		_animator.SetIKPosition( AvatarIKGoal.LeftHand, stick_left_transform.position );
-		_animator.SetIKPosition( AvatarIKGoal.RightHand, stick_right_transform.position );
+		_animator.SetIKHintPositionWeight( AvatarIKHint.LeftElbow, 1 );
+		_animator.SetIKHintPositionWeight( AvatarIKHint.RightElbow, 1 );
+
+		_animator.SetIKPosition( AvatarIKGoal.LeftHand, hand_target_left.position );
+		_animator.SetIKPosition( AvatarIKGoal.RightHand, hand_target_right.position );
+		_animator.SetIKRotation( AvatarIKGoal.LeftHand, hand_target_left.rotation );
+		_animator.SetIKRotation( AvatarIKGoal.RightHand, hand_target_right.rotation );
+
+		_animator.SetIKHintPosition( AvatarIKHint.LeftElbow, hand_hint_left.position );
+		_animator.SetIKHintPosition( AvatarIKHint.RightElbow, hand_hint_right.position );
 	}
 
 	void CalculateMovement()
@@ -144,8 +146,8 @@ public class Character : MonoBehaviour
 		character_position.z += Time.deltaTime * GameSettings.Instance.character_movement_forward_speed;
 
 		character_position.x = Mathf.Clamp( character_position.x,
-			GameSettings.Instance.character_movement_lateral_clamp.x,
-			GameSettings.Instance.character_movement_lateral_clamp.y );
+			CurrentLevelData.Instance.levelData.character_movement_lateral_clamp.x,
+			CurrentLevelData.Instance.levelData.character_movement_lateral_clamp.y );
 
 		var targetRotation = character_rotation;
 		targetRotation += shared_finger_update.DeltaScaled.x * GameSettings.Instance.character_movement_rotate_cofactor;
