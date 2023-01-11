@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dda4d38786faa47bc9a024540d1517, type: 3}
   m_Name: pool_pfx_ball_deposit
   m_EditorClassIdentifier: 
-  stackSize: 100
+  stackSize: 64
   pool_entity: {fileID: 8593336815676032619, guid: c1837741871cb464e8aaf21ac71c35c4, type: 3}
