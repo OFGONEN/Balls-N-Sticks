@@ -153,34 +153,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: gate_ball_multiply
       objectReference: {fileID: 0}
-    - target: {fileID: 6943708561977026174, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
-      propertyPath: particleDatas.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6943708561977026174, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
-      propertyPath: particleDatas.Array.data[0].size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6943708561977026174, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
-      propertyPath: particleDatas.Array.data[1].size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6943708561977026174, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
-      propertyPath: particleDatas.Array.data[0].alias
-      value: gate_disappear
-      objectReference: {fileID: 0}
-    - target: {fileID: 6943708561977026174, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
-      propertyPath: particleDatas.Array.data[1].alias
-      value: inside_gate_ball_multiply
-      objectReference: {fileID: 0}
-    - target: {fileID: 6943708561977026174, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
-      propertyPath: particleDatas.Array.data[0].particle_event
-      value: 
-      objectReference: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
-    - target: {fileID: 6943708561977026174, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
-      propertyPath: particleDatas.Array.data[1].particle_event
-      value: 
-      objectReference: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
     - target: {fileID: 7651145251451513493, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.size
       value: 4
