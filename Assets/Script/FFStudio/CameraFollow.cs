@@ -1,6 +1,7 @@
 /* Created by and for usage of FF Studios (2021). */
 
 using UnityEngine;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 
 namespace FFStudio
@@ -10,6 +11,8 @@ namespace FFStudio
 #region Fields
     [ Title( "Setup" ) ]
         [ SerializeField ] SharedReferenceNotifier notifier_reference_transform_target;
+        [ SerializeField ] SharedReferenceNotifier notif_plinko_reference;
+        [ SerializeField ] GameEvent event_camera_transition_done;
 
         Transform transform_target;
         Vector3 followOffset;
@@ -49,10 +52,23 @@ namespace FFStudio
             updateMethod = FollowTarget;
         }
 
-        public void LevelFinishedResponse()
+        public void OnFinishLineResponse()
         {
-            updateMethod = ExtensionMethods.EmptyMethod;
-        }
+			updateMethod = ExtensionMethods.EmptyMethod;
+
+			var plinkoPosition = ( notif_plinko_reference.sharedValue as Transform ).position;
+
+			transform.DOMove( plinkoPosition + GameSettings.Instance.camera_endLevel_offset,
+				GameSettings.Instance.camera_endLevel_transition_duration )
+				.SetEase( GameSettings.Instance.camera_endLevel_transition_ease )
+				.SetDelay( GameSettings.Instance.camera_endLevel_transition_delay )
+				.OnComplete( event_camera_transition_done.Raise );
+
+			transform.DORotate( GameSettings.Instance.camera_endLevel_rotation,
+				GameSettings.Instance.camera_endLevel_transition_duration )
+				.SetEase( GameSettings.Instance.camera_endLevel_transition_ease )
+				.SetDelay( GameSettings.Instance.camera_endLevel_transition_delay );
+		}
 #endregion
 
 #region Implementation
