@@ -19,7 +19,9 @@ public class ToolGroundSpawner : ScriptableObject
 	[ FoldoutGroup( "Configure" ), SerializeField ] GameObject prefab_divider;
 	[ FoldoutGroup( "Configure" ), SerializeField ] GameObject prefab_ground_start;
 	[ FoldoutGroup( "Configure" ), SerializeField ] GameObject prefab_ground_end;
+	[ FoldoutGroup( "Configure" ), SerializeField ] GameObject prefab_plinko;
 	[ FoldoutGroup( "Configure" ), SerializeField ] float prefab_ground_length;
+	[ FoldoutGroup( "Configure" ), SerializeField ] float prefab_plinko_offset;
     List< GameObject > environemt_gameObject_list = new List< GameObject >();
 
 	int spawn_index_start;
@@ -131,7 +133,9 @@ public class ToolGroundSpawner : ScriptableObject
 
 	void SpawnPlinko()
 	{
-
+		var plinko = PrefabUtility.InstantiatePrefab( prefab_plinko ) as GameObject;
+		plinko.transform.position = Vector3.forward * ( spawn_count ) * prefab_ground_length + prefab_plinko_offset * Vector3.forward;
+		plinko.transform.SetSiblingIndex( spawn_count + spawn_index_start );
 	}
 #endregion
 
