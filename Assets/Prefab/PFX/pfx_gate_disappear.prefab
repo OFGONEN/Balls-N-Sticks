@@ -143,7 +143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19882686, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
@@ -152,3 +152,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 462254, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
   m_PrefabInstance: {fileID: 6761099934736704509}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6761099934736838449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 134348, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
+  m_PrefabInstance: {fileID: 6761099934736704509}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &275055578350698832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6761099934736838449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2f92ebf525940729531c6d64948931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
