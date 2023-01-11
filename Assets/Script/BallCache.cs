@@ -36,6 +36,8 @@ public class BallCache : SharedIntNotifier
 
 	public BallData GetBallData() 
 	{
-		return ball_data_stack.Pop();
+		var ballData = ball_data_stack.Pop();
+		SharedValue = ball_data_stack.Count;
+		return ballData;
 	}
 }
