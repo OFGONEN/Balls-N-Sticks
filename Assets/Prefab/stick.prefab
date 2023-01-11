@@ -99,8 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stick_side_left: {fileID: 1573450586844336260}
   stick_side_right: {fileID: 1932020400879650040}
-  stick_side_right_punchScale: {fileID: 4814520674250605236}
   stick_side_left_punchScale: {fileID: 3388695903611598237}
+  stick_side_right_punchScale: {fileID: 4814520674250605236}
+  event_particle_spawn: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
 --- !u!1 &7381397335923446332
 GameObject:
   m_ObjectHideFlags: 0

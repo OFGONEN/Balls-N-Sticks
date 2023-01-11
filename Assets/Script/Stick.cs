@@ -14,6 +14,7 @@ public class Stick : MonoBehaviour
 	[ SerializeField ] Transform stick_side_right;
 	[ SerializeField ] TweenPunchScale stick_side_left_punchScale;
 	[ SerializeField ] TweenPunchScale stick_side_right_punchScale;
+	[ SerializeField ] ParticleSpawnEvent event_particle_spawn;
 
 	RecycledSequence recycledSequence = new RecycledSequence();
 
@@ -35,6 +36,12 @@ public class Stick : MonoBehaviour
 	[ Button() ]
 	public void OnStickLengthGained( float delta )
 	{
+		var particlePositionLeft  = stick_side_left.position + stick_side_left.right * -1f * stick_length / 2f;
+		var particlePositionRight = stick_side_right.position + stick_side_right.right * stick_length / 2f;
+
+		event_particle_spawn.Raise( "stick_grow", particlePositionLeft );
+		event_particle_spawn.Raise( "stick_grow", particlePositionRight );
+
 		stick_length = Mathf.Min( stick_length + delta, GameSettings.Instance.stick_length_max );
 		TweenUpdateStick();
 	}
