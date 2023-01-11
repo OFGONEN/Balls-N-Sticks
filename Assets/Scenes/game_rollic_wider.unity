@@ -1294,7 +1294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046890173963113791, guid: 3a31b376c13538b4ebb975a9a8f42091, type: 3}
       propertyPath: value
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6200798667638195569, guid: 3a31b376c13538b4ebb975a9a8f42091, type: 3}
       propertyPath: ball_spawn_level.y
@@ -5393,7 +5393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6178599397043734288, guid: 3971421298db0744ea3e5d2b9c836776, type: 3}
       propertyPath: value
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6459176263685776385, guid: 3971421298db0744ea3e5d2b9c836776, type: 3}
       propertyPath: m_RootOrder
@@ -12750,7 +12750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046890173963113791, guid: 3a31b376c13538b4ebb975a9a8f42091, type: 3}
       propertyPath: value
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6200798667638195569, guid: 3a31b376c13538b4ebb975a9a8f42091, type: 3}
       propertyPath: ball_spawn_level.y
