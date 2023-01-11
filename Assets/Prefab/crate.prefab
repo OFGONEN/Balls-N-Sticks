@@ -229,6 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945695909254940052}
   - component: {fileID: 3046890173963113791}
+  - component: {fileID: 8594937968475930453}
   m_Layer: 29
   m_Name: logic_int
   m_TagString: Untagged
@@ -291,13 +292,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onComparisionUnityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9005349842962656585}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 3046890173963113791}
+        m_TargetAssemblyTypeName: IntValue, Assembly-CSharp
+        m_MethodName: CheckIfEqual
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -306,13 +304,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 118816732550347755}
-        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
-        m_MethodName: SetParent
-        m_Mode: 2
+  onComparisionUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2233380841604635902}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 2736112017872256929}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -333,6 +334,54 @@ MonoBehaviour:
       - m_Target: {fileID: 6200798667638195569}
         m_TargetAssemblyTypeName: BallSpawnerCrate, Assembly-CSharp
         m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1539235634802522051}
+        m_TargetAssemblyTypeName: FFStudio.ParticleSpawner, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8594937968475930453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238905418260827500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced0f1e42f0d0455e998d43366b153f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onAwakeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3046890173963113791}
+        m_TargetAssemblyTypeName: IntValue, Assembly-CSharp
+        m_MethodName: ForceUpdate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -520,7 +569,7 @@ MonoBehaviour:
   - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
     alias: crate_explode
     parent: 0
-    offset: {x: 0, y: 0, z: 0}
+    offset: {x: 0, y: 0.25, z: 0}
     size: 1
 --- !u!1001 &609834919400995671
 PrefabInstance:
@@ -746,6 +795,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
+      propertyPath: collision_respond_data_array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
+      propertyPath: collision_respond_data_array.Array.data[0].collision_layer
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
       propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -769,6 +826,10 @@ PrefabInstance:
       propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3046890173963113791}
+    - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
+      propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
       propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -804,6 +865,10 @@ PrefabInstance:
     - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
       propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
+      propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3015635581122599483, guid: c2559a6a66c229e4cb6c1ae9f5197415, type: 3}
       propertyPath: collision_respond_data_array.Array.data[0].collision_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
