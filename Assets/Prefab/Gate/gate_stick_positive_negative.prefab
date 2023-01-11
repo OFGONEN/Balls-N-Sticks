@@ -98,8 +98,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3017043643116488888, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
       propertyPath: m_text
-      value: -20
+      value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 3017043643116488888, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: ff23a17416113dc4fbf292a990963b76, type: 2}
     - target: {fileID: 3069070546741235172, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -148,6 +152,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: gate_stick_positive_negative
       objectReference: {fileID: 0}
+    - target: {fileID: 5578913029714537307, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
+      propertyPath: m_text
+      value: +1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578913029714537307, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d2c5727e137da4a96f5ab254f928fe, type: 2}
     - target: {fileID: 6278785006620205413, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 4
