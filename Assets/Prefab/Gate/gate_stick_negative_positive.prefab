@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gate_stick_negative_positive
       objectReference: {fileID: 0}
+    - target: {fileID: 5578913029714537307, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
+      propertyPath: m_text
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 6278785006620205413, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 4

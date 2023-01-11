@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3017043643116488888, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
+      propertyPath: m_text
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 3069070546741235172, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
       propertyPath: m_RootOrder
       value: 0
