@@ -529,62 +529,6 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 9111737867376589836}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 5000704544089806101}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DoPunchScale
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Substract
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: TweenPunchScale, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: IntValue, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735725313469702409, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
-      propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2601354484714642909, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
       propertyPath: m_Layer
       value: 30
@@ -596,6 +540,62 @@ PrefabInstance:
     - target: {fileID: 5410668658221649264, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
       propertyPath: m_Name
       value: gate_ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 9111737867376589836}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 5000704544089806101}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DoPunchScale
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Substract
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TweenPunchScale, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: IntValue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819125716280493140, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
+      propertyPath: onTriggerUnityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7784183353572882946, guid: 2c6be030df6288b47bc2cbc0bfdcea64, type: 3}
       propertyPath: collision_respond_data_array.Array.size
