@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1090ffb03725f44c818ff2a3358ee68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alias: ball_deposit
+  alias: ball_cache
 --- !u!1001 &6248273332549425578
 PrefabInstance:
   m_ObjectHideFlags: 0
