@@ -38,6 +38,10 @@ namespace FFStudio
         [ LabelText( "Follow Speed Lateral" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_lateral = 2.8f;
         [ LabelText( "Follow Offset Position" ) ] public Vector3 camera_follow_offset_position;
         [ LabelText( "Follow Offset Rotation" ) ] public Vector3 camera_follow_offset_rotation;
+        [ LabelText( "End Level Offset" ) ] public Vector3 camera_endLevel_offset;
+        [ LabelText( "End Level Rotation" ) ] public Vector3 camera_endLevel_rotation;
+        [ LabelText( "End Level Transition Duration" ) ] public float camera_endLevel_transition_duration;
+        [ LabelText( "End Level Transition Ease" ) ] public Ease camera_endLevel_transition_ease;
     
     [ Title( "Project Setup", "These settings should not be edited by Level Designer(s).", TitleAlignments.Centered ) ]
         public int maxLevelCount;
