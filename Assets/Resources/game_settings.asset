@@ -32,7 +32,7 @@ MonoBehaviour:
   camera_follow_speed_depth: 2.8
   camera_follow_speed_lateral: 2.8
   camera_follow_offset_position: {x: 0, y: 6, z: -6.5}
-  camera_follow_offset_rotation: {x: 20.000004, y: -0, z: -0}
+  camera_follow_offset_rotation: {x: 20.000006, y: -0, z: -0}
   maxLevelCount: 1
   game_forward: {x: 0, y: 0, z: 1}
   character_movement_rotate_cofactor: 10
