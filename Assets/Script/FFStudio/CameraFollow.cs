@@ -37,7 +37,7 @@ namespace FFStudio
 			ResetCameraPositionAndRotation( transform_target );
 		}
 
-        void Update()
+        void FixedUpdate()
         {
             updateMethod();
         }
