@@ -27,6 +27,7 @@ public class BallSpawnerPlinko : BallSpawner
 #endregion
 
 #region API
+	[ Button() ]
     public void StartSpawnSequence()
     {
 		var sequence = recycledSequence.Recycle();
