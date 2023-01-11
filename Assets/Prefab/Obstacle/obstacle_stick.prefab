@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5880546678315691007, guid: aaa2610849976ad45b3086d9305f1f03, type: 3}
       propertyPath: m_Name
-      value: obstacle_stick_base
+      value: obstacle_stick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2610849976ad45b3086d9305f1f03, type: 3}

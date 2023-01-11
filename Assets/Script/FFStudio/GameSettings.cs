@@ -17,15 +17,15 @@ namespace FFStudio
     
     [ Title( "Stick" ) ]
 		[ LabelText( "Stick Max Length " ), Min( 0 ) ] public float stick_length_max;
+		[ LabelText( "Stick Update Duration" ), Min( 0 ) ] public float stick_update_duration;
+		[ LabelText( "Stick Update Ease" ), Min( 0 ) ] public Ease stick_update_ease;
 
     [ Title( "Character" ) ]
 		[ LabelText( "Movement Forward Speed" ) ] public float character_movement_forward_speed;
-		[ LabelText( "Movement Lateral Input Cofactor" ) ] public float character_movement_lateral_cofactor;
 		[ LabelText( "Movement Lateral Speed" ) ] public float character_movement_lateral_speed;
 		[ LabelText( "Movement Lateral Clamp" ) ] public Vector2 character_movement_lateral_clamp;
 		[ LabelText( "Movement Rotate Speed" ) ] public float character_movement_rotate_speed;
-		[ LabelText( "Movement Rotate Cofactor" ) ] public float character_movement_rotate_cofactor;
-		[ LabelText( "Movement Rotate Deceleration" ) ] public float character_movement_rotate_deceleration;
+		[ LabelText( "Movement Rotate Return Speed" ) ] public float character_movement_rotate_deceleration;
 		[ LabelText( "Movement Rotate Clamp" ) ] public Vector2 character_movement_rotate_clamp;
 		[ LabelText( "Victory Rotate Duration" ) ] public float character_victory_rotate_duration;
 		[ LabelText( "Victory Rotate Ease" ) ] public Ease character_victory_rotate_ease;
@@ -42,6 +42,8 @@ namespace FFStudio
     [ Title( "Project Setup", "These settings should not be edited by Level Designer(s).", TitleAlignments.Centered ) ]
         public int maxLevelCount;
 		[ LabelText( "Game's Forward" ) ] public Vector3 game_forward;
+		[ LabelText( "Game's Movement Rotate Cofactor" ) ] public float character_movement_rotate_cofactor;
+		[ LabelText( "Game's Movement Lateral Input Cofactor" ) ] public float character_movement_lateral_cofactor;
 
 		// Info: 3 groups below (coming from template project) are foldout by design: They should remain hidden.
 		[ FoldoutGroup( "Remote Config" ) ] public bool useRemoteConfig_GameSettings;

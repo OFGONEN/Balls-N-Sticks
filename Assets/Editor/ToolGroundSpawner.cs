@@ -17,7 +17,8 @@ public class ToolGroundSpawner : ScriptableObject
 	
 	[ FoldoutGroup( "Configure" ), SerializeField ] GameObject prefab_ground;
 	[ FoldoutGroup( "Configure" ), SerializeField ] GameObject prefab_divider;
-	[ FoldoutGroup( "Configure" ), SerializeField ] GameObject prefab_end;
+	[ FoldoutGroup( "Configure" ), SerializeField ] GameObject prefab_ground_start;
+	[ FoldoutGroup( "Configure" ), SerializeField ] GameObject prefab_ground_end;
 	[ FoldoutGroup( "Configure" ), SerializeField ] float prefab_ground_length;
     List< GameObject > environemt_gameObject_list = new List< GameObject >();
 
@@ -46,6 +47,8 @@ public class ToolGroundSpawner : ScriptableObject
 
 		spawn_index_start = startIndex + 1;
 		spawn_count = 0;
+
+		SpawnGroundStart();
 
 		for( var i = 0; i < level_code.Length; i++ )
 		{
@@ -99,6 +102,15 @@ public class ToolGroundSpawner : ScriptableObject
 		spawn_count += count;
 	}
 
+	void SpawnGroundStart()
+	{
+		var groundStart = PrefabUtility.InstantiatePrefab( prefab_ground_start ) as GameObject;
+		groundStart.transform.position = Vector3.forward * ( spawn_count ) * prefab_ground_length;
+		groundStart.transform.SetSiblingIndex( spawn_count + spawn_index_start );
+
+		spawn_count++;
+	}
+
 	void SpawnGroundDivider()
 	{
 		var groundDivider = PrefabUtility.InstantiatePrefab( prefab_divider ) as GameObject;
@@ -110,9 +122,9 @@ public class ToolGroundSpawner : ScriptableObject
 
 	void SpawnGroundEnd()
 	{
-		var groundDivider = PrefabUtility.InstantiatePrefab( prefab_end ) as GameObject;
-		groundDivider.transform.position = Vector3.forward * ( spawn_count ) * prefab_ground_length;
-		groundDivider.transform.SetSiblingIndex( spawn_count + spawn_index_start );
+		var groundEnd = PrefabUtility.InstantiatePrefab( prefab_ground_end ) as GameObject;
+		groundEnd.transform.position = Vector3.forward * ( spawn_count ) * prefab_ground_length;
+		groundEnd.transform.SetSiblingIndex( spawn_count + spawn_index_start );
 
 		spawn_count++;
 	}

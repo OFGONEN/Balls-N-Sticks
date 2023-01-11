@@ -23,7 +23,7 @@ public class Ball : MonoBehaviour
     [ SerializeField ] MeshFilter _meshFilter;
     [ SerializeField ] Collider _collider;
     [ SerializeField ] Rigidbody _rigidbody;
-    [ SerializeField ] ParticleSpawner _particleSpawnner; // Upgrade, Destory, Cache, Currency
+    [ SerializeField ] ParticleSpawner _particleSpawnner; // Upgrade, Destory, Cache, Currency, Spawn
 
     RecycledTween recycledTween = new RecycledTween();
 #endregion
@@ -45,13 +45,15 @@ public class Ball : MonoBehaviour
 
 		ball_data = data;
 		UpdateBall();
+
+		_particleSpawnner.Spawn( 4 );
 	}
 
 	public void DoMultiply()
 	{
 		var ball = ball_pool.GetEntity();
 
-		ball.Spawn( transform.position + GameSettings.Instance.ball_multiply_offset, transform.forward, _rigidbody.velocity.magnitude, ball_data );
+		ball.Spawn( transform.position + GameSettings.Instance.ball_multiply_offset, Vector3.forward, _rigidbody.velocity.magnitude, ball_data );
 	}
 
     public void DoUpgrade()
