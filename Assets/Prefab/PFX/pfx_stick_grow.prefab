@@ -138,8 +138,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19804050, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
+      propertyPath: autoRandomSeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804050, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 50
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 19831716, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
       propertyPath: stopAction
@@ -151,7 +155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19831716, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 198301761303766644, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
       propertyPath: playOnAwake
@@ -163,10 +167,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198301761303766644, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
+--- !u!1 &7384702745120586636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147642, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
+  m_PrefabInstance: {fileID: 7384702745120471862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7198543870649837566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7384702745120586636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2f92ebf525940729531c6d64948931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7384702745120793288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 465406, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
