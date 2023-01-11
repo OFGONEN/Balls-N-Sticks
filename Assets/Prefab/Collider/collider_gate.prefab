@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 3368833712626179062}
   - component: {fileID: 7929763932953301003}
   - component: {fileID: 672144168299850210}
+  - component: {fileID: 4721135205331651775}
   m_Layer: 30
   m_Name: collider_gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9140588292962130147
 Transform:
@@ -93,9 +94,9 @@ MonoBehaviour:
     trigger_event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: a80b76c16d6517746a6b818ea9ea0daa, type: 2}
-          m_TargetAssemblyTypeName: BallInterfaceCollidderReceiver, Assembly-CSharp
-          m_MethodName: CacheBall
+        - m_Target: {fileID: 4721135205331651775}
+          m_TargetAssemblyTypeName: TriggerFilter, Assembly-CSharp
+          m_MethodName: OnTrigger
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -105,3 +106,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &4721135205331651775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237221641866999269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65670f622a618df449e686035b7292b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTriggerUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a80b76c16d6517746a6b818ea9ea0daa, type: 2}
+        m_TargetAssemblyTypeName: BallInterfaceCollidderReceiver, Assembly-CSharp
+        m_MethodName: CacheBall
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
