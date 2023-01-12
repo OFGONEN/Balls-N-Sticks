@@ -321,6 +321,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shared_finger_update: {fileID: 11400000, guid: e7fd71c5fbd1f2440b96c8b73f34e7d6, type: 2}
+  notif_finishLine_reference: {fileID: 11400000, guid: 9239056ef524741e6a1cdcf75fa251cb, type: 2}
+  notif_level_progress: {fileID: 11400000, guid: 43438d720c16f2e4aa5a19d520e1e15f, type: 2}
   hand_target_left: {fileID: 7236320579509342666}
   hand_target_right: {fileID: 5569977233048836718}
   hand_hint_left: {fileID: 8284992856054589589}
