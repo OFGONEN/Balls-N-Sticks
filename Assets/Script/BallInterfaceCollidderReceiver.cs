@@ -64,6 +64,11 @@ public class BallInterfaceCollidderReceiver : ScriptableObject , BallInterface
 	{
 		_ball.OnFinishLineTrigger();
 	}
+
+	public void DoApplyForce( Transform forceOrigin )
+	{
+		_ball.DoApplyForce( forceOrigin );
+	}
 #endregion
 
 #region Implementation

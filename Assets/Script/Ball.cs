@@ -122,6 +122,12 @@ public class Ball : MonoBehaviour , IClusterEntity
 		_rigidbody.angularDrag   = ball_data.BallAngularDrag;
 	}
 
+	public void DoApplyForce( Transform forceOrigin )
+	{
+		FFLogger.Log( "Force Origin: " + forceOrigin.forward * ball_data.BallAppliedForce, forceOrigin );
+		_rigidbody.AddForce( forceOrigin.forward * ball_data.BallAppliedForce, ForceMode.Impulse );
+	}
+
 	public void Subscribe_Cluster()
 	{
 		cluster_ball.Subscribe( this );
