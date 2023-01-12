@@ -21,7 +21,7 @@ MonoBehaviour:
   character_movement_forward_speed: 3.5
   character_movement_lateral_speed: 8
   character_movement_rotate_speed: 5
-  character_movement_rotate_deceleration: 3
+  character_movement_rotate_deceleration: 8
   character_movement_rotate_clamp: {x: -45, y: 45}
   character_victory_rotate_duration: 0.3
   character_victory_rotate_ease: 12
