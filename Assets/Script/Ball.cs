@@ -7,12 +7,13 @@ using FFStudio;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 
-public class Ball : MonoBehaviour
+public class Ball : MonoBehaviour , IClusterEntity
 {
 #region Fields
   [ Title( "Setup" ) ]
     [ SerializeField ] bool isPooled;
     [ SerializeField ] FloatGameEvent event_currency_gained;
+    [ SerializeField ] Cluster cluster_ball;
 
   [ Title( "Shared" ) ]
     [ SerializeField ] BallCache ball_cache_data;
@@ -33,6 +34,15 @@ public class Ball : MonoBehaviour
 #endregion
 
 #region Unity API
+	private void OnEnable()
+	{
+		Subscribe_Cluster();
+	}
+
+	private void OnDisable()
+	{
+		UnSubscribe_Cluster();
+	}
 #endregion
 
 #region API
@@ -110,6 +120,27 @@ public class Ball : MonoBehaviour
 		_rigidbody.mass          = ball_data.BallMass;
 		_rigidbody.drag          = ball_data.BallDrag;
 		_rigidbody.angularDrag   = ball_data.BallAngularDrag;
+	}
+
+	public void Subscribe_Cluster()
+	{
+		cluster_ball.Subscribe( this );
+	}
+
+	public void UnSubscribe_Cluster()
+	{
+		cluster_ball.UnSubscribe( this );
+	}
+
+	public void OnUpdate_Cluster()
+	{
+		var velocity = _rigidbody.velocity;
+		_rigidbody.velocity = velocity.normalized * Mathf.Min( ball_data.BallSpeedMax, velocity.magnitude );
+	}
+
+	public int GetID()
+	{
+		return GetInstanceID();
 	}
 #endregion
 

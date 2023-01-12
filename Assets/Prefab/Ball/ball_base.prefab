@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPooled: 0
   event_currency_gained: {fileID: 11400000, guid: e11530277c7cf034bb80a793e8925b6e, type: 2}
+  cluster_ball: {fileID: 11400000, guid: 737af276daaf16f4a8d040d7bc44adf5, type: 2}
   ball_cache_data: {fileID: 11400000, guid: 68e8c7d9b26045144b1771d2e1bce148, type: 2}
   ball_pool: {fileID: 11400000, guid: 53958f55ff87f8b458fbe9c8a391482e, type: 2}
   ball_data: {fileID: 11400000, guid: 7711b2ec6f5a4bd45a2bbd979bc46814, type: 2}
