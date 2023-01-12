@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 2179331278279680745, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.3137255
+      objectReference: {fileID: 0}
     - target: {fileID: 2409390779368235044, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 4
@@ -191,6 +195,10 @@ PrefabInstance:
     - target: {fileID: 8362368419729361866, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362368419743508082, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.3137255
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23c7af6c37f09654ea9857d33b2e294d, type: 3}
