@@ -15,7 +15,7 @@ MonoBehaviour:
   ball_mass: 1
   ball_drag: 1
   ball_angularDrag: 0
-  ball_speed_max: 10
+  ball_speed_max: 20
   ball_render_data_array:
   - ball_material: {fileID: 2100000, guid: 437d91e9d23b6ea47ba245fa4d64e1cf, type: 2}
     ball_mesh: {fileID: 8712223550844136875, guid: 8d659731b03c50f42929015d2af37975, type: 3}
