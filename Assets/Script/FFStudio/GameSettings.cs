@@ -17,8 +17,10 @@ namespace FFStudio
     
     [ Title( "Stick" ) ]
 		[ LabelText( "Stick Max Length " ), Min( 0 ) ] public float stick_length_max;
+		[ LabelText( "Stick Max Default " ), Min( 0 ) ] public float stick_length_default = 1f;
 		[ LabelText( "Stick Update Duration" ), Min( 0 ) ] public float stick_update_duration;
 		[ LabelText( "Stick Update Ease" ), Min( 0 ) ] public Ease stick_update_ease;
+		[ LabelText( "Stick Force Collider Cofactor" ), Min( 0 ) ] public float stick_forceCollider_cofactor = 0.9f;
 
     [ Title( "Character" ) ]
 		[ LabelText( "Movement Forward Speed" ) ] public float character_movement_forward_speed;

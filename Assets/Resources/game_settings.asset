@@ -16,8 +16,10 @@ MonoBehaviour:
   ball_punchScale_duration: 0.35
   ball_multiply_offset: {x: 0, y: 0, z: 0}
   stick_length_max: 3
+  stick_length_default: 1
   stick_update_duration: 1
   stick_update_ease: 12
+  stick_forceCollider_cofactor: 0.9
   character_movement_forward_speed: 3.5
   character_movement_lateral_speed: 8
   character_movement_rotate_speed: 5
