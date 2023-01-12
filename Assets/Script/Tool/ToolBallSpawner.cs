@@ -1,4 +1,5 @@
 /* Created by and for usage of FF Studios (2021). */
+#if UNITY_EDITOR
 
 using System.Collections;
 using System.Collections.Generic;
@@ -76,11 +77,10 @@ public class ToolBallSpawner : MonoBehaviour
 #endregion
 
 #region Editor Only
-#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
 		Handles.DrawWireArc( transform.position.SetY( 0 ), Vector3.up, Vector3.left, 360, ball_spawn_radius );
 	}
-#endif
 #endregion
 }
+#endif
