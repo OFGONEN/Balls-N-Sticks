@@ -80,7 +80,7 @@ namespace FFStudio
 
 			transform.position = position
 				.SetX( Mathf.Lerp( position.x, targetPosition.x, Time.fixedDeltaTime * GameSettings.Instance.camera_follow_speed_depth ) )
-				.SetY( targetPosition.y )
+				.SetY( GameSettings.Instance.camera_follow_offset_position.y )
 				.SetZ( Mathf.Lerp( position.z, targetPosition.z, Time.fixedDeltaTime * GameSettings.Instance.camera_follow_speed_lateral ) );
 		}
 

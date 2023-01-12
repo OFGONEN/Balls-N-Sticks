@@ -185,6 +185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gate_ball_multiply
       objectReference: {fileID: 0}
+    - target: {fileID: 4850809211582002198, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
+      propertyPath: managedReferences[4884349657468895233].endValue.y
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 8119158626237398855, guid: 64be35a4de68ce247a4e213a380aa72a, type: 3}
       propertyPath: m_RootOrder
       value: 0
