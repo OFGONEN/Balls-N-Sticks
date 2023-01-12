@@ -19,7 +19,7 @@ MonoBehaviour:
   stick_update_duration: 1
   stick_update_ease: 12
   character_movement_forward_speed: 3.5
-  character_movement_lateral_speed: 2
+  character_movement_lateral_speed: 8
   character_movement_rotate_speed: 5
   character_movement_rotate_deceleration: 3
   character_movement_rotate_clamp: {x: -45, y: 45}
