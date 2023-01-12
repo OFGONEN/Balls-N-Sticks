@@ -12,8 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc122a0e082a4a8a8336783abba8bdd, type: 3}
   m_Name: shared_ball_data_1
   m_EditorClassIdentifier: 
+  ball_force: 0
   ball_mass: 1
-  ball_render_data_array: []
+  ball_drag: 1
+  ball_angularDrag: 0
+  ball_speed_max: 20
+  ball_render_data_array:
+  - ball_material: {fileID: 2100000, guid: 437d91e9d23b6ea47ba245fa4d64e1cf, type: 2}
+    ball_mesh: {fileID: -776770033807633869, guid: 3ecd902a1ce07c04ab529a44af6fc8bb, type: 3}
+  - ball_material: {fileID: 2100000, guid: 437d91e9d23b6ea47ba245fa4d64e1cf, type: 2}
+    ball_mesh: {fileID: 8652889637981801955, guid: 254aa7d76cdc8784daef8b6749e27f42, type: 3}
+  - ball_material: {fileID: 2100000, guid: 437d91e9d23b6ea47ba245fa4d64e1cf, type: 2}
+    ball_mesh: {fileID: -6911600628754135194, guid: c081d15da38b08e4e986eb5c7fbb7944, type: 3}
+  - ball_material: {fileID: 2100000, guid: 437d91e9d23b6ea47ba245fa4d64e1cf, type: 2}
+    ball_mesh: {fileID: 1060906404494647042, guid: 53d9307c74ef16143a812f66afdb8aa2, type: 3}
+  - ball_material: {fileID: 2100000, guid: 437d91e9d23b6ea47ba245fa4d64e1cf, type: 2}
+    ball_mesh: {fileID: 6055889700340971574, guid: 3784f8c797f5e3d43a9c25b93fdf5afd, type: 3}
+  - ball_material: {fileID: 2100000, guid: 437d91e9d23b6ea47ba245fa4d64e1cf, type: 2}
+    ball_mesh: {fileID: 2827461007565925219, guid: a3fc30279db28ea418badc8eb384361e, type: 3}
+  - ball_material: {fileID: 2100000, guid: 437d91e9d23b6ea47ba245fa4d64e1cf, type: 2}
+    ball_mesh: {fileID: -825604911926736399, guid: 9503390068a20824cb399f79095f4647, type: 3}
+  - ball_material: {fileID: 2100000, guid: 437d91e9d23b6ea47ba245fa4d64e1cf, type: 2}
+    ball_mesh: {fileID: -8700752771188661654, guid: 793f96610d344004780fbd4857b8742b, type: 3}
   ball_material_physic: {fileID: 13400000, guid: dfd2aae4a22e14c4f8b07efcbff40f1b, type: 2}
-  ball_currency_range: {x: 0.5, y: 1}
+  ball_currency_range: {x: 0.1, y: 0.4}
   ball_nextData: {fileID: 11400000, guid: e534ee147178e20419bf9d498c2484f5, type: 2}

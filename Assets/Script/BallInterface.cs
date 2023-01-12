@@ -12,4 +12,6 @@ public interface BallInterface
 	public void DoDestoryed();
 	public void DoCached();
 	public void DoConvertCurrency( float cofactor );
+	public void OnFinishLineTrigger();
+	public void DoApplyForce( Transform forceOrigin );
 }

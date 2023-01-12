@@ -31,6 +31,7 @@ public class TweenPunchScale : MonoBehaviour
 #endregion
 
 #region API
+    [ Button() ]
     public void DoPunchScale()
     {
         if( recycledTween.IsPlaying() && !punch_isInterruptable ) return;

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8927142722521276206}
   - component: {fileID: 8588874995386570243}
-  - component: {fileID: 2558259146949914715}
-  - component: {fileID: 6561353768907410865}
+  - component: {fileID: 7195143113123876433}
+  - component: {fileID: 4242898949665736701}
   m_Layer: 29
   m_Name: collider_obstacle_ball
   m_TagString: Untagged
@@ -42,12 +42,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2529159525406137380}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2558259146949914715
+  m_Size: {x: 0.6, y: 0.4, z: 0.6}
+  m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!114 &7195143113123876433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2529159525406137380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd209e93f371934494f5cbe9870d1f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c5cf41ea274c404ea73899fb5b80769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isEnabled: 1
@@ -64,9 +64,9 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6561353768907410865}
-        m_TargetAssemblyTypeName: FFStudio.CollisionRouter, Assembly-CSharp
-        m_MethodName: OnCollision
+      - m_Target: {fileID: 4242898949665736701}
+        m_TargetAssemblyTypeName: FFStudio.TriggerRouter, Assembly-CSharp
+        m_MethodName: OnTrigger
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -76,7 +76,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6561353768907410865
+--- !u!114 &4242898949665736701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,12 +85,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2529159525406137380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 401aebb796b51400c825ce52592b53e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f5b20d65233a74c8c4ced8fae5f66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collision_respond_data_array:
+  trigger_respond_data_array:
   - collision_layer: 28
-    collision_event:
+    trigger_event:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000, guid: a80b76c16d6517746a6b818ea9ea0daa, type: 2}

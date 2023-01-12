@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEditor;
 
@@ -12,20 +13,28 @@ public class Character : MonoBehaviour
 #region Fields
   [ Title( "Shared" ) ]
     [ SerializeField ] FingerUpdate shared_finger_update; 
-    [ SerializeField ] SharedReferenceNotifier notif_stick_left; 
-    [ SerializeField ] SharedReferenceNotifier notif_stick_right; 
+	[ SerializeField ] SharedReferenceNotifier notif_finishLine_reference;
+	[ SerializeField ] SharedFloatNotifier notif_level_progress;
 
   [ Title( "Components" ) ]
+    [ SerializeField ] Transform hand_target_left; 
+    [ SerializeField ] Transform hand_target_right;
+	[ SerializeField ] Transform hand_hint_left;
+	[ SerializeField ] Transform hand_hint_right;
+
     [ SerializeField ] Transform gfx_parent_transform;
     [ SerializeField ] Rigidbody _rigidBody;
     [ SerializeField ] Animator _animator;
 
-	Transform stick_left_transform;
-	Transform stick_right_transform;
-
 	Vector3 character_position;
 	float character_rotation;
 
+	float finishLine_position;
+	float finishLine_distance;
+
+	RecycledTween recycledTween = new RecycledTween();
+
+	UnityIntMessage onIKPass;
 	UnityMessage onFixedUpdate;
     UnityMessage onUpdate;
 	UnityMessage onFingerDown;
@@ -45,15 +54,19 @@ public class Character : MonoBehaviour
     {
 		EmptyDelegates();
 
+		onIKPass           = AnimatorIKUpdate;
 		character_position = transform.position;
 	}
 
-	private void Start()
+	void Start()
 	{
-		stick_left_transform  = notif_stick_left.sharedValue as Transform;
-		stick_right_transform = notif_stick_right.sharedValue as Transform;
-	}
+		_rigidBody.mass = GameSettings.Instance.character_mass;
 
+		notif_level_progress.SetValue_NotifyAlways( 0 );
+
+		finishLine_position = ( notif_finishLine_reference.sharedValue as Transform ).position.z;
+		finishLine_distance = finishLine_position - transform.position.z;
+	}
 
     private void FixedUpdate()
     {
@@ -62,6 +75,7 @@ public class Character : MonoBehaviour
 
 	private void Update()
 	{
+		notif_level_progress.SharedValue = 1f - Mathf.InverseLerp( 0, finishLine_distance, finishLine_position - transform.position.z );
 		onUpdate();
 	}
 #endregion
@@ -86,23 +100,71 @@ public class Character : MonoBehaviour
 
 	public void OnAnimatorIKUpdate( int layer )
 	{
-		_animator.SetIKPositionWeight( AvatarIKGoal.LeftHand, 1 );
-		_animator.SetIKPositionWeight( AvatarIKGoal.RightHand, 1 );
+		onIKPass( layer );
+	}
+	
+	public void OnFinishLine()
+	{
+		EmptyDelegates();
+		onIKPass = ExtensionMethods.EmptyMethod;
+		_animator.SetTrigger( "victory" );
 
-		_animator.SetIKPosition( AvatarIKGoal.LeftHand, stick_left_transform.position );
-		_animator.SetIKPosition( AvatarIKGoal.RightHand, stick_right_transform.position );
+		recycledTween.Recycle( transform.DORotate( Vector3.zero,
+			GameSettings.Instance.character_victory_rotate_duration )
+			.SetEase( GameSettings.Instance.character_victory_rotate_ease ) );
+	}
+
+	[ Button() ]
+	public void OnCharacterBump()
+	{
+		EmptyDelegates();
+
+		var delta = Vector3.back * GameSettings.Instance.character_bump_delta;
+
+		character_position += delta;
+		character_rotation = 0;
+
+		var sequence = DOTween.Sequence();
+		sequence.Append( transform.DORotate( Vector3.zero, 
+			GameSettings.Instance.character_victory_rotate_duration )
+			.SetEase( GameSettings.Instance.character_victory_rotate_ease ) );
+		sequence.Join( transform.DOMove( delta,
+			GameSettings.Instance.character_bump_duration )
+			.SetEase( GameSettings.Instance.character_bump_ease )
+			.SetRelative()
+		);
+		sequence.OnComplete( StartMovement );
 	}
 #endregion
 
 #region Implementation
+	void AnimatorIKUpdate( int layer )
+	{
+		_animator.SetIKPositionWeight( AvatarIKGoal.LeftHand, 1 );
+		_animator.SetIKPositionWeight( AvatarIKGoal.RightHand, 1 );
+		_animator.SetIKRotationWeight( AvatarIKGoal.LeftHand, 1 );
+		_animator.SetIKRotationWeight( AvatarIKGoal.RightHand, 1 );
+
+		_animator.SetIKHintPositionWeight( AvatarIKHint.LeftElbow, 1 );
+		_animator.SetIKHintPositionWeight( AvatarIKHint.RightElbow, 1 );
+
+		_animator.SetIKPosition( AvatarIKGoal.LeftHand, hand_target_left.position );
+		_animator.SetIKPosition( AvatarIKGoal.RightHand, hand_target_right.position );
+		_animator.SetIKRotation( AvatarIKGoal.LeftHand, hand_target_left.rotation );
+		_animator.SetIKRotation( AvatarIKGoal.RightHand, hand_target_right.rotation );
+
+		_animator.SetIKHintPosition( AvatarIKHint.LeftElbow, hand_hint_left.position );
+		_animator.SetIKHintPosition( AvatarIKHint.RightElbow, hand_hint_right.position );
+	}
+
 	void CalculateMovement()
 	{
 		character_position.x += shared_finger_update.DeltaScaled.x * GameSettings.Instance.character_movement_lateral_speed * GameSettings.Instance.character_movement_lateral_cofactor;
 		character_position.z += Time.deltaTime * GameSettings.Instance.character_movement_forward_speed;
 
 		character_position.x = Mathf.Clamp( character_position.x,
-			GameSettings.Instance.character_movement_lateral_clamp.x,
-			GameSettings.Instance.character_movement_lateral_clamp.y );
+			CurrentLevelData.Instance.levelData.character_movement_lateral_clamp.x,
+			CurrentLevelData.Instance.levelData.character_movement_lateral_clamp.y );
 
 		var targetRotation = character_rotation;
 		targetRotation += shared_finger_update.DeltaScaled.x * GameSettings.Instance.character_movement_rotate_cofactor;
@@ -139,10 +201,15 @@ public class Character : MonoBehaviour
 	void FirstFingerDown()
 	{
 		_animator.SetTrigger( "run" );
-		onUpdate      = CalculateMovement;
-		onFixedUpdate = Movement;
+		StartMovement();
 
 		onFingerDown = ExtensionMethods.EmptyMethod;
+	}
+
+	void StartMovement()
+	{
+		onUpdate      = CalculateMovement;
+		onFixedUpdate = Movement;
 	}
 
 	void EmptyDelegates()

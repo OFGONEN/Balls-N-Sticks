@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Sirenix.OdinInspector;
 
 public class IntValue : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class IntValue : MonoBehaviour
     [ SerializeField ] int value;
     [ SerializeField ] UnityEvent< int > onUpdateUnityEvent;
     [ SerializeField ] UnityEvent< int > onComparisionUnityEvent;
-    int value_current;
+    [ ShowInInspector, ReadOnly ] int value_current;
 #endregion
 
 #region Properties
@@ -66,10 +67,6 @@ public class IntValue : MonoBehaviour
 
 #region Editor Only
 #if UNITY_EDITOR
-	private void OnValidate()
-	{
-		ForceUpdate();
-	}
 #endif
 #endregion
 }

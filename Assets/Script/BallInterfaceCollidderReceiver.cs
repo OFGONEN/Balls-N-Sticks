@@ -25,6 +25,11 @@ public class BallInterfaceCollidderReceiver : ScriptableObject , BallInterface
         _ball = collision.collider.GetComponent< ComponentHost >().HostComponent as Ball;
     }
 
+	public void CacheBall( Collider collider )
+	{
+		_ball = collider.GetComponent< ComponentHost >().HostComponent as Ball;
+	}
+
 	public void DoMultiply()
 	{
 		_ball.DoMultiply();
@@ -53,6 +58,16 @@ public class BallInterfaceCollidderReceiver : ScriptableObject , BallInterface
 	public void Spawn( BallInterfaceSpawnData spawnData )
 	{
 		_ball.Spawn( spawnData.SpawnPosition, spawnData.SpawnDirection, spawnData.SpawnVelocity, spawnData.SpawnBallData );
+	}
+
+	public void OnFinishLineTrigger()
+	{
+		_ball.OnFinishLineTrigger();
+	}
+
+	public void DoApplyForce( Transform forceOrigin )
+	{
+		_ball.DoApplyForce( forceOrigin );
 	}
 #endregion
 

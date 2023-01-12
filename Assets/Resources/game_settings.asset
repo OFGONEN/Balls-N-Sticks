@@ -15,17 +15,35 @@ MonoBehaviour:
   ball_punchScale_power: 1
   ball_punchScale_duration: 0.35
   ball_multiply_offset: {x: 0, y: 0, z: 0}
-  character_movement_forward_speed: 1.5
-  character_movement_lateral_cofactor: 0.002
-  character_movement_lateral_speed: 10
-  character_movement_lateral_clamp: {x: -5, y: 5}
-  character_movement_rotate_speed: 50
-  character_movement_rotate_cofactor: 10
-  character_movement_rotate_deceleration: 3
+  stick_length_max: 3
+  stick_length_default: 1
+  stick_update_duration: 1
+  stick_update_ease: 12
+  stick_forceCollider_cofactor: 0.9
+  character_movement_forward_speed: 3.5
+  character_movement_lateral_speed: 8
+  character_movement_rotate_speed: 5
+  character_movement_rotate_deceleration: 8
   character_movement_rotate_clamp: {x: -45, y: 45}
+  character_victory_rotate_duration: 0.3
+  character_victory_rotate_ease: 12
+  character_bump_delta: 1.5
+  character_bump_duration: 1
+  character_bump_ease: 12
+  character_mass: 10
   camera_follow_speed_depth: 2.8
-  maxLevelCount: 1
+  camera_follow_speed_lateral: 2.8
+  camera_follow_offset_position: {x: 0, y: 6, z: -6.5}
+  camera_follow_offset_rotation: {x: 20.000006, y: -0, z: -0}
+  camera_endLevel_offset: {x: 0, y: 4, z: -14}
+  camera_endLevel_rotation: {x: 0, y: 0, z: 0}
+  camera_endLevel_transition_delay: 1
+  camera_endLevel_transition_duration: 0.75
+  camera_endLevel_transition_ease: 12
+  maxLevelCount: 2
   game_forward: {x: 0, y: 0, z: 1}
+  character_movement_rotate_cofactor: 10
+  character_movement_lateral_cofactor: 0.002
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
   ui_Entity_Move_TweenDuration: 0.5

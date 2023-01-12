@@ -7,31 +7,42 @@ using FFStudio;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 
-public class Ball : MonoBehaviour
+public class Ball : MonoBehaviour , IClusterEntity
 {
 #region Fields
   [ Title( "Setup" ) ]
     [ SerializeField ] bool isPooled;
     [ SerializeField ] FloatGameEvent event_currency_gained;
+    [ SerializeField ] Cluster cluster_ball;
 
   [ Title( "Shared" ) ]
     [ SerializeField ] BallCache ball_cache_data;
-    [ SerializeField, ShowIf( "isPooled" ) ] BallPool ball_pool;
+    [ SerializeField ] BallPool ball_pool;
     [ SerializeField ] BallData ball_data;
   [ Title( "Components" ) ]
     [ SerializeField ] Renderer _renderer;
     [ SerializeField ] MeshFilter _meshFilter;
     [ SerializeField ] Collider _collider;
     [ SerializeField ] Rigidbody _rigidbody;
-    [ SerializeField ] ParticleSpawner _particleSpawnner; // Upgrade, Destory, Cache, Currency
+    [ SerializeField ] ParticleSpawner _particleSpawnner; // Upgrade, Destory, Cache, Currency, Spawn
 
-    RecycledTween recycledTween = new RecycledTween();
+	UnityMessage onFinishLine = ExtensionMethods.EmptyMethod;
+	RecycledTween recycledTween = new RecycledTween();
 #endregion
 
 #region Properties
 #endregion
 
 #region Unity API
+	private void OnEnable()
+	{
+		Subscribe_Cluster();
+	}
+
+	private void OnDisable()
+	{
+		UnSubscribe_Cluster();
+	}
 #endregion
 
 #region API
@@ -45,13 +56,17 @@ public class Ball : MonoBehaviour
 
 		ball_data = data;
 		UpdateBall();
+
+		onFinishLine = ExtensionMethods.EmptyMethod;
+
+		_particleSpawnner.Spawn( 4 );
 	}
 
 	public void DoMultiply()
 	{
 		var ball = ball_pool.GetEntity();
 
-		ball.Spawn( transform.position + GameSettings.Instance.ball_multiply_offset, transform.forward, _rigidbody.velocity.magnitude, ball_data );
+		ball.Spawn( transform.position + GameSettings.Instance.ball_multiply_offset, Vector3.forward, _rigidbody.velocity.magnitude, ball_data );
 	}
 
     public void DoUpgrade()
@@ -85,6 +100,16 @@ public class Ball : MonoBehaviour
 		event_currency_gained.Raise( ball_data.BallCurrency * cofactor );
 	}
 
+	public void OnFinishLineTrigger()
+	{
+		onFinishLine = DoCached;
+	}
+
+	public void OnFinishLine()
+	{
+		onFinishLine();
+	}
+
     public void UpdateBall()
     {
 		var renderData = ball_data.BallRenderData;
@@ -93,6 +118,34 @@ public class Ball : MonoBehaviour
 		_meshFilter.mesh         = renderData.ball_mesh;
 		_collider.sharedMaterial = ball_data.BallPhysicMaterial;
 		_rigidbody.mass          = ball_data.BallMass;
+		_rigidbody.drag          = ball_data.BallDrag;
+		_rigidbody.angularDrag   = ball_data.BallAngularDrag;
+	}
+
+	public void DoApplyForce( Transform forceOrigin )
+	{
+		_rigidbody.AddForce( forceOrigin.forward * ball_data.BallAppliedForce, ForceMode.Impulse );
+	}
+
+	public void Subscribe_Cluster()
+	{
+		cluster_ball.Subscribe( this );
+	}
+
+	public void UnSubscribe_Cluster()
+	{
+		cluster_ball.UnSubscribe( this );
+	}
+
+	public void OnUpdate_Cluster()
+	{
+		var velocity = _rigidbody.velocity;
+		_rigidbody.velocity = velocity.normalized * Mathf.Min( ball_data.BallSpeedMax, velocity.magnitude );
+	}
+
+	public int GetID()
+	{
+		return GetInstanceID();
 	}
 #endregion
 

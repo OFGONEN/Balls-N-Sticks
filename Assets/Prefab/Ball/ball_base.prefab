@@ -33,6 +33,7 @@ Transform:
   - {fileID: 5273792639156979722}
   - {fileID: 2239496017034057655}
   - {fileID: 8060341516366924419}
+  - {fileID: 8693245014239594425}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50,8 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPooled: 0
   event_currency_gained: {fileID: 11400000, guid: e11530277c7cf034bb80a793e8925b6e, type: 2}
+  cluster_ball: {fileID: 11400000, guid: 737af276daaf16f4a8d040d7bc44adf5, type: 2}
   ball_cache_data: {fileID: 11400000, guid: 68e8c7d9b26045144b1771d2e1bce148, type: 2}
-  ball_pool: {fileID: 0}
+  ball_pool: {fileID: 11400000, guid: 53958f55ff87f8b458fbe9c8a391482e, type: 2}
   ball_data: {fileID: 11400000, guid: 7711b2ec6f5a4bd45a2bbd979bc46814, type: 2}
   _renderer: {fileID: 1405026803882251717}
   _meshFilter: {fileID: 3937011074235557242}
@@ -106,6 +108,69 @@ Transform:
   m_Father: {fileID: 3162736375492179929}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2784033128610629697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8693245014239594425}
+  - component: {fileID: 5124881762252280806}
+  m_Layer: 28
+  m_Name: logic_respond
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8693245014239594425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2784033128610629697}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3162736375492179929}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5124881762252280806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2784033128610629697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245dc21cc9428744fa28ad2d6ce7d327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventPairs:
+  - eventListener:
+      gameEvents:
+      - {fileID: 11400000, guid: 665d78f645b60b54ca6a0c5bb2234ba0, type: 2}
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 389910542763896007}
+          m_TargetAssemblyTypeName: Ball, Assembly-CSharp
+          m_MethodName: OnFinishLine
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3825434361174243713
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +316,11 @@ MonoBehaviour:
     size: 1
   - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
     alias: ball_currency
+    parent: 0
+    offset: {x: 0, y: 0, z: 0}
+    size: 1
+  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: ball_spawn
     parent: 0
     offset: {x: 0, y: 0, z: 0}
     size: 1
