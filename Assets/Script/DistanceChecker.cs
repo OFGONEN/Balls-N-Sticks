@@ -15,7 +15,7 @@ public class DistanceChecker : MonoBehaviour
     [ SerializeField ] float transform_distance;
     [ SerializeField ] UnityEvent onReferenceDistance;
 
-    Transform _transform;
+    Transform target_transform;
 
     UnityMessage onUpdate;
 #endregion
@@ -43,7 +43,7 @@ public class DistanceChecker : MonoBehaviour
 #region API
     public void CacheReference()
     {
-		_transform = notif_transform_reference.sharedValue as Transform;
+		target_transform = notif_transform_reference.sharedValue as Transform;
     }
 
     public void StartDistanceChecking()
@@ -62,7 +62,7 @@ public class DistanceChecker : MonoBehaviour
 #region Implementation
     void DistanceCheck()
     {
-        if( Vector3.Distance( transform.position, _transform.position ) <= transform_distance )
+        if( transform.position.z - target_transform.position.z <= transform_distance )
 			onReferenceDistance.Invoke();
 	}
 #endregion

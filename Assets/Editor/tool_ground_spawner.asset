@@ -17,4 +17,6 @@ MonoBehaviour:
   prefab_divider: {fileID: 237767412321979465, guid: 4a81a0f162ad6294f9520f118a92f63c, type: 3}
   prefab_ground_start: {fileID: 237767412321979465, guid: 27fc1954e8af4ae4f8b62233e085cc67, type: 3}
   prefab_ground_end: {fileID: 237767412321979465, guid: 904f996db16b6894da438df03e789849, type: 3}
+  prefab_plinko: {fileID: 8532704736674983516, guid: 9316f986e109ace4e88286fe89aeb71d, type: 3}
   prefab_ground_length: 6
+  prefab_plinko_offset: 6

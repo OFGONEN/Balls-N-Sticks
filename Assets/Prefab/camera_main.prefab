@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notifier_reference_transform_target: {fileID: 11400000, guid: af640506cdbe9aa4f90aa284a691b035, type: 2}
+  notif_plinko_reference: {fileID: 11400000, guid: a5af8135a9f960d4ebff8eabc700886a, type: 2}
+  event_camera_transition_done: {fileID: 11400000, guid: 6c3d499e343e6504a95fa17e21b663a1, type: 2}
 --- !u!1 &3747325266785291023
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,14 +229,13 @@ MonoBehaviour:
   eventPairs:
   - eventListener:
       gameEvents:
-      - {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
-      - {fileID: 11400000, guid: 28d976b368abc004a924d98b1751a17d, type: 2}
+      - {fileID: 11400000, guid: 665d78f645b60b54ca6a0c5bb2234ba0, type: 2}
     unityEvent:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7857897603248437443}
           m_TargetAssemblyTypeName: FFStudio.CameraFollow, Assembly-CSharp
-          m_MethodName: LevelFinishedResponse
+          m_MethodName: OnFinishLineResponse
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

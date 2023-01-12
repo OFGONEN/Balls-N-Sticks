@@ -59,5 +59,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5124881762252280806, guid: 323d4be5930de9f45833044870324152, type: 3}
+      propertyPath: eventPairs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124881762252280806, guid: 323d4be5930de9f45833044870324152, type: 3}
+      propertyPath: eventPairs.Array.data[1].eventListener.gameEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124881762252280806, guid: 323d4be5930de9f45833044870324152, type: 3}
+      propertyPath: eventPairs.Array.data[1].eventListener.gameEvents.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e8cfec9edbaa44adb862500e0a6326b7, type: 2}
+    - target: {fileID: 5124881762252280806, guid: 323d4be5930de9f45833044870324152, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124881762252280806, guid: 323d4be5930de9f45833044870324152, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124881762252280806, guid: 323d4be5930de9f45833044870324152, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 53958f55ff87f8b458fbe9c8a391482e, type: 2}
+    - target: {fileID: 5124881762252280806, guid: 323d4be5930de9f45833044870324152, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124881762252280806, guid: 323d4be5930de9f45833044870324152, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnEntity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124881762252280806, guid: 323d4be5930de9f45833044870324152, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FFStudio.ComponentPool`1[[Ball, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124881762252280806, guid: 323d4be5930de9f45833044870324152, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 352772876455676549}
+    - target: {fileID: 5124881762252280806, guid: 323d4be5930de9f45833044870324152, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Ball, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 323d4be5930de9f45833044870324152, type: 3}
+--- !u!114 &352772876455676549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 389910542763896007, guid: 323d4be5930de9f45833044870324152, type: 3}
+  m_PrefabInstance: {fileID: 111587911464887874}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bdab123c39194302a653053040afb98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

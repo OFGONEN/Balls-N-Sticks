@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using FFStudio;
 using DG.Tweening;
 using Sirenix.OdinInspector;
@@ -16,6 +17,7 @@ public class BallSpawnerPlinko : BallSpawner
     [ SerializeField, LabelText( "Spawn Velocity") ] Vector2 ball_spawn_velocity;
     [ SerializeField, LabelText( "Spawn Radius") ] float ball_spawn_radius;
     [ SerializeField, LabelText( "Spawn Delay") ] Vector2 ball_spawn_delay;
+    [ SerializeField, LabelText( "Spawn Complete Event") ] UnityEvent onSpawnComplete;
 
     RecycledSequence recycledSequence = new RecycledSequence();
 #endregion
@@ -27,9 +29,10 @@ public class BallSpawnerPlinko : BallSpawner
 #endregion
 
 #region API
+	[ Button() ]
     public void StartSpawnSequence()
     {
-		var sequence = recycledSequence.Recycle();
+		var sequence = recycledSequence.Recycle( onSpawnComplete.Invoke );
 
 		sequence.AppendCallback( Spawn );
 		sequence.AppendInterval( ball_spawn_delay.ReturnRandom() );

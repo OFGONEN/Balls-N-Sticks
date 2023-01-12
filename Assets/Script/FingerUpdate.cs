@@ -28,8 +28,9 @@ public class FingerUpdate : ScriptableObject
 #region API
     public void OnFingerDown( LeanFinger finger )
     {
-		finger_position_start = finger.ScreenPosition;
-		finger_position_end   = finger.ScreenPosition;
+		finger_position_start        = finger.ScreenPosition;
+		finger_position_end          = finger.ScreenPosition;
+		finger_position_scaled_delta = Vector2.zero;
 	}
 
     public void OnFingerUpdate( LeanFinger finger )

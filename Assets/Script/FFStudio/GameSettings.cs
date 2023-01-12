@@ -17,8 +17,10 @@ namespace FFStudio
     
     [ Title( "Stick" ) ]
 		[ LabelText( "Stick Max Length " ), Min( 0 ) ] public float stick_length_max;
+		[ LabelText( "Stick Max Default " ), Min( 0 ) ] public float stick_length_default = 1f;
 		[ LabelText( "Stick Update Duration" ), Min( 0 ) ] public float stick_update_duration;
 		[ LabelText( "Stick Update Ease" ), Min( 0 ) ] public Ease stick_update_ease;
+		[ LabelText( "Stick Force Collider Cofactor" ), Min( 0 ) ] public float stick_forceCollider_cofactor = 0.9f;
 
     [ Title( "Character" ) ]
 		[ LabelText( "Movement Forward Speed" ) ] public float character_movement_forward_speed;
@@ -32,12 +34,18 @@ namespace FFStudio
 		[ LabelText( "Bump Delta" ) ] public float character_bump_delta;
 		[ LabelText( "Bump Duration" ) ] public float character_bump_duration;
 		[ LabelText( "Bump Ease" ) ] public Ease character_bump_ease;
+		[ LabelText( "Mass" ) ] public float character_mass;
 
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed Depth" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
         [ LabelText( "Follow Speed Lateral" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_lateral = 2.8f;
         [ LabelText( "Follow Offset Position" ) ] public Vector3 camera_follow_offset_position;
         [ LabelText( "Follow Offset Rotation" ) ] public Vector3 camera_follow_offset_rotation;
+        [ LabelText( "End Level Offset" ) ] public Vector3 camera_endLevel_offset;
+        [ LabelText( "End Level Rotation" ) ] public Vector3 camera_endLevel_rotation;
+        [ LabelText( "End Level Transition Delay" ) ] public float camera_endLevel_transition_delay;
+        [ LabelText( "End Level Transition Duration" ) ] public float camera_endLevel_transition_duration;
+        [ LabelText( "End Level Transition Ease" ) ] public Ease camera_endLevel_transition_ease;
     
     [ Title( "Project Setup", "These settings should not be edited by Level Designer(s).", TitleAlignments.Centered ) ]
         public int maxLevelCount;
