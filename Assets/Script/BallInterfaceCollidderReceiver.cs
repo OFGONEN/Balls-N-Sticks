@@ -59,6 +59,11 @@ public class BallInterfaceCollidderReceiver : ScriptableObject , BallInterface
 	{
 		_ball.Spawn( spawnData.SpawnPosition, spawnData.SpawnDirection, spawnData.SpawnVelocity, spawnData.SpawnBallData );
 	}
+
+	public void OnFinishLineTrigger()
+	{
+		_ball.OnFinishLineTrigger();
+	}
 #endregion
 
 #region Implementation
