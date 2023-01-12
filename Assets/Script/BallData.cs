@@ -12,11 +12,13 @@ public class BallData : ScriptableObject
     [ SerializeField, LabelText( "Mass" ) ] float ball_mass;
     [ SerializeField, LabelText( "Drag" ) ] float ball_drag;
     [ SerializeField, LabelText( "Angular Drag" ) ] float ball_angularDrag;
+    [ SerializeField, LabelText( "Max Speed" ) ] float ball_speed_max;
     [ SerializeField, LabelText( "Render Data" ) ] BallRenderData[] ball_render_data_array;
     [ SerializeField, LabelText( "Physic Material" ) ] PhysicMaterial ball_material_physic;
     [ SerializeField, LabelText( "Currency Range" ) ] Vector2 ball_currency_range;
     [ SerializeField, LabelText( "Next Data" ) ] BallData ball_nextData;
 
+	public float BallSpeedMax                => ball_speed_max;
 	public float BallMass                    => ball_mass;
 	public float BallDrag                    => ball_drag;
 	public float BallAngularDrag             => ball_angularDrag;
