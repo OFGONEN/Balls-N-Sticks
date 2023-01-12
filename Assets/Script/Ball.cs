@@ -25,7 +25,8 @@ public class Ball : MonoBehaviour
     [ SerializeField ] Rigidbody _rigidbody;
     [ SerializeField ] ParticleSpawner _particleSpawnner; // Upgrade, Destory, Cache, Currency, Spawn
 
-    RecycledTween recycledTween = new RecycledTween();
+	UnityMessage onFinishLine = ExtensionMethods.EmptyMethod;
+	RecycledTween recycledTween = new RecycledTween();
 #endregion
 
 #region Properties
@@ -45,6 +46,8 @@ public class Ball : MonoBehaviour
 
 		ball_data = data;
 		UpdateBall();
+
+		onFinishLine = ExtensionMethods.EmptyMethod;
 
 		_particleSpawnner.Spawn( 4 );
 	}
@@ -85,6 +88,16 @@ public class Ball : MonoBehaviour
 		DisableBall();
 
 		event_currency_gained.Raise( ball_data.BallCurrency * cofactor );
+	}
+
+	public void OnFinishLineTrigger()
+	{
+		onFinishLine = DoCached;
+	}
+
+	public void OnFinishLine()
+	{
+		onFinishLine();
 	}
 
     public void UpdateBall()
