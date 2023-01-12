@@ -11,9 +11,10 @@ using Sirenix.OdinInspector;
 public class UIMoneyCounter : MonoBehaviour
 {
 #region Fields
-  [ Title( "Components" ) ]
+  [ Title( "Configure" ) ]
     [ SerializeField ] string text_suffix; // TextRenderer 
     [ SerializeField ] Vector2 text_rotation_range; // TextRenderer 
+    [ SerializeField ] Currency currency;
   [ Title( "Components" ) ]
     [ SerializeField ] GameObject gfx_parent;
     [ SerializeField ] TextMeshProUGUI _textRenderer;
@@ -44,6 +45,11 @@ public class UIMoneyCounter : MonoBehaviour
     {
 		gfx_parent.SetActive( false );
 		onMoneyGained = MoneyFirstGained;
+	}
+
+    public void OnPlinkoSequenceDone()
+    {
+		currency.SharedValue += money;
 	}
 #endregion
 
