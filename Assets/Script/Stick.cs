@@ -15,10 +15,14 @@ public class Stick : MonoBehaviour
 	[ SerializeField ] TweenPunchScale stick_side_left_punchScale;
 	[ SerializeField ] TweenPunchScale stick_side_right_punchScale;
 	[ SerializeField ] ParticleSpawnEvent event_particle_spawn;
+	[ SerializeField ] Transform stick_collider_collision;
+	[ SerializeField ] Transform stick_collider_trigger;
+
+	float CollisionLength => ( stick_length + GameSettings.Instance.stick_length_default );
+	float TriggerLength   => ( stick_length + GameSettings.Instance.stick_length_default ) * GameSettings.Instance.stick_forceCollider_cofactor;
 
 	RecycledSequence recycledSequence = new RecycledSequence();
-
-	float stick_length;
+	[ ShowInInspector, ReadOnly ] float stick_length;
 #endregion
 
 #region Properties
@@ -72,6 +76,12 @@ public class Stick : MonoBehaviour
 		sequence.Join( stick_side_right.DOScale( scale.SetX( stick_length / 2f ),
 			GameSettings.Instance.stick_update_duration )
 			.SetEase( GameSettings.Instance.stick_update_ease ) );
+		sequence.Join( stick_collider_collision.DOScale( CollisionLength,
+			GameSettings.Instance.stick_update_duration )
+			.SetEase( Ease.Linear ) );
+		sequence.Join( stick_collider_trigger.DOScale( TriggerLength,
+			GameSettings.Instance.stick_update_duration )
+			.SetEase( Ease.Linear ) );
 
 		// stick_side_left.localScale  = scale.SetX( stick_length / 2f );
 		// stick_side_right.localScale = scale.SetX( stick_length / 2f );
@@ -79,6 +89,9 @@ public class Stick : MonoBehaviour
 
 	void UpdateStick()
 	{
+		stick_collider_collision.localScale = stick_collider_collision.localScale.SetX( CollisionLength );
+		stick_collider_trigger.localScale   = stick_collider_trigger.localScale.SetX( TriggerLength );
+
 		var scale                       = stick_side_left.localScale;
 		    stick_side_left.localScale  = scale.SetX( stick_length / 2f );
 		    stick_side_right.localScale = scale.SetX( stick_length / 2f );
