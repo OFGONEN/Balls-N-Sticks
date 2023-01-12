@@ -66,6 +66,9 @@ namespace FFStudio
 		void OnDisable()
 		{
 			KillProper();
+
+			foreach( var tween in tweenDatas )
+				tween.Tween.KillProper();
 		}
 
         void Start()
