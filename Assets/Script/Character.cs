@@ -52,6 +52,11 @@ public class Character : MonoBehaviour
 		character_position = transform.position;
 	}
 
+	void Start()
+	{
+		_rigidBody.mass = GameSettings.Instance.character_mass;
+	}
+
     private void FixedUpdate()
     {
 		onFixedUpdate();

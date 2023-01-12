@@ -32,6 +32,7 @@ namespace FFStudio
 		[ LabelText( "Bump Delta" ) ] public float character_bump_delta;
 		[ LabelText( "Bump Duration" ) ] public float character_bump_duration;
 		[ LabelText( "Bump Ease" ) ] public Ease character_bump_ease;
+		[ LabelText( "Mass" ) ] public float character_mass;
 
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed Depth" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;

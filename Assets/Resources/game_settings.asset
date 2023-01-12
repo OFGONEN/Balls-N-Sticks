@@ -28,6 +28,7 @@ MonoBehaviour:
   character_bump_delta: 1.5
   character_bump_duration: 1
   character_bump_ease: 12
+  character_mass: 10
   camera_follow_speed_depth: 2.8
   camera_follow_speed_lateral: 2.8
   camera_follow_offset_position: {x: 0, y: 6, z: -6.5}
