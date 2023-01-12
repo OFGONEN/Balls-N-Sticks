@@ -108,6 +108,8 @@ public class Ball : MonoBehaviour
 		_meshFilter.mesh         = renderData.ball_mesh;
 		_collider.sharedMaterial = ball_data.BallPhysicMaterial;
 		_rigidbody.mass          = ball_data.BallMass;
+		_rigidbody.drag          = ball_data.BallDrag;
+		_rigidbody.angularDrag   = ball_data.BallAngularDrag;
 	}
 #endregion
 
