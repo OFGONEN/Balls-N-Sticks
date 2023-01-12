@@ -13,18 +13,24 @@ public class Character : MonoBehaviour
 #region Fields
   [ Title( "Shared" ) ]
     [ SerializeField ] FingerUpdate shared_finger_update; 
+	[ SerializeField ] SharedReferenceNotifier notif_finishLine_reference;
+	[ SerializeField ] SharedFloatNotifier notif_level_progress;
+
+  [ Title( "Components" ) ]
     [ SerializeField ] Transform hand_target_left; 
     [ SerializeField ] Transform hand_target_right;
 	[ SerializeField ] Transform hand_hint_left;
 	[ SerializeField ] Transform hand_hint_right;
 
-	[ Title( "Components" ) ]
     [ SerializeField ] Transform gfx_parent_transform;
     [ SerializeField ] Rigidbody _rigidBody;
     [ SerializeField ] Animator _animator;
 
 	Vector3 character_position;
 	float character_rotation;
+
+	float finishLine_position;
+	float finishLine_distance;
 
 	RecycledTween recycledTween = new RecycledTween();
 
@@ -55,6 +61,11 @@ public class Character : MonoBehaviour
 	void Start()
 	{
 		_rigidBody.mass = GameSettings.Instance.character_mass;
+
+		notif_level_progress.SetValue_NotifyAlways( 0 );
+
+		finishLine_position = ( notif_finishLine_reference.sharedValue as Transform ).position.z;
+		finishLine_distance = finishLine_position - transform.position.z;
 	}
 
     private void FixedUpdate()
@@ -64,6 +75,7 @@ public class Character : MonoBehaviour
 
 	private void Update()
 	{
+		notif_level_progress.SharedValue = 1f - Mathf.InverseLerp( 0, finishLine_distance, finishLine_position - transform.position.z );
 		onUpdate();
 	}
 #endregion
