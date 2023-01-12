@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene_index: 2
   scene_overrideAsActiveScene: 0
-  stick_length_start: 0.2
+  stick_length_start: 1
   character_movement_lateral_clamp: {x: -4, y: 4}
