@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 287954634219910209}
   - component: {fileID: 6821794201833090137}
   - component: {fileID: 27054250907475329}
+  - component: {fileID: 3273906725475633102}
   m_Layer: 30
   m_Name: finish_line
   m_TagString: Untagged
@@ -171,6 +172,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &3273906725475633102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015506577533005173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8b9286af946534c832e5352b9db9e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedReferenceProperty: {fileID: 11400000, guid: 9239056ef524741e6a1cdcf75fa251cb, type: 2}
+  referenceComponent: {fileID: 1094227083306600744}
 --- !u!1001 &2151878992018951977
 PrefabInstance:
   m_ObjectHideFlags: 0
