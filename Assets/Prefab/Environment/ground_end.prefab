@@ -376,11 +376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1779699500459356211, guid: 72726e088663af744a10971cbee8c3df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1779699500459356211, guid: 72726e088663af744a10971cbee8c3df, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.5
+      value: 8.2
       objectReference: {fileID: 0}
     - target: {fileID: 1779699500459356211, guid: 72726e088663af744a10971cbee8c3df, type: 3}
       propertyPath: m_LocalRotation.w
@@ -413,6 +413,10 @@ PrefabInstance:
     - target: {fileID: 3121544233009449120, guid: 72726e088663af744a10971cbee8c3df, type: 3}
       propertyPath: m_Name
       value: ball_deposit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299347834716248827, guid: 72726e088663af744a10971cbee8c3df, type: 3}
+      propertyPath: m_Radius
+      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72726e088663af744a10971cbee8c3df, type: 3}
