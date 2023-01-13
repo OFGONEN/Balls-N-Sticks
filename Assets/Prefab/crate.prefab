@@ -188,8 +188,8 @@ MonoBehaviour:
   pool_ball: {fileID: 11400000, guid: 53958f55ff87f8b458fbe9c8a391482e, type: 2}
   library_ball_data: {fileID: 11400000, guid: 8547dd0b5cf3c6c469eca6160478d11a, type: 2}
   ball_cache: {fileID: 11400000, guid: 68e8c7d9b26045144b1771d2e1bce148, type: 2}
-  ball_spawn_count: {x: 3, y: 5}
-  ball_spawn_level: {x: 1, y: 2}
+  ball_spawn_count: {x: 5, y: 10}
+  ball_spawn_level: {x: 1, y: 5}
   ball_spawn_velocity: {x: 1, y: 2}
   ball_spawn_radius: 0.2
 --- !u!1 &2233380841604635902
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958bd9b5876975e49ba79843e95d88b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 2
+  value: 5
   onUpdateUnityEvent:
     m_PersistentCalls:
       m_Calls:

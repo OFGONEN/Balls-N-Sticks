@@ -57,6 +57,11 @@ namespace FFStudio
 
 			return Tween;
 		}
+
+		public void KillProper()
+		{
+			recycledTween.Kill();
+		}
 #endregion
 
 #region Implementation

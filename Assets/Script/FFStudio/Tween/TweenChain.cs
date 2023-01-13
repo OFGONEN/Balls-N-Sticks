@@ -68,7 +68,7 @@ namespace FFStudio
 			KillProper();
 
 			foreach( var tween in tweenDatas )
-				tween.Tween.KillProper();
+				tween.KillProper();
 		}
 
         void Start()

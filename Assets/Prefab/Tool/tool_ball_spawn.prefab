@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b2124308557e34f95b301ee7ba6250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball_spawn_radius: 4
+  ball_spawn_radius: 3
   ball_count_range: {x: 10, y: 10}
   ball_level_range: {x: 1, y: 1}
   ball_gameObject_array:
