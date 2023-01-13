@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text_suffix: 'x '
-  text_rotation_range: {x: -10, y: 10}
+  text_rotation_range: {x: 0, y: 0}
   currency: {fileID: 11400000, guid: e5b1d3ab2f0b97941bd1ee0ee9a0fd65, type: 2}
   gfx_parent: {fileID: 7256092763087834482}
   _textRenderer: {fileID: 8948203278353935296}
