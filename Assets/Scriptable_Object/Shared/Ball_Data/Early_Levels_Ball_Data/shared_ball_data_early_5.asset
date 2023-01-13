@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: shared_ball_data_early_5
   m_EditorClassIdentifier: 
   ball_force: 100
+  ball_force_mode: 1
   ball_mass: 1
   ball_drag: 1
   ball_angularDrag: 0
@@ -25,5 +26,5 @@ MonoBehaviour:
   - ball_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
     ball_mesh: {fileID: -4916481675420941597, guid: 2c898e69af16b6949b40f4106c3d1d2f, type: 3}
   ball_material_physic: {fileID: 13400000, guid: dfd2aae4a22e14c4f8b07efcbff40f1b, type: 2}
-  ball_currency_range: {x: 0.8, y: 1}
+  ball_currency_range: {x: 8, y: 10}
   ball_nextData: {fileID: 11400000}
