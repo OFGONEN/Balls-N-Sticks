@@ -334,6 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8322965941487153124}
   - component: {fileID: 8864623799535155160}
+  - component: {fileID: 7319952270944435227}
   m_Layer: 0
   m_Name: logic_respond
   m_TagString: Untagged
@@ -375,30 +376,57 @@ MonoBehaviour:
     unityEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3249823718081760420}
-          m_TargetAssemblyTypeName: BallSpawnerPlinko, Assembly-CSharp
-          m_MethodName: StartSpawnSequence
-          m_Mode: 1
+        - m_Target: {fileID: 7319952270944435227}
+          m_TargetAssemblyTypeName: DelayedUnityEvent, Assembly-CSharp
+          m_MethodName: InvokeWithDelayUnityEvent
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 0.5
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 11400000, guid: a5edacec3496d4c5f9e94958dd3b9adf, type: 2}
-          m_TargetAssemblyTypeName: FFStudio.IntGameEvent, Assembly-CSharp
-          m_MethodName: Raise
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+--- !u!114 &7319952270944435227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514949896245728044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e665ea48c137643aab35be6f8ad681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3249823718081760420}
+        m_TargetAssemblyTypeName: BallSpawnerPlinko, Assembly-CSharp
+        m_MethodName: StartSpawnSequence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: a5edacec3496d4c5f9e94958dd3b9adf, type: 2}
+        m_TargetAssemblyTypeName: FFStudio.IntGameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8532704736674983516
 GameObject:
   m_ObjectHideFlags: 0
