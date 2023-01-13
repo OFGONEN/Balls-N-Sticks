@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc122a0e082a4a8a8336783abba8bdd, type: 3}
   m_Name: shared_ball_data_1
   m_EditorClassIdentifier: 
-  ball_force: 0
+  ball_force: 100
   ball_mass: 1
   ball_drag: 1
   ball_angularDrag: 0
