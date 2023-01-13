@@ -22,4 +22,19 @@ namespace FFStudio
 		Int,
 		Float
 	}
+
+    public enum VibrateType
+    {
+        Peek,
+        Pop,
+        Nope,
+        Big
+    }
+
+	public enum MovementMode { Local, World }
+    
+    public enum SequenceElementType
+    {
+        Append, Join, Insert
+    }
 }

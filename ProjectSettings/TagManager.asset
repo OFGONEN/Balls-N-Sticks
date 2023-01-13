@@ -30,14 +30,14 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnvironmentDebris
+  - EnvironmentCeil
+  - Player
+  - Stick
+  - Ball
+  - Obstacle
+  - Interaction
+  - Environment
   m_SortingLayers:
   - name: Default
     uniqueID: 0

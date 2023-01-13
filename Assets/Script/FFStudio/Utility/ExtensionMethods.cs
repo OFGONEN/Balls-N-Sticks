@@ -4,15 +4,18 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using DG.Tweening;
 
 namespace FFStudio
 {
 	public static class ExtensionMethods
 	{
-		//Static Variables
-		private static List< Transform > baseModelBones = new List< Transform >( 96 );
-		private static List< Transform > targetModelBones = new List< Transform >( 96 );
+		public static readonly string SAVE_PATH = Application.persistentDataPath + "/Saves/";
+		public static readonly string Key_Currency = "currency";
+
+		static List< Transform > baseModelBones   = new List< Transform >( 96 );
+		static List< Transform > targetModelBones = new List< Transform >( 96 );
 
 		public static Vector2 ReturnV2FromUnSignedAngle( this float angle )
 		{
@@ -80,6 +83,11 @@ namespace FFStudio
 			return new Vector3( v2.x, v2.y, 0 );
 		}
 
+		public static Vector3 ConvertV3_Z( this Vector2 v2 )
+		{
+			return new Vector3( v2.x, 0, v2.y );
+		}
+
 		public static Vector3 RandomPointBetween( this Vector3 first, Vector3 second )
 		{
 			return first + Random.Range( 0, 1f ) * ( second - first );
@@ -88,7 +96,7 @@ namespace FFStudio
 		public static void LookAtOverTime( this Transform baseTransform, Vector3 targetPosition, float speed )
 		{
 			var directionVector = targetPosition - baseTransform.position;
-			var step = speed * Time.deltaTime;
+			var step            = speed * Time.deltaTime;
 
 			Vector3 newDirection = Vector3.RotateTowards( baseTransform.forward, directionVector, step, 0.0f );
 
@@ -97,8 +105,8 @@ namespace FFStudio
 
 		public static void LookAtAxis( this Transform baseTransform, Vector3 targetPosition, Vector3 axis )
 		{
-			var newDirection = targetPosition - baseTransform.position;
-			var eulerAngles = baseTransform.eulerAngles;
+			var newDirection     = targetPosition - baseTransform.position;
+			var eulerAngles      = baseTransform.eulerAngles;
 			var newRotationEuler = Quaternion.LookRotation( newDirection ).eulerAngles;
 
 			newRotationEuler.x = eulerAngles.x + ( newRotationEuler.x - eulerAngles.x ) * axis.x;
@@ -110,8 +118,8 @@ namespace FFStudio
 
 		public static void LookAtAxis( this Transform baseTransform, Vector3 targetPosition, Vector3 axis, float directionCofactor )
 		{
-			var newDirection = targetPosition - baseTransform.position;
-			var eulerAngles = baseTransform.eulerAngles;
+			var newDirection     = targetPosition - baseTransform.position;
+			var eulerAngles      = baseTransform.eulerAngles;
 			var newRotationEuler = Quaternion.LookRotation( newDirection * directionCofactor ).eulerAngles;
 
 			newRotationEuler.x = eulerAngles.x + ( newRotationEuler.x - eulerAngles.x ) * axis.x;
@@ -125,10 +133,10 @@ namespace FFStudio
 		public static void LookAtOverTimeAxis( this Transform baseTransform, Vector3 targetPosition, Vector3 axis, float speed )
 		{
 
-			var _directionVector = targetPosition - baseTransform.position;
-			var step = speed * Time.deltaTime;
+			var directionVector = targetPosition - baseTransform.position;
+			var step             = speed * Time.deltaTime;
 
-			Vector3 newDirection = Vector3.RotateTowards( baseTransform.forward, _directionVector, step, 0.0f );
+			Vector3 newDirection = Vector3.RotateTowards( baseTransform.forward, directionVector, step, 0.0f );
 
 			var eulerAngles = baseTransform.eulerAngles;
 
@@ -150,6 +158,31 @@ namespace FFStudio
 		}
 
 		public static void EmptyMethod()
+		{
+			/* Intentionally empty, by definition. */
+		}
+
+		public static void EmptyMethod( float value )
+		{
+			/* Intentionally empty, by definition. */
+		}
+
+		public static void EmptyMethod( int value )
+		{
+			/* Intentionally empty, by definition. */
+		}
+		
+		public static void EmptyMethod( Vector2 vector2 )
+		{
+			/* Intentionally empty, by definition. */
+		}
+		
+		public static void EmptyMethod( Lean.Touch.LeanFinger leanFinger )
+		{
+			/* Intentionally empty, by definition. */
+		}
+
+		public static void EmptyMethod( Camera camera )
 		{
 			/* Intentionally empty, by definition. */
 		}
@@ -178,6 +211,18 @@ namespace FFStudio
 		public static Vector2 SetY( this Vector2 theVector, float newY )
 		{
 			theVector.y = newY;
+			return theVector;
+		}
+
+		public static Vector2 OffsetX( this Vector2 theVector, float delta )
+		{
+			theVector.x = theVector.x + delta;
+			return theVector;
+		}
+
+		public static Vector2 OffsetY( this Vector2 theVector, float delta )
+		{
+			theVector.y = theVector.y + delta;
 			return theVector;
 		}
 
@@ -238,12 +283,48 @@ namespace FFStudio
 			return theVector;
 		}
 
+		public static Vector3 NegateX( this Vector3 theVector )
+		{
+			theVector.x *= -1;
+			return theVector;
+		}
+
+		public static Vector3 NegateY( this Vector3 theVector )
+		{
+			theVector.y *= -1;
+			return theVector;
+		}
+
+		public static Vector3 NegateZ( this Vector3 theVector )
+		{
+			theVector.z *= -1;
+			return theVector;
+		}
+
+		public static Vector3 MakeXAbsolute( this Vector3 theVector )
+		{
+			theVector.x *= Mathf.Sign( theVector.x );
+			return theVector;
+		}
+
+		public static Vector3 MakeYAbsolute( this Vector3 theVector )
+		{
+			theVector.y *= Mathf.Sign( theVector.y );
+			return theVector;
+		}
+
+		public static Vector3 MakeZAbsolute( this Vector3 theVector )
+		{
+			theVector.z *= Mathf.Sign( theVector.z );
+			return theVector;
+		}
+
 		public static float ComponentSum( this Vector3 theVector )
 		{
 			return theVector.x + theVector.y + theVector.z;
 		}
 
-		public static TransformData GetTransformData( this Transform transform ) // Global values
+		public static TransformData GetTransformData( this Transform transform )
 		{
 			TransformData data;
 			data.position = transform.position;
@@ -253,14 +334,31 @@ namespace FFStudio
 			return data;
 		}
 
-		public static void SetTransformData( this Transform transform, TransformData data ) // Global values
+		public static void SetTransformData( this Transform transform, TransformData data )
 		{
 			transform.position    = data.position;
 			transform.eulerAngles = data.rotation;
 			transform.localScale  = data.scale;
 		}
 
-		// Takes root boes as parameters that are child of a humanoid model 
+		public static TransformData GetLocalTransformData( this Transform transform )
+		{
+			TransformData data;
+			data.position = transform.localPosition;
+			data.rotation = transform.localEulerAngles;
+			data.scale = transform.localScale;
+
+			return data;
+		}
+
+		public static void SetLocalTransformData( this Transform transform, TransformData data )
+		{
+			transform.localPosition = data.position;
+			transform.localEulerAngles = data.rotation;
+			transform.localScale = data.scale;
+		}
+
+		// Takes root bones as parameters that are children of a humanoid model.
 		public static void ReplaceHumanoidModel( this Transform baseBone, Transform targetBone )
 		{
 			baseModelBones.Clear();
@@ -278,7 +376,7 @@ namespace FFStudio
 			}
 		}
 
-        public static void UpdateSkinnedMeshRenderer(this GameObject gameObject, SkinnedMeshRenderer currentRender, SkinnedMeshRenderer newRenderer)
+		public static void UpdateSkinnedMeshRenderer( this GameObject gameObject, SkinnedMeshRenderer currentRender, SkinnedMeshRenderer newRenderer )
         {
             currentRender.sharedMesh      = newRenderer.sharedMesh;
             currentRender.sharedMaterials = newRenderer.sharedMaterials;
@@ -289,35 +387,37 @@ namespace FFStudio
 
             gameObject.GetComponentsInChildren< Transform >( true, baseModelBones );
 
-            for (int boneOrder = 0; boneOrder < newRenderer.bones.Length; boneOrder++)
-            {
+			for( int boneOrder = 0; boneOrder < newRenderer.bones.Length; boneOrder++ )
                 targetModelBones.Add( baseModelBones.Find( c => c.name == newRenderer.bones[ boneOrder ].name ) );
-            }
 
             currentRender.bones = targetModelBones.ToArray();
         }
 
 		public static void SetFieldValue( this object source, string fieldName, string value )
 		{
-				var fieldInfo = source.GetType().GetField( fieldName );
+			var fieldInfo = source.GetType().GetField( fieldName );
 
-				if( fieldInfo == null )
-					return;
+			if( fieldInfo == null )
+				return;
 
-				var fieldType = fieldInfo.FieldType;
+			var fieldType = fieldInfo.FieldType;
 
-                if( fieldType == typeof( int ) )
-                {
-				    fieldInfo.SetValue( source, int.Parse( value ) );
-                }
-                else if( fieldType == typeof( float ) )
-                {
-				    fieldInfo.SetValue( source, float.Parse( value, CultureInfo.InvariantCulture ) );
-                }
-                else if( fieldType == typeof( string ) )
-                {
-				    fieldInfo.SetValue( source, value );
-                }
+			if( fieldType == typeof( int ) )
+				fieldInfo.SetValue( source, int.Parse( value ) );
+			else if( fieldType == typeof( float ) )
+				fieldInfo.SetValue( source, float.Parse( value, CultureInfo.InvariantCulture ) );
+			else if( fieldType == typeof( string ) )
+				fieldInfo.SetValue( source, value );
+			else if( fieldType == typeof( bool ) )
+			{
+				fieldInfo.SetValue( source, bool.Parse( value ) );
+				FFLogger.Log( "Setting Bool: " + fieldName + " Value: " + value );
+			}
+			else
+			{
+				fieldInfo.SetValue( source, JsonUtility.FromJson( value, fieldType ));
+				FFLogger.Log( "Setting Json: " + fieldName + " Value: " + value );
+			}
 		}
 
 		public static DG.Tweening.Sequence KillProper( this DG.Tweening.Sequence sequence )
@@ -358,11 +458,19 @@ namespace FFStudio
 			image.color = newColor;
 		}
 
+		public static void SetAlpha( this TextMeshProUGUI textRenderer, float alpha )
+		{
+			Color newColor = textRenderer.color;
+			newColor.a = alpha;
+
+			textRenderer.color = newColor;
+		}
+
 		public static float RoundTo( this float number, float step )
 		{
-			int quotient = Mathf.FloorToInt( number / step );
-			var reminder = number % step;
-			float rounded = quotient * step;
+			int   quotient = Mathf.FloorToInt( number / step );
+			var   reminder = number % step;
+			float rounded  = quotient * step;
 
 			if( reminder >= step / 2f )
 				rounded += step;
@@ -370,12 +478,27 @@ namespace FFStudio
 			return rounded;
 		}
 
+		public static float Hypotenuse( float edge1, float edge2 )
+		{
+			return Mathf.Sqrt( edge1 * edge1 + edge2 * edge2 );
+		}
+
+		public static float NonHypothenuseEdge( float hypotenuseEdge, float edge1 )
+		{
+			return Mathf.Sqrt( hypotenuseEdge * hypotenuseEdge - edge1 * edge1 );
+		}
+
 		public static T ReturnRandom< T >( this T[] array )
 		{
 			return array[ Random.Range( 0, array.Length ) ];
 		}
 
-				public static float ReturnRandom( this Vector2 vector )
+		public static float ReturnRandom( this Vector2 vector )
+		{
+			return Random.Range( vector.x, vector.y );
+		}
+
+		public static int ReturnRandom( this Vector2Int vector )
 		{
 			return Random.Range( vector.x, vector.y );
 		}
@@ -390,32 +513,51 @@ namespace FFStudio
 			return Mathf.Lerp( vector.y, vector.x, progress );
 		}
 
-		public static void DestoryAllChildren( this Transform transform )
+		public static void DestroyAllChildren( this Transform transform )
 		{
 			var childCount = transform.childCount;
 			var childs = new List< Transform >( transform.childCount );
 
 			for( var i = 0; i < childCount; i++ )
-			{
 				childs.Add( transform.GetChild( i ) );
-			}
 			
 			for( var i = 0; i < childCount; i++ )
-			{
 				GameObject.DestroyImmediate( childs[ i ].gameObject );
-			}
 		}
 
-		public static void ToggleKinematic( this Rigidbody rb, bool value )
+		public static void ToggleKinematic( this Rigidbody rigidbody, bool value )
 		{
-			rb.isKinematic = value;
-			rb.useGravity  = !value;
+			rigidbody.isKinematic = value;
+			rigidbody.useGravity  = !value;
 		}
 
 		public static float ReturnClamped( this Vector2 vector, float value )
 		{
 			return Mathf.Clamp( value, vector.x, vector.y );
 		}
+
+		public static float ReturnSign( this float value )
+		{
+			if( Mathf.Approximately( value, 0 ) )
+				return 0;
+			else
+				return Mathf.Sign( value );
+		}
+
+#if FF_OBI_IMPORTED
+		public static void MergeParticles( this Obi.ObiRope obiRope, int indexOfElementBefore, int indexOfElementOfInterest )
+		{
+			var solver = obiRope.solver;
+
+			var previousElement = obiRope.elements[ indexOfElementBefore ];
+			var elementOfInterest = obiRope.elements[ indexOfElementOfInterest ];
+
+			solver.invMasses[ previousElement.particle2 ] /= 2; // Revert previous halving of the particle mass.
+
+			obiRope.DeactivateParticle( solver.particleToActor[ elementOfInterest.particle1 ].indexInActor );
+
+			elementOfInterest.particle1 = previousElement.particle2;
+		}
+#endif
 	}
 }
-

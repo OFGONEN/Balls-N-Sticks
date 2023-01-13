@@ -10,39 +10,45 @@ namespace FFStudio
 	{
 #region Fields (Inspector Interface)
 	[ Title( "Setup" ) ]
-		[ SerializeField ] private Component attachedComponent;
+		// Info: We can't use Component.enabled because it does not show on Inspector without Update() etc.
+		[ SerializeField ] protected bool isEnabled = true;
+		[ SerializeField ] Component attachedComponent;
 
 		public Component AttachedComponent => attachedComponent;
 		public Collider AttachedCollider => attachedCollider;
 		
 		public UnityEvent< CallbackArgumentType > unityEvent;
-#endregion
 
-#region  Fields (Private)
-		private Collider attachedCollider;
+		Collider attachedCollider;
 #endregion
 
 #region UnityAPI
-		private void Awake()
+		void Awake()
 		{
 			attachedCollider = GetComponent< Collider >();
 		}
 #endregion
 
 #region API
-		public abstract void ClearEventList();
-
 		public void SetColliderActive( bool active )
 		{
 			attachedCollider.enabled = active;
 		}
 
-		public abstract void Subscribe( DelegateType method );
-		public abstract void Unsubscribe( DelegateType method );
+		public void SetAttachedComponent( Component component )
+		{
+			attachedComponent = component;
+		}
 #endregion
 
 #region Implementation
-        protected abstract void InvokeEvent( CallbackArgumentType physicsCallbackArgument );
+        protected virtual void InvokeEvent( CallbackArgumentType physicsCallbackArgument )
+		{
+			if( isEnabled == false )
+				return;
+
+			unityEvent.Invoke( physicsCallbackArgument );
+		}
 #endregion
 	}
 }

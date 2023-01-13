@@ -15,8 +15,12 @@ namespace FFStudio
 		[ ValueDropdown( "SceneList" ), LabelText( "Scene Index" ) ] public int scene_index;
         [ LabelText( "Override As Active Scene" ) ] public bool scene_overrideAsActiveScene;
 
+	[ Title( "Level Design" ) ]
+        [ LabelText( "Stick Relative Start Length" ) ] public float stick_length_start; //Info this starts from 0
+		[ LabelText( "Movement Lateral Clamp" ) ] public Vector2 character_movement_lateral_clamp;
+
 #if UNITY_EDITOR
-		private static IEnumerable SceneList()
+		static IEnumerable SceneList()
         {
 			var list = new ValueDropdownList< int >();
 

@@ -8,65 +8,43 @@ namespace FFStudio
     public class LevelManager : MonoBehaviour
     {
 #region Fields
-        [ Header( "Event Listeners" ) ]
-        public EventListenerDelegateResponse levelLoadedListener;
-        public EventListenerDelegateResponse levelRevealedListener;
-        public EventListenerDelegateResponse levelStartedListener;
-
         [ Header( "Fired Events" ) ]
         public GameEvent levelFailedEvent;
         public GameEvent levelCompleted;
 
         [ Header( "Level Releated" ) ]
-        public SharedFloatNotifier levelProgress;
+        public SharedProgressNotifier notifier_progress;
 #endregion
 
 #region UnityAPI
-        private void OnEnable()
-        {
-            levelLoadedListener.OnEnable();
-            levelRevealedListener.OnEnable();
-            levelStartedListener.OnEnable();
-        }
-
-        private void OnDisable()
-        {
-            levelLoadedListener.OnDisable();
-            levelRevealedListener.OnDisable();
-            levelStartedListener.OnDisable();
-        }
-
-        private void Awake()
-        {
-            levelLoadedListener.response   = LevelLoadedResponse;
-            levelRevealedListener.response = LevelRevealedResponse;
-            levelStartedListener.response  = LevelStartedResponse;
-        }
 #endregion
 
-#region Implementation
-        private void LevelLoadedResponse()
+#region API
+        // Info: Called from Editor.
+        public void LevelLoadedResponse()
         {
-			levelProgress.SetValue_NotifyAlways( 0 );
-
 			var levelData = CurrentLevelData.Instance.levelData;
-
-            // Set Active Scene
+            // Set Active Scene.
 			if( levelData.scene_overrideAsActiveScene )
 				SceneManager.SetActiveScene( SceneManager.GetSceneAt( 1 ) );
             else
 				SceneManager.SetActiveScene( SceneManager.GetSceneAt( 0 ) );
 		}
 
-        private void LevelRevealedResponse()
+        // Info: Called from Editor.
+        public void LevelRevealedResponse()
         {
 
         }
 
-        private void LevelStartedResponse()
+        // Info: Called from Editor.
+        public void LevelStartedResponse()
         {
 
         }
+#endregion
+
+#region Implementation
 #endregion
     }
 }

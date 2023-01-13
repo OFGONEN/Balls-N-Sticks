@@ -14,10 +14,26 @@ namespace FFStudio
 		public Vector3 position;
 		public Vector3 rotation; // Euler angles.
 		public Vector3 scale; // Local scale.
+
+		public TransformData( Transform transform, bool isLocal )
+		{
+			if( isLocal )
+			{
+				position = transform.localPosition;
+				rotation = transform.localEulerAngles;
+				scale    = transform.localScale;
+			}
+			else
+			{
+				position = transform.position;
+				rotation = transform.eulerAngles;
+				scale    = transform.localScale;
+			}
+		}
 	}
 
 	[ Serializable ]
-	public struct EventPair
+	public struct EventResponseData
 	{
 		public MultipleEventListenerDelegateResponse eventListener;
 		public UnityEvent unityEvent;
@@ -84,5 +100,88 @@ namespace FFStudio
 
 		public UnityEvent event_complete;
 		public bool event_complete_alwaysInvoke;
+	}
+	
+	[ Serializable ]
+	public struct PlayerPrefs_Int
+	{
+		[ ReadOnly ]
+		public string key;
+		[ OnValueChanged( "Save" ) ]
+		public int value;
+		
+		public void Refresh() => value = PlayerPrefs.GetInt( key, 0 );
+		public void Save()
+		{
+			PlayerPrefs.SetInt( key, value );
+			FFLogger.Log( $"PlayerPrefs: Saved value \"{value}\" for key \"{key}\"." );
+		}
+	}
+	
+	[ Serializable ]
+	public struct PlayerPrefs_Float
+	{
+		[ ReadOnly ]
+		public string key;
+		[ OnValueChanged( "Save" ) ]
+		public float value;
+		
+		public void Refresh() => value = PlayerPrefs.GetFloat( key, 0.0f );
+		public void Save()
+		{
+			PlayerPrefs.SetFloat( key, value );
+			FFLogger.Log( $"PlayerPrefs: Saved value \"{value}\" for key \"{key}\"." );
+		}
+	}
+	
+	[ Serializable ]
+	public struct PlayerPrefs_String
+	{
+		[ ReadOnly ]
+		public string key;
+		[ OnValueChanged( "Save" ) ]
+		public string value;
+		
+		public void Refresh() => value = PlayerPrefs.GetString( key, "" );
+		public void Save()
+		{
+			PlayerPrefs.SetString( key, value );
+			FFLogger.Log( $"PlayerPrefs: Saved value \"{value}\" for key \"{key}\"." );
+		}
+	}
+	
+	[ Serializable ]
+	public struct ColorPerThreshold
+	{
+		public Color color;
+		[ MappedFloat ] public float threshold;
+	}
+
+	[ Serializable ]
+	public struct TriggerRespondData
+	{
+		[ Layer() ] public int collision_layer;
+		public UnityEvent< Collider > trigger_event;
+	}
+
+	[ Serializable ]
+	public struct CollisionRespondData
+	{
+		[ Layer() ] public int collision_layer;
+		public UnityEvent< Collision > collision_event;
+	}
+	
+	[ Serializable ]
+	public struct Trigger2DRespondData
+	{
+		[ Layer() ] public int collision_layer;
+		public UnityEvent< Collider2D > trigger_event;
+	}
+
+	[ Serializable ]
+	public struct Collision2DRespondData
+	{
+		[ Layer() ] public int collision_layer;
+		public UnityEvent< Collision2D > collision_event;
 	}
 }

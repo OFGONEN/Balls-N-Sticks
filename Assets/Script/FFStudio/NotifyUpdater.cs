@@ -7,21 +7,23 @@ using Sirenix.OdinInspector;
 namespace FFStudio
 {
 	public class NotifyUpdater< SharedDataNotifierType, SharedDataType > : MonoBehaviour
-			where SharedDataNotifierType : SharedDataNotifier< SharedDataType >
+		where SharedDataNotifierType : SharedDataNotifier< SharedDataType >
 	{
 #region Fields
 	[ Title( "Setup" ) ]
 		[ SerializeField ] protected SharedDataNotifierType sharedDataNotifier;
-		[ SerializeField ] protected UnityEvent< SharedDataType > notify_event;
+		[ SerializeField, HideIf( "HideBaseClassOnNotifyEvent" ), LabelText( "") ] protected UnityEvent< SharedDataType > notify_event;
+
+		public virtual bool HideBaseClassOnNotifyEvent => false;
 #endregion
 
 #region Unity API
-		private void OnEnable()
+		void OnEnable()
 		{
 			sharedDataNotifier.Subscribe( OnSharedDataChange );
 		}
 
-		private void OnDisable()
+		void OnDisable()
 		{
 			sharedDataNotifier.Unsubscribe( OnSharedDataChange );
 		}

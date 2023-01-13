@@ -9,37 +9,17 @@ namespace FFStudio
 	public class ParticleManager : MonoBehaviour
 	{
 #region Fields
-	[ Title( "Event Listeners" ) ]
-		public EventListenerDelegateResponse listener_pfx_spawn;
-		public EventListenerDelegateResponse listener_pfx_spawn_random;
-
 	[ Title( "Setup" ) ]
-		[ SerializeField ] private ParticleEffectPool[] pools_pfx;
-		[ SerializeField ] private RandomParticlePool[] pools_pfx_random; //Info: All pools needs to be in particleEffectPools aswell.
+		[ SerializeField ] ParticleEffectPool[] pools_pfx;
+		[ SerializeField ] RandomParticlePool[] pools_pfx_random; //Info: All pools needs to be in particleEffectPools aswell.
 
-		private Dictionary< string, ParticleEffectPool > dictionary_pool_pfx;
-		private Dictionary< string, RandomParticlePool > dictionary_pool_pfx_random;
+		Dictionary< string, ParticleEffectPool > dictionary_pool_pfx;
+		Dictionary< string, RandomParticlePool > dictionary_pool_pfx_random;
 #endregion
 
 #region UnityAPI
-
-		private void OnEnable()
+		void Awake()
 		{
-			listener_pfx_spawn.OnEnable();
-			listener_pfx_spawn_random.OnEnable();
-		}
-
-		private void OnDisable()
-		{
-			listener_pfx_spawn.OnDisable();
-			listener_pfx_spawn_random.OnDisable();
-		}
-
-		private void Awake()
-		{
-			listener_pfx_spawn.response        = SpawnParticle;
-			listener_pfx_spawn_random.response = SpawnParticleRandom;
-
 			dictionary_pool_pfx = new Dictionary< string, ParticleEffectPool >( pools_pfx.Length );
 
 			for( int i = 0; i < pools_pfx.Length; i++ )
@@ -51,17 +31,13 @@ namespace FFStudio
 			dictionary_pool_pfx_random = new Dictionary< string, RandomParticlePool >( pools_pfx_random.Length );
 
 			for( var i = 0; i < pools_pfx_random.Length; i++ )
-			{
 				dictionary_pool_pfx_random.Add( pools_pfx_random[ i ].alias, pools_pfx_random[ i ] );
-			}
 		}
 #endregion
 
-#region Implementation
-		private void SpawnParticle()
+#region API
+		public void SpawnParticle( ParticleSpawnEvent spawnEvent )
 		{
-			var spawnEvent = listener_pfx_spawn.gameEvent as ParticleSpawnEvent;
-
 			ParticleEffectPool pool;
 
 			if( !dictionary_pool_pfx.TryGetValue( spawnEvent.particle_alias, out pool ) )
@@ -74,10 +50,8 @@ namespace FFStudio
 			effect.PlayParticle( spawnEvent );
 		}
 
-		private void SpawnParticleRandom()
+		public void SpawnParticleRandom( ParticleSpawnEvent spawnEvent )
 		{
-			var spawnEvent = listener_pfx_spawn_random.gameEvent as ParticleSpawnEvent;
-
 			RandomParticlePool randomPool;
 
 			if( !dictionary_pool_pfx_random.TryGetValue( spawnEvent.particle_alias, out randomPool ) )
@@ -90,7 +64,7 @@ namespace FFStudio
 			effect.PlayParticle( spawnEvent );
 		}
 
-		private void ParticleEffectStopped( ParticleEffect particleEffect )
+		void ParticleEffectStopped( ParticleEffect particleEffect )
 		{
 			ParticleEffectPool pool;
 

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ff057ed6dc32b46ab272ac1a080f20, type: 3}
+  m_Name: tool_ground_spawner
+  m_EditorClassIdentifier: 
+  level_code: 3d5d5
+  prefab_ground: {fileID: 237767412321979465, guid: face7b88b36745d4a8f4e6b2c80c583a, type: 3}
+  prefab_divider: {fileID: 237767412321979465, guid: c982cbb46445321419c0bd2db9f64172, type: 3}
+  prefab_ground_start: {fileID: 237767412321979465, guid: e61ceda93025c52449a51eed6ce8183e, type: 3}
+  prefab_ground_end: {fileID: 237767412321979465, guid: 49d61d8e5a4f963409e5576219222846, type: 3}
+  prefab_plinko: {fileID: 8532704736674983516, guid: 9316f986e109ace4e88286fe89aeb71d, type: 3}
+  prefab_ground_length: 6
+  prefab_plinko_offset: 6

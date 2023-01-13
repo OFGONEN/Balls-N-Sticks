@@ -1,4 +1,5 @@
 /* Created by and for usage of FF Studios (2021). */
+
 using UnityEngine;
 using UnityEngine.Events;
 using Sirenix.OdinInspector;
@@ -20,26 +21,55 @@ namespace FFStudio
 		[ SerializeField ] CurrentLevelData currentLevelData;
 
 	[ Title( "Pool" ) ]
-		[SerializeField ] Pool_UIPopUpText pool_UIPopUpText;
+		[ SerializeField ] Pool_UIPopUpText pool_UIPopUpText;
+		[ SerializeField ] BallPool pool_ball;
 #endregion
 
-#region Implementation
-		private void OnEnable()
+#region UnityAPI
+		void OnEnable()
 		{
 			onEnableEvent.Invoke();
 		}
 
-		private void Awake()
+		void Awake()
 		{
+			Vibration.Init();
+
+			//Init Pools
 			pool_UIPopUpText.InitPool( transform, false );
+			pool_ball.InitPool( transform, false );
 
 			onAwakeEvent.Invoke();
 		}
 
-		private void Start()
+		void Start()
 		{
 			onStartEvent.Invoke();
 		}
+#endregion
+
+#region API
+		public void VibrateAPI( IntGameEvent vibrateEvent )
+		{
+			switch ( vibrateEvent.eventValue )
+			{
+				case 0:
+					Vibration.VibratePeek();
+					break;
+				case 1:
+					Vibration.VibratePop();
+					break;
+				case 2:
+					Vibration.VibrateNope();
+					break;
+				default:
+					Vibration.Vibrate();
+					break;
+			}
+		}
+#endregion
+
+#region Implementation
 #endregion
 	}
 }

@@ -7,18 +7,21 @@ namespace FFStudio
 	public class UISafeAreaFixerTop : MonoBehaviour
 	{
 #region Fields
-		private RectTransform uiRectTransform;
+		RectTransform uiRectTransform;
 #endregion
 
 #region Unity API
-		private void Awake()
+		void Awake()
 		{
 			uiRectTransform = GetComponent< RectTransform >();
 
-			var position = uiRectTransform.anchoredPosition;
-			position.y += Mathf.Sign( position.y ) * ( Screen.height - Screen.safeArea.height - Screen.safeArea.position.y );
+			var dangerArea = Screen.height - Screen.safeArea.height - Screen.safeArea.position.y;
+			var offset = Mathf.Min( 0, GameSettings.Instance.ui_safeArea_offset_top - dangerArea );
 
-			uiRectTransform.anchoredPosition = position;
+			var position = uiRectTransform.position;
+			position.y += offset;
+
+			uiRectTransform.position = position;
 		}
 #endregion
 	}

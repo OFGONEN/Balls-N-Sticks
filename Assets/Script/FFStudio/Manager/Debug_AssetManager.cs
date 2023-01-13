@@ -1,4 +1,5 @@
 /* Created by and for usage of FF Studios (2021). */
+
 using UnityEngine;
 
 namespace FFStudio
@@ -10,7 +11,7 @@ namespace FFStudio
 #region Fields
 		public Pool_Debug_UI_Text pool_UI_Debug_Text;
 
-		private void Awake()
+		void Awake()
 		{
 			pool_UI_Debug_Text.InitPool( transform, false );
 		}

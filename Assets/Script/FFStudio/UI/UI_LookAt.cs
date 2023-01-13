@@ -1,7 +1,5 @@
 /* Created by and for usage of FF Studios (2021). */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
@@ -14,42 +12,45 @@ namespace FFStudio
         public SharedReferenceNotifier lookAt_Reference;
         public Vector3 lookAt_Axis;
 
-		// Private
-		private Transform lookAt_Transform;
-		private UnityMessage updateMethod;
+		Transform lookAt_Transform;
+		UnityMessage updateMethod;
 #endregion
 
 #region Properties
 #endregion
 
 #region Unity API
-        private void Awake()
+        void Awake()
         {
 			updateMethod = ExtensionMethods.EmptyMethod;
 		}
 
-		private void OnEnable()
+		void OnEnable()
 		{
 			lookAt_Transform = lookAt_Reference.SharedValue as Transform;
 			updateMethod = LookAtTarget;
 		}
 
-		private void OnDisable()
+		void OnDisable()
 		{
 			updateMethod = ExtensionMethods.EmptyMethod;
 		}
 
-        private void Update()
+        void Update()
         {
 			updateMethod();
 		}
 #endregion
 
 #region API
+		public void ManualDisable()
+		{
+			OnDisable();
+		}
 #endregion
 
 #region Implementation
-        private void LookAtTarget()
+        void LookAtTarget()
         {
 			transform.LookAtAxis( lookAt_Transform.position, lookAt_Axis, -1f );
 		}

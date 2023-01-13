@@ -12,9 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a385bd3b4416492409284c9a366cb52a, type: 3}
   m_Name: game_settings
   m_EditorClassIdentifier: 
+  ball_punchScale_power: 1
+  ball_punchScale_duration: 0.35
+  ball_multiply_offset: {x: 0, y: 0, z: 0}
+  stick_length_max: 3
+  stick_length_default: 1
+  stick_update_duration: 1
+  stick_update_ease: 12
+  stick_forceCollider_cofactor: 0.9
+  character_movement_forward_speed: 3.5
+  character_movement_lateral_speed: 8
+  character_movement_rotate_speed: 5
+  character_movement_rotate_deceleration: 8
+  character_movement_rotate_clamp: {x: -45, y: 45}
+  character_victory_rotate_duration: 0.3
+  character_victory_rotate_ease: 12
+  character_bump_delta: 1.5
+  character_bump_duration: 1
+  character_bump_ease: 12
+  character_mass: 10
+  camera_follow_speed_depth: 2.8
+  camera_follow_speed_lateral: 2.8
+  camera_follow_offset_position: {x: 0, y: 6, z: -6.5}
+  camera_follow_offset_rotation: {x: 20.000006, y: -0, z: -0}
+  camera_endLevel_offset: {x: 0, y: 4, z: -14}
+  camera_endLevel_rotation: {x: 0, y: 0, z: 0}
+  camera_endLevel_transition_delay: 1
+  camera_endLevel_transition_duration: 0.75
+  camera_endLevel_transition_ease: 12
+  maxLevelCount: 15
+  game_forward: {x: 0, y: 0, z: 1}
+  character_movement_rotate_cofactor: 10
+  character_movement_lateral_cofactor: 0.002
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
-  maxLevelCount: 1
   ui_Entity_Move_TweenDuration: 0.5
   ui_Entity_Fade_TweenDuration: 0.5
   ui_Entity_Scale_TweenDuration: 0.5
@@ -22,6 +53,20 @@ MonoBehaviour:
   ui_Entity_JoyStick_Gap: 50
   ui_PopUp_height: 1
   ui_PopUp_duration: 0.75
+  ui_particle_spawn_width: 10
+  ui_particle_spawn_duration: 0.1
+  ui_particle_spawn_ease: 1
+  ui_particle_target_waitTime: 0.16
+  ui_particle_target_duration: 0.4
+  ui_particle_target_ease: 1
   swipeThreshold: 2
+  ui_safeArea_offset_top: 88
+  uiParticle_spawn_width_percentage: 10
+  uiParticle_spawn_duration: 0.1
+  uiParticle_spawn_ease: 1
+  uiParticle_target_waitDuration: 0.16
+  uiParticle_target_duration: 0.4
+  uiParticle_target_duration_reward: 0.85
+  uiParticle_target_ease: 1
   debug_ui_text_float_height: 1
   debug_ui_text_float_duration: 1

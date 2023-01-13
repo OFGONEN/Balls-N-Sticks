@@ -5,33 +5,22 @@ using Sirenix.OdinInspector;
 
 namespace FFStudio
 {
+	[ RequireComponent( typeof( Respond ) ) ]
 	public class ParticleEffect : MonoBehaviour
 	{
 #region Fields
 	[ Title( "Setup" ) ]
-		public MultipleEventListenerDelegateResponse level_finish_listener;
 		public string alias;
 
-		// Private Fields \\
-		private ParticleEffectPool particle_pool;
-		private ParticleEffectStopped particleEffectStopped;
-		private ParticleSystem particles;
+		ParticleEffectPool particle_pool;
+		ParticleEffectStopped particleEffectStopped;
+		ParticleSystem particles;
 
-		private Vector3 particle_start_size;
+		Vector3 particle_start_size;
 #endregion
 
 #region UnityAPI
-		private void OnEnable()
-		{
-			level_finish_listener.OnEnable();
-		}
-
-		private void OnDisable()
-		{
-			level_finish_listener.OnDisable();
-		}
-
-		private void Awake()
+		void Awake()
 		{
 			particles = GetComponentInChildren< ParticleSystem >();
 
@@ -39,20 +28,17 @@ namespace FFStudio
 			    mainParticle.stopAction  = ParticleSystemStopAction.Callback;
 			    mainParticle.playOnAwake = false;
 
-			level_finish_listener.response = OnParticleSystemStopped;
-
 			particle_start_size = transform.localScale;
-		}
-
-		private void OnParticleSystemStopped()
-		{
-			particleEffectStopped( this );
-			particle_pool.ReturnEntity( this );
-			transform.localScale = Vector3.one;
 		}
 #endregion
 
 #region API
+		public void OnParticleStopped()
+		{
+			particleEffectStopped( this ); // Returns this back to pool
+			transform.localScale = Vector3.one;
+		}
+
 		public virtual void InitIntoPool( ParticleEffectPool pool, ParticleEffectStopped effectStoppedDelegate )
 		{
 			particle_pool         = pool;
@@ -68,6 +54,20 @@ namespace FFStudio
 
 			if( particleEvent.particle_spawn_parent != null )
 				transform.SetParent( particleEvent.particle_spawn_parent );
+
+			particles.Play();
+		}
+
+
+		public void PlayParticle( Vector3 position, float scale, Transform parent = null )
+		{
+			gameObject.SetActive( true );
+
+			transform.position = position;
+			transform.localScale = particle_start_size * scale;
+
+			if( parent != null )
+				transform.SetParent( parent );
 
 			particles.Play();
 		}

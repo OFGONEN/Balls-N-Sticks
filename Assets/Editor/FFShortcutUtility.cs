@@ -4,13 +4,16 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 using FFStudio;
+using DG.Tweening;
 using System.Reflection;
+using UnityEditor.SceneManagement;
 
 namespace FFEditor
 {
 	public static class FFShortcutUtility
 	{
 		static private TransformData currentTransformData;
+		static private string path_playerPrefsTracker = "Assets/Editor/tracker_playerPrefs.asset";
 
 		[ MenuItem( "FFShortcut/TakeScreenShot #F12" ) ]
 		public static void TakeScreenShot()
@@ -29,11 +32,34 @@ namespace FFEditor
 
 			Debug.Log( "ScreenShot Taken: " + "ScreenShot_" + counter + ".png" );
 		}
+		
+		[ MenuItem( "FFShortcut/Select PlayerPrefsTracker _F7" ) ]
+		static private void SelectPlayerPrefsTracker()
+		{
+			var tracker = AssetDatabase.LoadAssetAtPath( path_playerPrefsTracker, typeof( ScriptableObject ) );
+			( tracker as PlayerPrefsTracker ).Refresh();
+			Selection.SetActiveObjectWithContext( tracker, tracker );
+		}
+
+		[MenuItem( "FFShortcut/Delete Save File _F8" )]
+		static void DeleteSaveFile()
+		{
+			if( File.Exists( ExtensionMethods.SAVE_PATH + "save.txt" ) )
+			{
+				FFStudio.FFLogger.Log( "SaveSystem: Found save file. Deleting it." );
+				File.Delete( ExtensionMethods.SAVE_PATH + "save.txt" );
+			}
+
+			if( File.Exists( ExtensionMethods.SAVE_PATH + "save.txt" ) )
+				FFStudio.FFLogger.LogError( "SaveSystem: Failed to delete save file." );
+			else
+				FFStudio.FFLogger.Log( "SaveSystem: Successfully deleted save file." );
+		}
 
 		[ MenuItem( "FFShortcut/Delete PlayerPrefs _F9" ) ]
 		static private void ResetPlayerPrefs()
 		{
-			PlayerPrefs.DeleteAll();
+			PlayerPrefsUtility.Instance.DeleteAll();
 			Debug.Log( "PlayerPrefs Deleted" );
 		}
 
@@ -111,7 +137,15 @@ namespace FFEditor
 		static private void PasteTransform()
 		{
 			var gameObject = Selection.activeGameObject.transform;
+			EditorUtility.SetDirty( gameObject );
 			gameObject.SetTransformData( currentTransformData );
+		}
+
+		[ MenuItem( "FFShortcut/Kill All Tweens %#t" ) ]
+		private static void KillAllTweens()
+		{
+			DOTween.KillAll();
+			FFLogger.Log( "[FF] DOTween: Kill All" );
 		}
 
 		[ MenuItem( "FFShortcut/Clear Console %#x" ) ]
