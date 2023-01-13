@@ -10,6 +10,7 @@ using Sirenix.OdinInspector;
 public class BallData : ScriptableObject
 {
     [ SerializeField, LabelText( "Applied Force" ) ] float ball_force;
+    [ SerializeField, LabelText( "Applied Force Mode" ) ] ForceMode ball_force_mode = ForceMode.Impulse;
     [ SerializeField, LabelText( "Mass" ) ] float ball_mass;
     [ SerializeField, LabelText( "Drag" ) ] float ball_drag;
     [ SerializeField, LabelText( "Angular Drag" ) ] float ball_angularDrag;
@@ -20,6 +21,7 @@ public class BallData : ScriptableObject
     [ SerializeField, LabelText( "Next Data" ) ] BallData ball_nextData;
 
 	public float BallAppliedForce            => ball_force;
+	public ForceMode BallAppliedForceMode    => ball_force_mode;
 	public float BallSpeedMax                => ball_speed_max;
 	public float BallMass                    => ball_mass;
 	public float BallDrag                    => ball_drag;
