@@ -166,7 +166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212337994561284384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -191,7 +191,7 @@ MonoBehaviour:
   ball_spawn_count: {x: 3, y: 5}
   ball_spawn_level: {x: 1, y: 2}
   ball_spawn_velocity: {x: 1, y: 2}
-  ball_spawn_radius: 0.5
+  ball_spawn_radius: 0.2
 --- !u!1 &2233380841604635902
 GameObject:
   m_ObjectHideFlags: 0
