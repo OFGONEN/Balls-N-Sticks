@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/app.unity
     guid: ad0d37aebbbd4c54396618f1c151ebb7
   - enabled: 1
-    path: Assets/Scenes/game_rollic.unity
-    guid: e907b810f8445bb4ab6de62d94a29201
+    path: Assets/Scenes/game_1.unity
+    guid: cd78b8e8048eba0428587c8db4859873
   - enabled: 1
-    path: Assets/Scenes/game_rollic_wider.unity
-    guid: b382af6dc85105545aebe1339d607438
+    path: Assets/Scenes/game_2.unity
+    guid: 2991bc87642385a459807fa19803b22e
+  - enabled: 1
+    path: Assets/Scenes/game_3.unity
+    guid: 227cb4449e8588146a9769dd9a402194
   m_configObjects: {}
