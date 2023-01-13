@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6453024343168845162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6453024343168845156}
+  - component: {fileID: 6453024343168845157}
+  - component: {fileID: 3942740127487774599}
+  m_Layer: 0
+  m_Name: tool_ball_spawn
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6453024343168845156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453024343168845162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6453024343168845157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453024343168845162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b2124308557e34f95b301ee7ba6250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball_spawn_radius: 4
+  ball_count_range: {x: 10, y: 10}
+  ball_level_range: {x: 1, y: 1}
+  ball_gameObject_array:
+  - {fileID: 6111577700876256173, guid: 80ae2eeb7adb9da4287cdbd40204dcfc, type: 3}
+  - {fileID: 6111577700876256173, guid: aa6029ab9df611040a7197fd36966cdd, type: 3}
+  - {fileID: 6111577700876256173, guid: 8c8279a42f083844bb6591a456c17547, type: 3}
+  ball_spawn_height: 0.2
+--- !u!114 &3942740127487774599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453024343168845162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec817012fe939d841b245cea223cbe09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_data_array:
+  - spawn_object: {fileID: 0}
+    spawn_count_range: {x: 0, y: 0}
+    spawn_forward_offset_range: {x: 0, y: 0}
+    spawn_lateral_offset_range: {x: 0, y: 0}
+    spawn_height_range: {x: 0, y: 0}

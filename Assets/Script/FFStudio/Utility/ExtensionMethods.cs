@@ -12,6 +12,7 @@ namespace FFStudio
 	public static class ExtensionMethods
 	{
 		public static readonly string SAVE_PATH = Application.persistentDataPath + "/Saves/";
+		public static readonly string Key_Currency = "currency";
 
 		static List< Transform > baseModelBones   = new List< Transform >( 96 );
 		static List< Transform > targetModelBones = new List< Transform >( 96 );
@@ -80,6 +81,11 @@ namespace FFStudio
 		public static Vector3 ConvertV3( this Vector2 v2 )
 		{
 			return new Vector3( v2.x, v2.y, 0 );
+		}
+
+		public static Vector3 ConvertV3_Z( this Vector2 v2 )
+		{
+			return new Vector3( v2.x, 0, v2.y );
 		}
 
 		public static Vector3 RandomPointBetween( this Vector3 first, Vector3 second )
@@ -152,6 +158,16 @@ namespace FFStudio
 		}
 
 		public static void EmptyMethod()
+		{
+			/* Intentionally empty, by definition. */
+		}
+
+		public static void EmptyMethod( float value )
+		{
+			/* Intentionally empty, by definition. */
+		}
+
+		public static void EmptyMethod( int value )
 		{
 			/* Intentionally empty, by definition. */
 		}
@@ -482,6 +498,11 @@ namespace FFStudio
 			return Random.Range( vector.x, vector.y );
 		}
 
+		public static int ReturnRandom( this Vector2Int vector )
+		{
+			return Random.Range( vector.x, vector.y );
+		}
+
 		public static float ReturnProgress( this Vector2 vector, float progress )
 		{
 			return Mathf.Lerp( vector.x, vector.y, progress );
@@ -513,6 +534,14 @@ namespace FFStudio
 		public static float ReturnClamped( this Vector2 vector, float value )
 		{
 			return Mathf.Clamp( value, vector.x, vector.y );
+		}
+
+		public static float ReturnSign( this float value )
+		{
+			if( Mathf.Approximately( value, 0 ) )
+				return 0;
+			else
+				return Mathf.Sign( value );
 		}
 
 #if FF_OBI_IMPORTED
