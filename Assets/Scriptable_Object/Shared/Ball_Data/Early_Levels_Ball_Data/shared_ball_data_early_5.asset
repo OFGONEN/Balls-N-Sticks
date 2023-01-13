@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc122a0e082a4a8a8336783abba8bdd, type: 3}
+  m_Name: shared_ball_data_early_5
+  m_EditorClassIdentifier: 
+  ball_force: 0
+  ball_mass: 1
+  ball_drag: 1
+  ball_angularDrag: 0
+  ball_speed_max: 20
+  ball_render_data_array:
+  - ball_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+    ball_mesh: {fileID: -2167021535071039704, guid: 0829a98807084c545a1546e9d240df72, type: 3}
+  - ball_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+    ball_mesh: {fileID: 8873493433261873677, guid: 0b3d8b2db359f0b4e977893f77c78205, type: 3}
+  - ball_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+    ball_mesh: {fileID: -4916481675420941597, guid: 2c898e69af16b6949b40f4106c3d1d2f, type: 3}
+  ball_material_physic: {fileID: 13400000, guid: dfd2aae4a22e14c4f8b07efcbff40f1b, type: 2}
+  ball_currency_range: {x: 0.8, y: 1}
+  ball_nextData: {fileID: 11400000}
