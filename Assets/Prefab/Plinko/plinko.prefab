@@ -631,7 +631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8606660468576139916, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 170
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8974455141809143443, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: m_Name
@@ -1743,7 +1743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8606660468576139916, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 24
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8974455141809143443, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: m_Name
@@ -2742,7 +2742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8606660468576139916, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 24
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8974455141809143443, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: m_Name
@@ -3012,7 +3012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8606660468576139916, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 170
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8974455141809143443, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: m_Name
