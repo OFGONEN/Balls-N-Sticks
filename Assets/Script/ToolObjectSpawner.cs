@@ -12,13 +12,10 @@ public class ToolObjectSpawner : MonoBehaviour
 {
 #region Fields
   [ Title( "Configure" ) ]
-    public GameObject spawn_object;
-    public Vector2 spawn_count_range;
-    public Vector2 spawn_forward_offset_range;
-    public Vector2 spawn_lateral_offset_range;
-    public Vector2 spawn_height_range;
+	public SpawnData[] spawn_data_array;
 
 	Vector3 spawn_position;
+	int spawn_index;
 	List< GameObject > spawned_object_array = new List< GameObject >( 128 );
 #endregion
 
@@ -30,25 +27,27 @@ public class ToolObjectSpawner : MonoBehaviour
 
 #region API
     [ Button() ]
-    public void Spawn()
+    public void Spawn( int spawnIndex )
     {
 		EditorSceneManager.MarkAllScenesDirty();
 
 		spawned_object_array.Clear();
+		spawn_index = spawnIndex;
+		var data = spawn_data_array[ spawnIndex ];
 
-		var spawnCount = spawn_count_range.ReturnRandom();
-		spawn_position = transform.position.SetY( spawn_height_range.ReturnRandom() );
+		var spawnCount = data.spawn_count_range.ReturnRandom();
+		spawn_position = transform.position.SetY( data.spawn_height_range.ReturnRandom() );
 
 		var siblingIndex = GameObject.Find( "--- Patterns_Start ---" ).transform.GetSiblingIndex();
 
         for( var i = 0; i < spawnCount; i++ )
         {
-			var spawnObject = PrefabUtility.InstantiatePrefab( spawn_object ) as GameObject;
-			spawnObject.transform.position = spawn_position.OffsetX( spawn_lateral_offset_range.ReturnRandom() ).SetY( spawn_height_range.ReturnRandom() );
+			var spawnObject = PrefabUtility.InstantiatePrefab( data.spawn_object ) as GameObject;
+			spawnObject.transform.position = spawn_position.OffsetX( data.spawn_lateral_offset_range.ReturnRandom() ).SetY( data.spawn_height_range.ReturnRandom() );
 			spawnObject.transform.SetSiblingIndex( siblingIndex + 1 );
 
 			spawned_object_array.Add( spawnObject );
-			spawn_position = spawn_position + Vector3.forward * spawn_forward_offset_range.ReturnRandom();
+			spawn_position = spawn_position + Vector3.forward * data.spawn_forward_offset_range.ReturnRandom();
 		}
 	}
 
@@ -56,7 +55,7 @@ public class ToolObjectSpawner : MonoBehaviour
     public void SpawnAgain()
     {
 		DeleteLastSpawned();
-		Spawn();
+		Spawn( spawn_index );
 	}
 
     [ Button() ]
@@ -80,4 +79,14 @@ public class ToolObjectSpawner : MonoBehaviour
 #if UNITY_EDITOR
 #endif
 #endregion
+}
+
+[ System.Serializable ]
+public struct SpawnData
+{
+    public GameObject spawn_object;
+    public Vector2 spawn_count_range;
+    public Vector2 spawn_forward_offset_range;
+    public Vector2 spawn_lateral_offset_range;
+    public Vector2 spawn_height_range;
 }

@@ -65,8 +65,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec817012fe939d841b245cea223cbe09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn_object: {fileID: 0}
-  spawn_count_range: {x: 0, y: 0}
-  spawn_forward_offset_range: {x: 0, y: 0}
-  spawn_lateral_offset_range: {x: 0, y: 0}
-  spawn_height_range: {x: 0, y: 0}
+  spawn_data_array:
+  - spawn_object: {fileID: 0}
+    spawn_count_range: {x: 0, y: 0}
+    spawn_forward_offset_range: {x: 0, y: 0}
+    spawn_lateral_offset_range: {x: 0, y: 0}
+    spawn_height_range: {x: 0, y: 0}
