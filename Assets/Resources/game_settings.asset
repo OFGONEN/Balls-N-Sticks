@@ -40,7 +40,7 @@ MonoBehaviour:
   camera_endLevel_transition_delay: 1
   camera_endLevel_transition_duration: 0.75
   camera_endLevel_transition_ease: 12
-  maxLevelCount: 2
+  maxLevelCount: 15
   game_forward: {x: 0, y: 0, z: 1}
   character_movement_rotate_cofactor: 10
   character_movement_lateral_cofactor: 0.002

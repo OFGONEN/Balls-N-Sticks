@@ -282,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
       propertyPath: m_fontSize
-      value: 0.5
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
       propertyPath: m_fontAsset
@@ -290,7 +290,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 61cbfcba0d3f0a843a450218100c5182, type: 2}
     - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
       propertyPath: m_fontSizeBase
-      value: 0.5
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
       propertyPath: m_sharedMaterial
@@ -605,7 +605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2407574007300901498, guid: 9768d684be27e434898f54dea1c93182, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2407574007300901498, guid: 9768d684be27e434898f54dea1c93182, type: 3}
       propertyPath: m_LocalRotation.w
@@ -629,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2407574007300901498, guid: 9768d684be27e434898f54dea1c93182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.7
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 2407574007300901498, guid: 9768d684be27e434898f54dea1c93182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

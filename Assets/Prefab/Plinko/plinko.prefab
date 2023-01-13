@@ -55,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6824973704061283284}
   - component: {fileID: 3249823718081760420}
+  - component: {fileID: 8004549288549202587}
   m_Layer: 31
   m_Name: logic_plinkoBallSpawner
   m_TagString: Untagged
@@ -94,7 +95,7 @@ MonoBehaviour:
   ball_cache: {fileID: 11400000, guid: 68e8c7d9b26045144b1771d2e1bce148, type: 2}
   ball_spawn_velocity: {x: 0.2, y: 0.6}
   ball_spawn_radius: 0.1
-  ball_spawn_delay: {x: 0.2, y: 0.35}
+  ball_spawn_delay: {x: 0.05, y: 0.125}
   onSpawnComplete:
     m_PersistentCalls:
       m_Calls:
@@ -110,6 +111,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8004549288549202587}
+        m_TargetAssemblyTypeName: DelayedUnityEvent, Assembly-CSharp
+        m_MethodName: InvokeWithDelayUnityEvent
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8004549288549202587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2153325553543758566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e665ea48c137643aab35be6f8ad681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 11400000, guid: 28d976b368abc004a924d98b1751a17d, type: 2}
         m_TargetAssemblyTypeName: FFStudio.GameEvent, Assembly-CSharp
         m_MethodName: Raise
@@ -185,14 +213,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2883797668258276774}
-  m_LocalRotation: {x: -0.17854442, y: 0.6841943, z: 0.17854442, w: 0.6841943}
-  m_LocalPosition: {x: 4.428, y: 0, z: 0}
+  m_LocalRotation: {x: -0.16889632, y: 0.68663967, z: 0.16889632, w: 0.68663967}
+  m_LocalPosition: {x: 4.373, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7228930999280722943}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -29.251, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -27.638, y: 90, z: 0}
 --- !u!65 &5821367695665358841
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -204,8 +232,53 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9, y: 8, z: 0.65}
-  m_Center: {x: 0, y: 4, z: 0}
+  m_Size: {x: 9, y: 6, z: 0.65}
+  m_Center: {x: 0, y: 3, z: 0}
+--- !u!1 &5404882956628572072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7643222398590035411}
+  - component: {fileID: 8979887500053239254}
+  m_Layer: 31
+  m_Name: collider_border_right_up
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &7643222398590035411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404882956628572072}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.586, y: 5.241, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7228930999280722943}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &8979887500053239254
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404882956628572072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 6, z: 0.65}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &7868495228062732416
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,14 +303,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7868495228062732416}
-  m_LocalRotation: {x: 0.17854485, y: 0.6841942, z: -0.17854485, w: 0.6841942}
-  m_LocalPosition: {x: -4.428, y: 0, z: 0}
+  m_LocalRotation: {x: 0.16889825, y: 0.68663925, z: -0.16889825, w: 0.68663925}
+  m_LocalPosition: {x: -4.373, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7228930999280722943}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 29.251, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 27.638, y: 90, z: 0}
 --- !u!65 &2612428595528547567
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -249,8 +322,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9, y: 8, z: 0.65}
-  m_Center: {x: 0, y: 4, z: 0}
+  m_Size: {x: 9, y: 6, z: 0.65}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &8514949896245728044
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8322965941487153124}
   - component: {fileID: 8864623799535155160}
+  - component: {fileID: 7319952270944435227}
   m_Layer: 0
   m_Name: logic_respond
   m_TagString: Untagged
@@ -302,18 +376,57 @@ MonoBehaviour:
     unityEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3249823718081760420}
-          m_TargetAssemblyTypeName: BallSpawnerPlinko, Assembly-CSharp
-          m_MethodName: StartSpawnSequence
-          m_Mode: 1
+        - m_Target: {fileID: 7319952270944435227}
+          m_TargetAssemblyTypeName: DelayedUnityEvent, Assembly-CSharp
+          m_MethodName: InvokeWithDelayUnityEvent
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 0.5
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &7319952270944435227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514949896245728044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e665ea48c137643aab35be6f8ad681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3249823718081760420}
+        m_TargetAssemblyTypeName: BallSpawnerPlinko, Assembly-CSharp
+        m_MethodName: StartSpawnSequence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: a5edacec3496d4c5f9e94958dd3b9adf, type: 2}
+        m_TargetAssemblyTypeName: FFStudio.IntGameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8532704736674983516
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +465,8 @@ Transform:
   - {fileID: 5091673925377264433}
   - {fileID: 1395390712928705202}
   - {fileID: 185732004444302623}
+  - {fileID: 6965604188713381525}
+  - {fileID: 7643222398590035411}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -369,6 +484,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sharedReferenceProperty: {fileID: 11400000, guid: a5af8135a9f960d4ebff8eabc700886a, type: 2}
   referenceComponent: {fileID: 7228930999280722943}
+--- !u!1 &8955806664283408635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6965604188713381525}
+  - component: {fileID: 364860555891067255}
+  m_Layer: 31
+  m_Name: collider_border_left_up
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &6965604188713381525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8955806664283408635}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -1.586, y: 5.241, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7228930999280722943}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &364860555891067255
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8955806664283408635}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 6, z: 0.65}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &8991134338439892646
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8606660468576139916, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 170
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8974455141809143443, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: m_Name
@@ -1583,7 +1743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8606660468576139916, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 24
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8974455141809143443, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: m_Name
@@ -2582,7 +2742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8606660468576139916, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 24
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8974455141809143443, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: m_Name
@@ -2852,7 +3012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8606660468576139916, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: trigger_respond_data_array.Array.data[0].trigger_event.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 170
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8974455141809143443, guid: 3359e65ba6b4ecd48ab72eefc7606bc0, type: 3}
       propertyPath: m_Name
@@ -3011,6 +3171,10 @@ PrefabInstance:
     - target: {fileID: 2429230526218195090, guid: a982f2faf3ca09642b8aabf2429f7152, type: 3}
       propertyPath: m_Layer
       value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429230526218195090, guid: a982f2faf3ca09642b8aabf2429f7152, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2429230526218195090, guid: a982f2faf3ca09642b8aabf2429f7152, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3350,7 +3514,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &668313154989843824 stripped
@@ -3369,7 +3533,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &719939487576067354 stripped
@@ -3406,7 +3570,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &1411311975101263214 stripped
@@ -3425,7 +3589,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &1424980390768094895 stripped
@@ -3462,7 +3626,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &1619055434328071473 stripped
@@ -3481,7 +3645,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &1729138191827041049 stripped
@@ -3500,7 +3664,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &2098831048889873737 stripped
@@ -3519,7 +3683,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &2460707338357077843 stripped
@@ -3538,7 +3702,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &2758885535070091213 stripped
@@ -3557,7 +3721,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!4 &2801969195592491136 stripped
@@ -3581,7 +3745,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &2985976599791731009 stripped
@@ -3600,7 +3764,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &3578351179992545090 stripped
@@ -3637,7 +3801,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &3803829903969331151 stripped
@@ -3692,7 +3856,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &4553240128530792720 stripped
@@ -3711,7 +3875,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &4703033394640225964 stripped
@@ -3730,7 +3894,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &5153953410580166051 stripped
@@ -3749,7 +3913,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &5598515744778531542 stripped
@@ -3768,7 +3932,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &5769425042874040387 stripped
@@ -3787,7 +3951,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &6432751142675288313 stripped
@@ -3824,7 +3988,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &6677512667842886358 stripped
@@ -3843,7 +4007,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &6884915791603772081 stripped
@@ -3862,7 +4026,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &7156569738747165966 stripped
@@ -3881,7 +4045,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &7887374960382004176 stripped
@@ -3918,7 +4082,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &8169829718526761408 stripped
@@ -3937,7 +4101,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &8577146169520615821 stripped
@@ -3974,7 +4138,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &8729625840418167265 stripped
@@ -3993,7 +4157,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &8888553867893908540 stripped
@@ -4012,7 +4176,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 1.5
   m_Direction: 2
   m_Center: {x: -0.000000037252903, y: 0, z: 0.00000013411044}
 --- !u!1 &9133758515404319777 stripped

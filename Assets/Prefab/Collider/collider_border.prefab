@@ -53,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136117472541997380, guid: 4003237f50a162649bccd343099ce81a, type: 3}
       propertyPath: m_Name
-      value: collider_border_right
+      value: collider_border
       objectReference: {fileID: 0}
     - target: {fileID: 7468496568363939783, guid: 4003237f50a162649bccd343099ce81a, type: 3}
       propertyPath: m_Size.x
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7468496568363939783, guid: 4003237f50a162649bccd343099ce81a, type: 3}
       propertyPath: m_Size.y
@@ -65,15 +65,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7468496568363939783, guid: 4003237f50a162649bccd343099ce81a, type: 3}
       propertyPath: m_Size.z
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7468496568363939783, guid: 4003237f50a162649bccd343099ce81a, type: 3}
       propertyPath: m_Center.x
-      value: -3.5
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7468496568363939783, guid: 4003237f50a162649bccd343099ce81a, type: 3}
       propertyPath: m_Center.y
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7468496568363939783, guid: 4003237f50a162649bccd343099ce81a, type: 3}
       propertyPath: m_Center.z
@@ -82,6 +82,6 @@ PrefabInstance:
     - target: {fileID: 7468496568363939783, guid: 4003237f50a162649bccd343099ce81a, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: fb60ea829f6c913458e01b5b93cb4b79, type: 2}
+      objectReference: {fileID: 13400000, guid: fe5cfbefe7056fa4ca951541607bbfa7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4003237f50a162649bccd343099ce81a, type: 3}

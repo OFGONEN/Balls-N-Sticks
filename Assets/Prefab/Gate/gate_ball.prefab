@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958bd9b5876975e49ba79843e95d88b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 1
+  value: 10
   onUpdateUnityEvent:
     m_PersistentCalls:
       m_Calls:

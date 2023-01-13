@@ -124,7 +124,7 @@ public class Ball : MonoBehaviour , IClusterEntity
 
 	public void DoApplyForce( Transform forceOrigin )
 	{
-		_rigidbody.AddForce( forceOrigin.forward * ball_data.BallAppliedForce, ForceMode.Impulse );
+		_rigidbody.AddForce( forceOrigin.forward * ball_data.BallAppliedForce, ball_data.BallAppliedForceMode );
 	}
 
 	public void Subscribe_Cluster()

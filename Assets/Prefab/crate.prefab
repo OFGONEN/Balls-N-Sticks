@@ -166,7 +166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212337994561284384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -188,10 +188,10 @@ MonoBehaviour:
   pool_ball: {fileID: 11400000, guid: 53958f55ff87f8b458fbe9c8a391482e, type: 2}
   library_ball_data: {fileID: 11400000, guid: 8547dd0b5cf3c6c469eca6160478d11a, type: 2}
   ball_cache: {fileID: 11400000, guid: 68e8c7d9b26045144b1771d2e1bce148, type: 2}
-  ball_spawn_count: {x: 3, y: 5}
-  ball_spawn_level: {x: 1, y: 2}
+  ball_spawn_count: {x: 5, y: 10}
+  ball_spawn_level: {x: 1, y: 5}
   ball_spawn_velocity: {x: 1, y: 2}
-  ball_spawn_radius: 0.5
+  ball_spawn_radius: 0.2
 --- !u!1 &2233380841604635902
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958bd9b5876975e49ba79843e95d88b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 2
+  value: 5
   onUpdateUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -363,6 +363,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: a5edacec3496d4c5f9e94958dd3b9adf, type: 2}
+        m_TargetAssemblyTypeName: FFStudio.IntGameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -702,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2407574007300901498, guid: 9768d684be27e434898f54dea1c93182, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.48
       objectReference: {fileID: 0}
     - target: {fileID: 2407574007300901498, guid: 9768d684be27e434898f54dea1c93182, type: 3}
       propertyPath: m_LocalRotation.w
@@ -726,7 +738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2407574007300901498, guid: 9768d684be27e434898f54dea1c93182, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 2407574007300901498, guid: 9768d684be27e434898f54dea1c93182, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -920,7 +932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
       propertyPath: m_fontSize
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
       propertyPath: m_fontAsset
@@ -928,12 +940,12 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 61cbfcba0d3f0a843a450218100c5182, type: 2}
     - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
       propertyPath: m_fontSizeBase
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7600049506065207049, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: ff23a17416113dc4fbf292a990963b76, type: 2}
+      objectReference: {fileID: -1992174343660753052, guid: 61cbfcba0d3f0a843a450218100c5182, type: 2}
     - target: {fileID: 7668125578453921217, guid: 4da31d1af9fcaaa4c8886f458407b99f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

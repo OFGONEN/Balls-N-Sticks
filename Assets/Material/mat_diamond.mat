@@ -203,10 +203,10 @@ Material:
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0.46334648, g: 0, b: 1, a: 0.5}
+    - _RimColor: {r: 0.4069562, g: 0, b: 1, a: 0.5}
     - _SColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
-    - _SpecularColor: {r: 0.3347993, g: 0, b: 1, a: 1}
+    - _SpecularColor: {r: 0.43755627, g: 0.15633422, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &4407156670126428002
 MonoBehaviour:
