@@ -1,4 +1,5 @@
 /* Created by and for usage of FF Studios (2021). */
+#if UNITY_EDITOR
 
 using System.Collections;
 using System.Collections.Generic;
@@ -74,11 +75,6 @@ public class ToolObjectSpawner : MonoBehaviour
 
 #region Implementation
 #endregion
-
-#region Editor Only
-#if UNITY_EDITOR
-#endif
-#endregion
 }
 
 [ System.Serializable ]
@@ -90,3 +86,4 @@ public struct SpawnData
     public Vector2 spawn_lateral_offset_range;
     public Vector2 spawn_height_range;
 }
+#endif
