@@ -55,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6824973704061283284}
   - component: {fileID: 3249823718081760420}
+  - component: {fileID: 8004549288549202587}
   m_Layer: 31
   m_Name: logic_plinkoBallSpawner
   m_TagString: Untagged
@@ -110,6 +111,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8004549288549202587}
+        m_TargetAssemblyTypeName: DelayedUnityEvent, Assembly-CSharp
+        m_MethodName: InvokeWithDelayUnityEvent
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8004549288549202587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2153325553543758566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e665ea48c137643aab35be6f8ad681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 11400000, guid: 28d976b368abc004a924d98b1751a17d, type: 2}
         m_TargetAssemblyTypeName: FFStudio.GameEvent, Assembly-CSharp
         m_MethodName: Raise
